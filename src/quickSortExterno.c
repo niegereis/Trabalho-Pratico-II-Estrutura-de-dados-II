@@ -31,7 +31,12 @@ void inicializaArea(TipoArea *Area, Contagem *C){
     Area->r = (TipoRegistro*) malloc(10 * sizeof(TipoRegistro));
     Area->n = 0; // numero de itens inicializado com 0
     C->comp = 0;
+    C->transf = 0;
+    C->transfEscrita = 0;
+    C->transfLeitura = 0;
 
+    clock_t inicio;
+    clock_t fim;
 
 }
 
