@@ -14,26 +14,41 @@
 4) tempo de execução (tempo do término de execução menos o tempo do início de execução).*/
 
 
+// Para a 2ª fase, experimentos devem ser realizados considerando o arquivo texto "PROVAO.TXT"
+/*arquivo disponível na página da disciplina) que corresponde a uma base de dados de notas de 471.705
+alunos do Ensino Superior que fizeram o "Provão" em 2003 (último ano em que tal avaliação foi
+aplicada). Cada linha do arquivo contém os seguintes dados relativos a um determinado aluno que fez o
+"Provão":
+- número de inscrição do aluno (valor inteiro longo, ocupando as colunas 1 a 8 do arquivo texto);
+- nota obtida pelo aluno (valor real entre 0.0 e 100.0, ocupando as colunas 10 a 14 do arquivo texto);
+- estado do aluno (cadeia de 2 caracteres, ocupando as colunas 16 e 17 do arquivo texto);
+- cidade do aluno (cadeia de 50 caracteres, ocupando as colunas 19 a 68 do arquivo texto);
+- curso do aluno (cadeia de 30 caracteres, ocupando as colunas 70 a 99 do arquivo texto).*/
+
+
 //A area seria o pivo
-void inicializaArea(TipoArea *Area){
+void inicializaArea(TipoArea *Area, Contagem *C){
     Area->r = (TipoRegistro*) malloc(10 * sizeof(TipoRegistro));
     Area->n = 0; // numero de itens inicializado com 0
+    C->comp = 0;
+
+
 }
 
 
 
-void QuickSortExterno(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, int Esq, int Dir){
+void QuickSortExterno(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, int Esq, int Dir, Contagem *C){
     int i, j;
     TipoArea Area;
-    inicializaArea(&Area);
+    inicializaArea(&Area, &C);
     if (Dir - Esq < 1) return;
-    Particao(ArqLi, ArqEi, ArqLEs, Area, Esq, Dir, &i, &j);
+    Particao(ArqLi, ArqEi, ArqLEs, Area, Esq, Dir, &i, &j, Area);
     if (i - Esq < Dir - j){
-        QuickSortExterno(ArqLi, ArqEi, ArqLEs, Esq, i);
-        QuickSortExterno(ArqLi, ArqEi, ArqLEs, j, Dir);
+        QuickSortExterno(ArqLi, ArqEi, ArqLEs, Esq, i, C);
+        QuickSortExterno(ArqLi, ArqEi, ArqLEs, j, Dir, C);
     } else {
-        QuickSortExterno(ArqLi, ArqEi, ArqLEs, j, Dir);
-        QuickSortExterno(ArqLi, ArqEi, ArqLEs, Esq, i);
+        QuickSortExterno(ArqLi, ArqEi, ArqLEs, j, Dir, C);
+        QuickSortExterno(ArqLi, ArqEi, ArqLEs, Esq, i, C);
     }
 
     
@@ -81,10 +96,10 @@ void RetiraMin(TipoArea *Area, TipoRegistro *R, int *NRArea){
 }
 
 
-void Particao(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, TipoArea Area, int Esq, int Dir, int *i, int *j){
+void Particao(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, TipoArea Area, int Esq, int Dir, int *i, int *j, TipoArea area){
     int Ls = Dir, Es = Dir, Li = Esq, Ei = Esq; 
     int Linf = INT_MIN, Lsup = INT_MAX;
-    int NRArea = 0; // Número de elementos na área
+    //int NRArea = 0; // Número de elementos na área
     short OndeLer = true;
     TipoRegistro UltLido, R;
     fseek(*ArqLi, (Li - 1) * sizeof(TipoRegistro), SEEK_SET);
@@ -92,17 +107,18 @@ void Particao(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, TipoArea Area, int Esq,
     *i = Esq - 1;
     *j = Dir + 1;
     while (Ls >= Li){
-        if (NRArea < TAMANHOAREA - 1){
+        if (area.n < TAMANHOAREA - 1){ // verificar se tem parte do pivo vazio
             if (OndeLer){
                 LeSup(ArqLEs, &UltLido, &Ls, &OndeLer);
             } else {
                 LeInf(ArqLi, &UltLido, &Li, &OndeLer);
-                inserirArea(&Area, &UltLido, &NRArea);
+                inserirArea(&Area, &UltLido, &area);
                 continue;
             }
         }
 
         if (Ls == Es)
+        // tem que fazer o numero de comparações
         LeSup(ArqLEs, &UltLido, &Ls, &OndeLer);
         else if (Li == Ei) LeInf(ArqLi, &UltLido, &Li, &OndeLer);
             else if (OndeLer) LeSup(ArqLEs, &UltLido, &Ls, &OndeLer);
@@ -118,20 +134,20 @@ void Particao(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, TipoArea Area, int Esq,
             EscreveMin(ArqEi, UltLido, &Ei);
             continue;
         }
-        inserirArea(&Area, &UltLido, &NRArea);
+        inserirArea(&Area, &UltLido, &area);
         if (Ei - Esq < Dir - Es){
-            RetiraMin(&Area, &R, &NRArea);
+            RetiraMin(&Area, &R, &area);
             EscreveMin(ArqEi, R, &Ei);
             Linf = R.chave;
         } else {
-            RetiraMax(&Area, &R, &NRArea);
+            RetiraMax(&Area, &R, &area);
             EscreveMax(ArqLEs, R, &Es);
             Lsup = R.chave;
         }
     }
 
     while (Ei <= Es){
-        RetiraMin(&Area, &R, &NRArea);
+        RetiraMin(&Area, &R, &area);
         EscreveMin(ArqEi, R, &Ei);
     }
     
