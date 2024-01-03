@@ -1,26 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
+#include "../headers/quickSortExterno.h"
+#define TAMANHOAREA 10
+//Para o método de quickSort externo, deve ser considerada a existência de memória interna disponível para armazenar um vetor
+// de, no máximo, 10 registros
+//A 2ª fase deste trabalho corresponde à análise experimental da complexidade de desempenho dos 3
+/*métodos mencionados, considerando os seguintes quesitos:
+1) número de transferências (leitura) de registros da memória externa para a memória interna;
+2) número de transferências (escrita) de registros da memória interna para a memória externa;
+3) número de comparações entre valores do campo de ordenação dos registros;
+4) tempo de execução (tempo do término de execução menos o tempo do início de execução).*/
 
-typedef long TipoChave;
 
-typedef struct TipoRegistro {
-    TipoChave chave;
-} TipoRegistro;
+//A area seria o pivo
+void inicializaArea(TipoArea *Area){
+    Area->r = (TipoRegistro*) malloc(10 * sizeof(TipoRegistro));
+    Area->n = 0; // numero de itens inicializado com 0
+}
 
-typedef struct TipoPagina* TipoApontador;
 
-// struct de tipoArea
-
-typedef struct TipoArea {
-    TipoRegistro *r;
-    int n;
-} TipoArea;
 
 void QuickSortExterno(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, int Esq, int Dir){
     int i, j;
     TipoArea Area;
-    FAVazia(&Area);
+    inicializaArea(&Area);
     if (Dir - Esq < 1) return;
     Particao(ArqLi, ArqEi, ArqLEs, Area, Esq, Dir, &i, &j);
     if (i - Esq < Dir - j){
@@ -33,7 +38,6 @@ void QuickSortExterno(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, int Esq, int Di
 
     
 }
-
 void LeSup(FILE **ArqLEs, TipoRegistro *UltLido, int *Ls, short *OndeLer){
     fseek(*ArqLEs, (*Ls - 1) * sizeof(TipoRegistro), SEEK_SET);
     fread(UltLido, sizeof(TipoRegistro), 1, *ArqLEs);
@@ -78,50 +82,59 @@ void RetiraMin(TipoArea *Area, TipoRegistro *R, int *NRArea){
 
 
 void Particao(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, TipoArea Area, int Esq, int Dir, int *i, int *j){
-    int Ls = Dir, Es = Dir, Li = Esq, Ei = Esq;
+    int Ls = Dir, Es = Dir, Li = Esq, Ei = Esq; 
+    int Linf = INT_MIN, Lsup = INT_MAX;
     int NRArea = 0; // Número de elementos na área
     short OndeLer = true;
     TipoRegistro UltLido, R;
+    fseek(*ArqLi, (Li - 1) * sizeof(TipoRegistro), SEEK_SET);
+    fseek(*ArqLEs, (Es - 1) * sizeof(TipoRegistro), SEEK_SET);
     *i = Esq - 1;
     *j = Dir + 1;
-    while (Li <= Ls){
-        if (ObterNumeroCelulas(&Area) == 0){
+    while (Ls >= Li){
+        if (NRArea < TAMANHOAREA - 1){
             if (OndeLer){
                 LeSup(ArqLEs, &UltLido, &Ls, &OndeLer);
             } else {
                 LeInf(ArqLi, &UltLido, &Li, &OndeLer);
+                inserirArea(&Area, &UltLido, &NRArea);
+                continue;
             }
-            inserirArea(&Area, &UltLido, &NRArea);
         }
-        if (OndeLer){
-            RetiraMax(&Area, &R, &NRArea);
-            EscreveMax(ArqLEs, R, &Es);
-            if (R.chave < UltLido.chave){
-                UltLido = R;
-                *j = Es;
-                *i = Ei;
-            }
-        } else {
+
+        if (Ls == Es)
+        LeSup(ArqLEs, &UltLido, &Ls, &OndeLer);
+        else if (Li == Ei) LeInf(ArqLi, &UltLido, &Li, &OndeLer);
+            else if (OndeLer) LeSup(ArqLEs, &UltLido, &Ls, &OndeLer);
+                else LeInf(ArqLi, &UltLido, &Li, &OndeLer);
+        if (UltLido.chave > Lsup){
+            *j = Es;
+            EscreveMax(ArqLEs, UltLido, &Es);
+            continue;
+        }
+
+        if(UltLido.chave < Linf){
+            *i = Ei;
+            EscreveMin(ArqEi, UltLido, &Ei);
+            continue;
+        }
+        inserirArea(&Area, &UltLido, &NRArea);
+        if (Ei - Esq < Dir - Es){
             RetiraMin(&Area, &R, &NRArea);
             EscreveMin(ArqEi, R, &Ei);
-            if (R.chave > UltLido.chave){
-                UltLido = R;
-                *i = Ei;
-                *j = Es;
-            }
-        }
-    }
-    while (Ei <= Es){
-        if (OndeLer){
-            LeSup(ArqLEs, &UltLido, &Ls, &OndeLer);
+            Linf = R.chave;
         } else {
-            LeInf(ArqLi, &UltLido, &Li, &OndeLer);
-        }
-        if (UltLido.chave < R.chave){
+            RetiraMax(&Area, &R, &NRArea);
             EscreveMax(ArqLEs, R, &Es);
-            EscreveMin(ArqEi, UltLido, &Ei);
-        } else {
-            EscreveMax(ArqEi, UltLido, &Ei);
-            EscreveMin(ArqLEs, R, &Es);
+            Lsup = R.chave;
         }
     }
+
+    while (Ei <= Es){
+        RetiraMin(&Area, &R, &NRArea);
+        EscreveMin(ArqEi, R, &Ei);
+    }
+    
+
+
+}

@@ -20,6 +20,8 @@ typedef struct Contagem {
     int tempo; // tempo de execucao
 } Contagem;
 
+typedef long TipoChave;
+
 typedef struct TipoPagina* TipoApontador;
 
 // struct de tipoArea
