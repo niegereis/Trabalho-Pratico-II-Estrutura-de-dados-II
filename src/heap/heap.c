@@ -31,9 +31,7 @@ bool HeapInserir(Heap *heap, Aluno aluno, bool marcado) {
 
   ItemHeap novoItem = ItemHeapCriar(&aluno);
 
-  float notaUltimoItemRemovido = ItemHeapObterNota(&heap->ultimoRemovido);
-  float notaAlunoInserido = ItemHeapObterNota(&novoItem);
-  bool ehParaInserirMarcado = notaAlunoInserido < notaUltimoItemRemovido;
+  bool ehParaInserirMarcado = HeapItemAPesoMaiorQueB(heap, &heap->ultimoRemovido, &novoItem);
 
   if (ehParaInserirMarcado || marcado) {
     novoItem.marcado = true;

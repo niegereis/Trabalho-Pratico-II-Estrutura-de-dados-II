@@ -1,5 +1,5 @@
-all: aluno.o compartilhado.o heap.o quickSortExterno.o main.o
-				@gcc ./aluno.o ./compartilhado.o ./heap.o ./quickSortExterno.o ./main.o -g -o exe
+all: aluno.o compartilhado.o heap.o quickSortExterno.o main.o intercalacaoBalanceadaFM1.o intercalacaoBalanceada2F.o
+				@gcc ./aluno.o ./compartilhado.o ./heap.o ./quickSortExterno.o ./intercalacaoBalanceadaFM1.o ./intercalacaoBalanceada2F.o ./main.o -g -o exe
 				@rm *.o
 
 aluno.o: ./src/aluno/aluno.c
