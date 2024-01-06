@@ -13,6 +13,10 @@ Aluno AlunoCriar(long int numeroInscricao, double nota, char *estado, char *cida
 }
 
 void AlunoImprime(Aluno *aluno) { printf("Inscrição: %ld => Nota: %.1f", aluno->numeroInscricao, aluno->nota); }
+void AlunoImprimeCompleto(Aluno *aluno) {
+  printf("Inscrição: %ld => Nota: %.1f, E: %s, C: %s, CURSO: %s.", aluno->numeroInscricao, aluno->nota, aluno->estado,
+         aluno->cidade, aluno->curso);
+}
 
 Aluno AlunoLer(FILE *f) {
   Aluno aluno;
@@ -21,3 +25,5 @@ Aluno AlunoLer(FILE *f) {
 
   return aluno;
 }
+
+void AlunoEscreverEmArquivoBin(Aluno *aluno, FILE *arquivoBinario) { fwrite(aluno, sizeof(Aluno), 1, arquivoBinario); }

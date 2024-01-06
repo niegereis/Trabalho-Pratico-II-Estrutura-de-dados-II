@@ -26,7 +26,7 @@ typedef struct heap {
 } Heap;
 
 Heap HeapCriar(int tam, TipoHeap tipo);
-bool HeapInserir(Heap *heap, Aluno aluno, bool marcado);
+bool HeapInserir(Heap *heap, Aluno *aluno, bool marcado);
 void HeapImprime(Heap *heap);
 bool HeapRemove(Heap *heap, ItemHeap *alunoObtido);
 void ItemHeapImprime(ItemHeap *itemHeap);

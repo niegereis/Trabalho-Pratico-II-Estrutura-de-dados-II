@@ -14,9 +14,10 @@ typedef struct aluno {
   char curso[31];
 } Aluno;
 
-Aluno AlunoCriar(long int numeroInscricao, double nota, char* estado,
-                 char* cidade, char* curso);
-void AlunoImprime(Aluno* aluno);
-Aluno AlunoLer(FILE* f);
+Aluno AlunoCriar(long int numeroInscricao, double nota, char *estado, char *cidade, char *curso);
+void AlunoImprime(Aluno *aluno);
+void AlunoImprimeCompleto(Aluno *aluno);
+Aluno AlunoLer(FILE *f);
+void AlunoEscreverEmArquivoBin(Aluno *aluno, FILE *arquivoBinario);
 
-#endif  // ALUNO_H
+#endif // ALUNO_H

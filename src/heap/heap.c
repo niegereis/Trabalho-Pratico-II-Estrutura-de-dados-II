@@ -25,11 +25,11 @@ Heap HeapCriar(int tam, TipoHeap tipo) {
   return heap;
 }
 
-bool HeapInserir(Heap *heap, Aluno aluno, bool marcado) {
+bool HeapInserir(Heap *heap, Aluno *aluno, bool marcado) {
   if ((heap->qtdItens + heap->qtdItensMarcados) == heap->qtdMaxima)
     return false;
 
-  ItemHeap novoItem = ItemHeapCriar(&aluno);
+  ItemHeap novoItem = ItemHeapCriar(aluno);
 
   bool ehParaInserirMarcado = HeapItemAPesoMaiorQueB(heap, &heap->ultimoRemovido, &novoItem);
 
