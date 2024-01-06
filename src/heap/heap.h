@@ -18,7 +18,7 @@ typedef enum tipoHeap { HEAP_MAX, HEAP_MIN } TipoHeap;
 
 typedef struct heap {
   ItemHeap *itensHeap;
-  ItemHeap ultimoRemovido;
+  ItemHeap *ultimoRemovido;
   TipoHeap tipo;
   int qtdItens;
   int qtdItensMarcados;
@@ -28,7 +28,7 @@ typedef struct heap {
 Heap HeapCriar(int tam, TipoHeap tipo);
 bool HeapInserir(Heap *heap, Aluno *aluno, bool marcado);
 void HeapImprime(Heap *heap);
-bool HeapRemove(Heap *heap, ItemHeap *alunoObtido);
+bool HeapRemove(Heap *heap, ItemHeap *itemRemovido);
 void ItemHeapImprime(ItemHeap *itemHeap);
 void HeapDesmarcarTodosEReconstituir(Heap *heap);
 bool HeapVerificaSeEhValido(Heap *heap);

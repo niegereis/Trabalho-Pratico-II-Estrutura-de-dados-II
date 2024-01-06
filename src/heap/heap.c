@@ -21,6 +21,7 @@ Heap HeapCriar(int tam, TipoHeap tipo) {
   heap.itensHeap = malloc(sizeof(ItemHeap) * tam);
   heap.qtdMaxima = tam;
   heap.qtdItensMarcados = 0;
+  heap.ultimoRemovido = NULL;
   heap.tipo = tipo;
   return heap;
 }
@@ -31,9 +32,10 @@ bool HeapInserir(Heap *heap, Aluno *aluno, bool marcado) {
 
   ItemHeap novoItem = ItemHeapCriar(aluno);
 
-  bool ehParaInserirMarcado = HeapItemAPesoMaiorQueB(heap, &heap->ultimoRemovido, &novoItem);
+  bool ehParaInserirMarcado = heap->ultimoRemovido != NULL && HeapItemAPesoMaiorQueB(heap, &novoItem, heap->ultimoRemovido);
 
   if (ehParaInserirMarcado || marcado) {
+    // printf("INSERIDO MARCADO!\n");
     novoItem.marcado = true;
 
     int posicaoNovoItemMarcado = heap->qtdMaxima - heap->qtdItensMarcados - 1;
@@ -106,7 +108,7 @@ bool HeapRemove(Heap *heap, ItemHeap *itemObtido) {
   ItemHeap ultimoItem = heap->itensHeap[heap->qtdItens - 1];
 
   *itemObtido = heap->itensHeap[0];
-  heap->ultimoRemovido = *itemObtido;
+  heap->ultimoRemovido = itemObtido;
 
   heap->qtdItens--;
 
@@ -127,7 +129,7 @@ void ItemHeapImprime(ItemHeap *itemHeap) {
 void HeapImprime(Heap *heap) {
   int posicaoPrimeiroItemMarcado = HeapObterPosicaoPrimeiroItemMarcado(heap);
   printf("\n");
-
+  printf("ESTADO ATUAL HEAP (%d itens não marcados) (%d itens marcados)\n\n", heap->qtdItens, heap->qtdItensMarcados);
   for (int i = 0; i < heap->qtdMaxima; i++) {
     if (i < heap->qtdItens || i > posicaoPrimeiroItemMarcado)
       ItemHeapImprime(&heap->itensHeap[i]);
@@ -175,6 +177,7 @@ bool HeapItemATemMesmoPesoOuMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b) {
 }
 
 bool HeapItemAPesoMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b) {
+
   float notaAlunoA = ItemHeapObterNota(a);
   float notaAlunoB = ItemHeapObterNota(b);
   if (h->tipo == HEAP_MAX) {
