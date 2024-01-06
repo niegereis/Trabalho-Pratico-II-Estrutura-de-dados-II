@@ -7,14 +7,14 @@
 #include <string.h>
 
 typedef struct aluno {
-  long int numeroInscricao;
+  char numeroInscricao[9];
   float nota;
   char estado[3];
   char cidade[51];
   char curso[31];
 } Aluno;
 
-Aluno AlunoCriar(long int numeroInscricao, double nota, char *estado, char *cidade, char *curso);
+Aluno AlunoCriar(char *numeroInscricao, double nota, char *estado, char *cidade, char *curso);
 void AlunoImprime(Aluno *aluno);
 void AlunoImprimeCompleto(Aluno *aluno);
 Aluno AlunoLer(FILE *f);
