@@ -6,9 +6,10 @@
 void HeapTroca(Heap *heap, int p1, int p2);
 void HeapReconstituir(Heap *heap, int pos);
 
-ItemHeap ItemHeapCriar(Aluno *aluno) {
+ItemHeap ItemHeapCriar(Aluno *aluno, int fitaDeOrigem) {
   ItemHeap itemHeap;
   itemHeap.aluno = *aluno;
+  itemHeap.fitaDeOrigem = fitaDeOrigem;
   itemHeap.marcado = false;
   return itemHeap;
 }
@@ -26,16 +27,15 @@ Heap HeapCriar(int tam, TipoHeap tipo) {
   return heap;
 }
 
-bool HeapInserir(Heap *heap, Aluno *aluno, bool marcado) {
+bool HeapInserir(Heap *heap, Aluno *aluno) {
   if ((heap->qtdItens + heap->qtdItensMarcados) == heap->qtdMaxima)
     return false;
 
-  ItemHeap novoItem = ItemHeapCriar(aluno);
+  ItemHeap novoItem = ItemHeapCriar(aluno, -1);
 
   bool ehParaInserirMarcado = heap->ultimoRemovido != NULL && HeapItemAPesoMaiorQueB(heap, &novoItem, heap->ultimoRemovido);
 
-  if (ehParaInserirMarcado || marcado) {
-    // printf("INSERIDO MARCADO!\n");
+  if (ehParaInserirMarcado) {
     novoItem.marcado = true;
 
     int posicaoNovoItemMarcado = heap->qtdMaxima - heap->qtdItensMarcados - 1;
@@ -49,6 +49,20 @@ bool HeapInserir(Heap *heap, Aluno *aluno, bool marcado) {
 
   return true;
 }
+
+bool HeapInserirComFitaOrigem(Heap *heap, Aluno *aluno, int fitaDeOrigem) {
+  if (HeapCheio(heap))
+    return false;
+
+  ItemHeap novoItem = ItemHeapCriar(aluno, fitaDeOrigem);
+  heap->itensHeap[heap->qtdItens++] = novoItem;
+  for (int i = (heap->qtdItens / 2) - 1; i >= 0; i--)
+    HeapReconstituir(heap, i);
+
+  return true;
+}
+
+bool HeapCheio(Heap *heap) { return heap->qtdItens + heap->qtdItensMarcados == heap->qtdMaxima; }
 
 void HeapReconstituir(Heap *heap, int pos) {
   if (pos < 0)
@@ -84,8 +98,10 @@ void HeapReconstituir(Heap *heap, int pos) {
 void HeapDesmarcarTodosEReconstituir(Heap *heap) {
   int posicaoPrimeiroItemMarcado = HeapObterPosicaoPrimeiroItemMarcado(heap);
 
-  for (int i = posicaoPrimeiroItemMarcado; i < heap->qtdMaxima; i++) {
+  for (int i = posicaoPrimeiroItemMarcado + 1; i < heap->qtdMaxima; i++) {
     heap->itensHeap[i].marcado = false;
+    if (heap->qtdItens + heap->qtdItensMarcados < heap->qtdMaxima)
+      heap->itensHeap[heap->qtdItens] = heap->itensHeap[i];
     heap->qtdItens++;
     heap->qtdItensMarcados--;
   }
@@ -102,7 +118,7 @@ void HeapTroca(Heap *heap, int p1, int p2) {
 }
 
 bool HeapRemove(Heap *heap, ItemHeap *itemObtido) {
-  if (heap->qtdItens == 0)
+  if (heap->qtdItens <= 0)
     return false;
 
   ItemHeap ultimoItem = heap->itensHeap[heap->qtdItens - 1];
@@ -172,7 +188,7 @@ bool HeapItemATemMesmoPesoOuMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b) {
   if (h->tipo == HEAP_MAX) {
     return notaAlunoA >= notaAlunoB;
   } else {
-    return notaAlunoB <= notaAlunoA;
+    return notaAlunoA <= notaAlunoB;
   }
 }
 
@@ -183,7 +199,7 @@ bool HeapItemAPesoMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b) {
   if (h->tipo == HEAP_MAX) {
     return notaAlunoA > notaAlunoB;
   } else {
-    return notaAlunoB < notaAlunoA;
+    return notaAlunoA < notaAlunoB;
   }
 }
 
@@ -199,3 +215,5 @@ void HeapEsvaziar(Heap *h) {
 }
 
 void HeapImprimeValidade(Heap *h) { printf("\n%s valido!\n", HeapVerificaSeEhValido(h) ? "É" : "Não é"); }
+
+void HeapRemoverDesmarcados(Heap *heap) { heap->qtdItens = 0; }

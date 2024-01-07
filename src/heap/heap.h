@@ -11,6 +11,7 @@
 
 typedef struct itemHeap {
   Aluno aluno;
+  int fitaDeOrigem;
   bool marcado;
 } ItemHeap;
 
@@ -26,7 +27,8 @@ typedef struct heap {
 } Heap;
 
 Heap HeapCriar(int tam, TipoHeap tipo);
-bool HeapInserir(Heap *heap, Aluno *aluno, bool marcado);
+bool HeapInserir(Heap *heap, Aluno *aluno);
+bool HeapInserirComFitaOrigem(Heap *heap, Aluno *aluno, int fitaDeOrigem);
 void HeapImprime(Heap *heap);
 bool HeapRemove(Heap *heap, ItemHeap *itemRemovido);
 void ItemHeapImprime(ItemHeap *itemHeap);
@@ -34,6 +36,8 @@ void HeapDesmarcarTodosEReconstituir(Heap *heap);
 bool HeapVerificaSeEhValido(Heap *heap);
 void HeapEsvaziar(Heap *h);
 void HeapImprimeValidade(Heap *h);
+void HeapRemoverDesmarcados(Heap *heap);
+bool HeapCheio(Heap *heap);
 
 bool HeapVerificaSeEhValidoRecursivo(Heap *heap, int centro, bool valido);
 bool HeapItemATemMesmoPesoOuMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b);

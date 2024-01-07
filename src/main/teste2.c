@@ -4,18 +4,18 @@ int popularHeapT2(Heap *h) {
   int qtd = 0;
 
   Aluno a = AlunoCriar("1", 3, "MG", "SP", "COMP");
-  HeapInserir(h, &a, false);
+  HeapInserir(h, &a);
   qtd++;
 
   ItemHeap i;
   HeapRemove(h, &i);
 
   a = AlunoCriar("1", 2, "MG", "SP", "COMP");
-  HeapInserir(h, &a, false);
+  HeapInserir(h, &a);
   qtd++;
 
   a = AlunoCriar("1", 3, "MG", "SP", "COMP");
-  HeapInserir(h, &a, false);
+  HeapInserir(h, &a);
   qtd++;
 
   return qtd;

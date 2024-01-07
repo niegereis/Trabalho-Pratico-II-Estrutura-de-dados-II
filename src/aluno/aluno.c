@@ -22,11 +22,13 @@ Aluno AlunoLer(FILE *f) {
   Aluno aluno;
 
   fscanf(f, "%s %f %s ", aluno.numeroInscricao, &aluno.nota, aluno.estado);
-  fgets(aluno.cidade, 51, f);
+  fgets(aluno.cidade, 50, f);
   fgetc(f);
-  fgets(aluno.curso, 31, f);
+  fgets(aluno.curso, 30, f);
 
   return aluno;
 }
+
+bool AlunoLerViaArquivoBinario(FILE *f, Aluno *alunoLido) { return fread(alunoLido, sizeof(Aluno), 1, f) == 1; }
 
 void AlunoEscreverEmArquivoBin(Aluno *aluno, FILE *arquivoBinario) { fwrite(aluno, sizeof(Aluno), 1, arquivoBinario); }

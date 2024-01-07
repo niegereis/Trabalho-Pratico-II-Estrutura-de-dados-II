@@ -1,0 +1,120 @@
+
+Inserção finalizada!
+
+ESTADO ATUAL HEAP (15 itens não marcados) (0 itens marcados)
+
+Inscrição: 1 => Nota: 12.0 (Não está marcado!)
+Inscrição: 1 => Nota: 11.0 (Não está marcado!)
+Inscrição: 1 => Nota: 11.2 (Não está marcado!)
+Inscrição: 1 => Nota: 5.0 (Não está marcado!)
+Inscrição: 1 => Nota: 9.0 (Não está marcado!)
+Inscrição: 1 => Nota: 8.0 (Não está marcado!)
+Inscrição: 1 => Nota: 10.5 (Não está marcado!)
+Inscrição: 1 => Nota: 0.5 (Não está marcado!)
+Inscrição: 1 => Nota: 2.0 (Não está marcado!)
+Inscrição: 1 => Nota: 0.5 (Não está marcado!)
+Inscrição: 1 => Nota: 5.0 (Não está marcado!)
+Inscrição: 1 => Nota: 1.0 (Não está marcado!)
+Inscrição: 1 => Nota: 3.0 (Não está marcado!)
+Inscrição: 1 => Nota: 4.0 (Não está marcado!)
+Inscrição: 1 => Nota: 10.0 (Não está marcado!)
+
+Inserção finalizada | Foram inseridos 15 items!
+/==============================/
+Remoção inicializada!
+
+Inscrição: 1 => Nota: 12.0 (Não está marcado!)
+Inscrição: 1 => Nota: 11.2 (Não está marcado!)
+Inscrição: 1 => Nota: 11.0 (Não está marcado!)
+Inscrição: 1 => Nota: 10.5 (Não está marcado!)
+Inscrição: 1 => Nota: 10.0 (Não está marcado!)
+Inscrição: 1 => Nota: 9.0 (Não está marcado!)
+Inscrição: 1 => Nota: 8.0 (Não está marcado!)
+Inscrição: 1 => Nota: 5.0 (Não está marcado!)
+Inscrição: 1 => Nota: 5.0 (Não está marcado!)
+Inscrição: 1 => Nota: 4.0 (Não está marcado!)
+Inscrição: 1 => Nota: 3.0 (Não está marcado!)
+Inscrição: 1 => Nota: 2.0 (Não está marcado!)
+Inscrição: 1 => Nota: 1.0 (Não está marcado!)
+Inscrição: 1 => Nota: 0.5 (Não está marcado!)
+Inscrição: 1 => Nota: 0.5 (Não está marcado!)
+
+Remoção finalizada | Foram removidos: 15
+
+ESTADO ATUAL HEAP (0 itens não marcados) (0 itens marcados)
+
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+... VAZIO ...
+
+ESTADO ATUAL HEAP (0 itens não marcados) (15 itens marcados)
+
+Inscrição: 1 => Nota: 11.2 (Está marcado!)
+Inscrição: 1 => Nota: 10.5 (Está marcado!)
+Inscrição: 1 => Nota: 10.0 (Está marcado!)
+Inscrição: 1 => Nota: 3.0 (Está marcado!)
+Inscrição: 1 => Nota: 12.0 (Está marcado!)
+Inscrição: 1 => Nota: 0.5 (Está marcado!)
+Inscrição: 1 => Nota: 2.0 (Está marcado!)
+Inscrição: 1 => Nota: 5.0 (Está marcado!)
+Inscrição: 1 => Nota: 4.0 (Está marcado!)
+Inscrição: 1 => Nota: 8.0 (Está marcado!)
+Inscrição: 1 => Nota: 9.0 (Está marcado!)
+Inscrição: 1 => Nota: 5.0 (Está marcado!)
+Inscrição: 1 => Nota: 11.0 (Está marcado!)
+Inscrição: 1 => Nota: 1.0 (Está marcado!)
+Inscrição: 1 => Nota: 0.5 (Está marcado!)
+
+
+Desmarcando e reconstituindo
+É valido!
+
+ESTADO ATUAL HEAP (15 itens não marcados) (0 itens marcados)
+
+Inscrição: 1 => Nota: 12.0 (Não está marcado!)
+Inscrição: 1 => Nota: 11.2 (Não está marcado!)
+Inscrição: 1 => Nota: 11.0 (Não está marcado!)
+Inscrição: 1 => Nota: 5.0 (Não está marcado!)
+Inscrição: 1 => Nota: 10.5 (Não está marcado!)
+Inscrição: 1 => Nota: 10.0 (Não está marcado!)
+Inscrição: 1 => Nota: 2.0 (Não está marcado!)
+Inscrição: 1 => Nota: 3.0 (Não está marcado!)
+Inscrição: 1 => Nota: 4.0 (Não está marcado!)
+Inscrição: 1 => Nota: 8.0 (Não está marcado!)
+Inscrição: 1 => Nota: 9.0 (Não está marcado!)
+Inscrição: 1 => Nota: 5.0 (Não está marcado!)
+Inscrição: 1 => Nota: 0.5 (Não está marcado!)
+Inscrição: 1 => Nota: 1.0 (Não está marcado!)
+Inscrição: 1 => Nota: 0.5 (Não está marcado!)
+
+Remoção inicializada!
+
+Inscrição: 1 => Nota: 12.0 (Não está marcado!)
+Inscrição: 1 => Nota: 11.2 (Não está marcado!)
+Inscrição: 1 => Nota: 11.0 (Não está marcado!)
+Inscrição: 1 => Nota: 10.5 (Não está marcado!)
+Inscrição: 1 => Nota: 10.0 (Não está marcado!)
+Inscrição: 1 => Nota: 9.0 (Não está marcado!)
+Inscrição: 1 => Nota: 8.0 (Não está marcado!)
+Inscrição: 1 => Nota: 5.0 (Não está marcado!)
+Inscrição: 1 => Nota: 5.0 (Não está marcado!)
+Inscrição: 1 => Nota: 4.0 (Não está marcado!)
+Inscrição: 1 => Nota: 3.0 (Não está marcado!)
+Inscrição: 1 => Nota: 2.0 (Não está marcado!)
+Inscrição: 1 => Nota: 1.0 (Não está marcado!)
+Inscrição: 1 => Nota: 0.5 (Não está marcado!)
+Inscrição: 1 => Nota: 0.5 (Não está marcado!)
+
+Remoção finalizada | Foram removidos: 15

@@ -3,6 +3,7 @@
 #ifndef ALUNO_H
 #define ALUNO_H
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -18,6 +19,7 @@ Aluno AlunoCriar(char *numeroInscricao, double nota, char *estado, char *cidade,
 void AlunoImprime(Aluno *aluno);
 void AlunoImprimeCompleto(Aluno *aluno);
 Aluno AlunoLer(FILE *f);
+bool AlunoLerViaArquivoBinario(FILE *f, Aluno *alunoLido);
 void AlunoEscreverEmArquivoBin(Aluno *aluno, FILE *arquivoBinario);
 
 #endif // ALUNO_H
