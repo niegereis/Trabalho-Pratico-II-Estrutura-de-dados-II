@@ -30,6 +30,15 @@ aplicada). Cada linha do arquivo contém os seguintes dados relativos a um deter
 - cidade do aluno (cadeia de 50 caracteres, ocupando as colunas 19 a 68 do arquivo texto);
 - curso do aluno (cadeia de 30 caracteres, ocupando as colunas 70 a 99 do arquivo texto).*/
 
+void leArquivoEscreveArquivo(Aluno *aluno){
+    FILE *arq = fopen("PROVAO.TXT", "r");
+    FILE *copiaArquivo = fopen("PROVAO.TXT", "w");
+
+    if (arq){
+        
+    }
+}
+
 void inicializaArea(TipoArea *Area, Contagem *C){
     Area->r = (Aluno *)malloc(TAMANHOAREA * sizeof(Aluno));
     Area->n = 0;
