@@ -2,5 +2,6 @@
 .ibin
 a.ts
 .tool-versions
-./**/**/**/fitas/*.bin
+./**/**/**/*.bin
 ./**/*.TXT
+*.bin
