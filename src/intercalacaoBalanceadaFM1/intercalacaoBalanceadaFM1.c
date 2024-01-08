@@ -1,6 +1,6 @@
 #include "./intercalacaoBalanceadaFM1.h"
 #define QTD_FITAS 10
-#define HEAP_TYPE HEAP_MAX
+#define HEAP_TYPE HEAP_MIN
 
 void FM1RegerarFitas(Fita *fitas, TipoDeFita tipo) {
   for (int i = 0; i < QTD_FITAS; i++) {

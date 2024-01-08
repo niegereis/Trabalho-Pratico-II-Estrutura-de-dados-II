@@ -4,7 +4,7 @@
 
 int main() {
 
-  Fita *fitas = FM1GerarBlocos(500);
+  Fita *fitas = FM1GerarBlocos(1000000);
   if (fitas == NULL) {
     printf("Ocorreu um erro inesperado!");
     return 0;

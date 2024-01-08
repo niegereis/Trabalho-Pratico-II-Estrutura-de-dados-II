@@ -1,0 +1,6 @@
+.exe
+.ibin
+a.ts
+.tool-versions
+./**/**/**/fitas/*.bin
+./**/*.TXT
