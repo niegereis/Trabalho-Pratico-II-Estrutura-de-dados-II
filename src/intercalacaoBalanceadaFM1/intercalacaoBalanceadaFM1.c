@@ -1,13 +1,11 @@
 #include "./intercalacaoBalanceadaFM1.h"
-#define QTD_FITAS 10
-#define HEAP_TYPE HEAP_MIN
 
-void FM1RegerarFitas(Fita *fitas, TipoDeFita tipo) {
+void FitaRegerarFitas(Fita *fitas, TipoDeFita tipo) {
   for (int i = 0; i < QTD_FITAS; i++) {
-    if ((tipo == SAIDA && !fitas[i].ehSaida) || (tipo == ENTRADA && fitas[i].ehSaida))
+    if ((tipo == FITA_DE_SAIDA && !fitas[i].ehSaida) || (tipo == FITA_DE_ENTRADA && fitas[i].ehSaida))
       continue;
 
-    char *caminhoArquivo = FitaObterCaminhoPelaPosicao(i);
+    char *caminhoArquivo = FitaObterCaminhoPelaPosicaoFM1(i);
     fclose(fitas[i].arquivo);
 
     FILE *arquivo = fopen(caminhoArquivo, "w+b");
@@ -15,7 +13,7 @@ void FM1RegerarFitas(Fita *fitas, TipoDeFita tipo) {
   }
 }
 
-char *FitaObterCaminhoPelaPosicao(int p) {
+char *FitaObterCaminhoPelaPosicaoFM1(int p) {
   char *caminhoArquivo = malloc(sizeof(char) * 52);
   strncpy(caminhoArquivo, "./src/intercalacaoBalanceadaFM1/fitas/fita_", 44);
 
@@ -31,7 +29,7 @@ char *FitaObterCaminhoPelaPosicao(int p) {
   return caminhoArquivo;
 }
 
-Fita *FM1GerarFitas(int qtd) {
+Fita *FitaGerarFitas(int qtd) {
   if (!opendir("./src/intercalacaoBalanceadaFM1/fitas/")) {
     mkdir("./src/intercalacaoBalanceadaFM1/fitas/", 0777);
   }
@@ -40,10 +38,9 @@ Fita *FM1GerarFitas(int qtd) {
 
   for (int i = 0; i < qtd; i++) {
 
-    bool ehAUltimaFita = i == qtd - 1;
-    char *caminhoArquivo = FitaObterCaminhoPelaPosicao(i);
+    char *caminhoArquivo = FitaObterCaminhoPelaPosicaoFM1(i);
     FILE *arquivo = fopen(caminhoArquivo, "w+b");
-    fitas[i] = FitaCriar(arquivo, ehAUltimaFita ? true : false);
+    fitas[i] = FitaCriar(arquivo, false);
 
     for (int i = 0; i < 52; i++)
       caminhoArquivo[i] = '\0';
@@ -54,17 +51,29 @@ Fita *FM1GerarFitas(int qtd) {
   return fitas;
 }
 
-void FM1DefinirFitaSaida(Fita *fitas, int qtd) { fitas[qtd - 1].ehSaida = true; }
+void FM1DefinirFitaSaida(Fita *fitas) { fitas[QTD_FITAS - 1].ehSaida = true; }
 
-Fita *FM1GerarBlocos(int qtdLinhas) {
+int FitaObterNumeroDeFitaDeEntradas(Fita *f) {
+  int c = 0;
+  for (int i = 0; i < QTD_FITAS; i++) {
+    if (!f[i].ehSaida)
+      c++;
+  }
+  return c;
+}
+
+Fita *FM1GerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia) {
   FILE *arquivoProvao = fopen("./PROVAO.TXT", "r");
   if (arquivoProvao == NULL) {
     printf("Não foi possível abrir o arquivo PROVAO.TXT");
     return NULL;
   }
 
-  Fita *fitas = FM1GerarFitas(QTD_FITAS);
-  FM1DefinirFitaSaida(fitas, QTD_FITAS);
+  Fita *fitas = FitaGerarFitas(QTD_FITAS);
+  if (estrategia == FM1)
+    FM1DefinirFitaSaida(fitas);
+  else
+    F2DefinirFitasDeSaida(fitas);
 
   Heap heap = HeapCriar(10, HEAP_TYPE);
 
@@ -82,11 +91,8 @@ Fita *FM1GerarBlocos(int qtdLinhas) {
   }
   // printf("\n");
 
+  int fitaSelecionada = 0;
   while (true) {
-
-    int fitaSelecionada = rand() % QTD_FITAS;
-    while (fitas[fitaSelecionada].ehSaida)
-      fitaSelecionada = rand() % QTD_FITAS;
 
     // printf("\nFITA SELECIONADA %d\n\n", fitaSelecionada);
     // HeapImprime(&heap);
@@ -123,11 +129,9 @@ Fita *FM1GerarBlocos(int qtdLinhas) {
           FM1BlocoInserirAluno(&bloco, &itemRemovido.aluno);
 
         if (bloco.qtdItens > 0) {
-          fitaSelecionada = rand() % QTD_FITAS;
-          while (fitas[fitaSelecionada].ehSaida)
-            fitaSelecionada = rand() % QTD_FITAS;
           FM1BlocoEscreverEmFita(&fitas[fitaSelecionada], &bloco);
           printf("!Bloco inserido na fita %d com %d itens\n", fitaSelecionada, bloco.qtdItens);
+          fitaSelecionada = (fitaSelecionada + 1) % FitaObterNumeroDeFitaDeEntradas(fitas);
         }
 
         HeapRemoverDesmarcados(&heap);
@@ -137,9 +141,6 @@ Fita *FM1GerarBlocos(int qtdLinhas) {
         while (HeapRemove(&heap, &itemRemovido))
           FM1BlocoInserirAluno(&blocoDosMarcadosRestantes, &itemRemovido.aluno);
         if (blocoDosMarcadosRestantes.qtdItens > 0) {
-          fitaSelecionada = rand() % QTD_FITAS;
-          while (fitas[fitaSelecionada].ehSaida)
-            fitaSelecionada = rand() % QTD_FITAS;
           FM1BlocoEscreverEmFita(&fitas[fitaSelecionada], &blocoDosMarcadosRestantes);
           printf("!!Bloco inserido na fita %d com %d itens\n", fitaSelecionada, blocoDosMarcadosRestantes.qtdItens);
         }
@@ -167,6 +168,7 @@ Fita *FM1GerarBlocos(int qtdLinhas) {
     // FM1BlocoImprimir(&bloco);
     FM1BlocoEscreverEmFita(&fitas[fitaSelecionada], &bloco);
     printf("!Bloco inserido na fita %d com %d itens\n", fitaSelecionada, bloco.qtdItens);
+    fitaSelecionada = (fitaSelecionada + 1) % FitaObterNumeroDeFitaDeEntradas(fitas);
     // printf("\nANTES DE RESCONSTITUIR E DESMARCAR (POS %d)", HeapObterPosicaoPrimeiroItemMarcado(&heap));
     // printf("\n HEAP ITENS %d / HEAP MARCADOS %d\n", heap.qtdItens, heap.qtdItensMarcados);
     // HeapImprime(&heap);
@@ -252,17 +254,17 @@ void FM1EspalharBlocosDaSaida(Fita *fitas) {
     bloco.posicaoAtualNoBloco = 0;
 
     fwrite(&bloco, sizeof(FM1Bloco), 1, fitas[idxFitaSelecionada].arquivo);
-    printf("BLOCO (%d): %d\n", idxFitaSelecionada, bloco.qtdItens);
+    printf("BLOCO de saida (%d): %d\n", idxFitaSelecionada, bloco.qtdItens);
     Aluno aluno;
     do {
       int itensLidos = fread(&aluno, sizeof(Aluno), 1, fitaSaida.arquivo);
       bloco.posicaoAtualNoBloco += itensLidos;
-      fwrite(&aluno, sizeof(Aluno), 1, fitas[idxFitaSelecionada].arquivo);
+      AlunoEscreverEmArquivoBin(&aluno, fitas[idxFitaSelecionada].arquivo);
+
       if (itensLidos == 0)
         break;
 
     } while (bloco.posicaoAtualNoBloco < bloco.qtdItens);
-    printf("\nForam inseridos %d alunos na %i\n", bloco.posicaoAtualNoBloco, idxFitaSelecionada);
   }
 }
 

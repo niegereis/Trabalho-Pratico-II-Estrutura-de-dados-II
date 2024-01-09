@@ -3,25 +3,49 @@
 #include "./teste2.c"
 
 int main() {
+  printf("GERANDO...\n\n");
 
-  Fita *fitas = FM1GerarBlocos(1000000);
+  EstrategiaDeIntercalacao estrategia = F2;
+
+  Fita *fitas = FM1GerarBlocos(50000, estrategia);
   if (fitas == NULL) {
     printf("Ocorreu um erro inesperado!");
     return 0;
   }
+  printf("\nINTERCALANDO...\n\n");
 
-  while (true) {
+  bool finalizou;
 
-    FM1FitaResetarArquivos(fitas);
-    bool x = FM1JuntarNaFitaDeSaida(fitas);
-    FM1RegerarFitas(fitas, ENTRADA);
+  if (estrategia == FM1) {
+    while (true) {
 
-    if (x)
-      break;
+      FM1FitaResetarArquivos(fitas);
+      bool x = FM1JuntarNaFitaDeSaida(fitas);
+      FitaRegerarFitas(fitas, FITA_DE_ENTRADA);
 
-    FM1FitaResetarArquivos(fitas);
-    FM1EspalharBlocosDaSaida(fitas);
-    FM1RegerarFitas(fitas, SAIDA);
+      if (x)
+        break;
+
+      FM1FitaResetarArquivos(fitas);
+      FM1EspalharBlocosDaSaida(fitas);
+      FitaRegerarFitas(fitas, FITA_DE_SAIDA);
+    }
+  } else {
+    while (true) {
+      FM1FitaResetarArquivos(fitas);
+      finalizou = FM2JuntarNaFitaDe(fitas, FITA_DE_SAIDA);
+      FitaRegerarFitas(fitas, FITA_DE_ENTRADA);
+
+      if (finalizou)
+        break;
+
+      FM1FitaResetarArquivos(fitas);
+      finalizou = FM2JuntarNaFitaDe(fitas, FITA_DE_ENTRADA);
+      FitaRegerarFitas(fitas, FITA_DE_SAIDA);
+
+      if (finalizou)
+        break;
+    }
   }
 
   FM1FitaFecharArquivos(fitas);
