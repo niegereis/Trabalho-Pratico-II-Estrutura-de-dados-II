@@ -17,8 +17,8 @@ quickSortExterno.o: ./src/quickSortExterno/quickSortExterno.c
 intercalacaoBalanceadaFM1.o: ./src/intercalacaoBalanceadaFM1/intercalacaoBalanceadaFM1.c
 				@gcc ./src/intercalacaoBalanceadaFM1/intercalacaoBalanceadaFM1.c -g -c -std=c11 -Wall
 
-intercalacaoBalanceada2F.o: ./src/intercalacaoBalanceada2F/intercalacaoBalanceada2F.c
-				@gcc ./src/intercalacaoBalanceada2F/intercalacaoBalanceada2F.c -g -c -std=c11 -Wall
+intercalacaoBalanceada2F.o: ./src/intercalacaoBalanceadaFM1/intercalacaoBalanceada2F.c
+				@gcc ./src/intercalacaoBalanceadaFM1/intercalacaoBalanceada2F.c -g -c -std=c11 -Wall
 
 main.o: ./src/main/main.c
 				@gcc ./src/main/main.c -g -c -std=c11 -Wall

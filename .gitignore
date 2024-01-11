@@ -1,0 +1,7 @@
+.exe
+.ibin
+a.ts
+.tool-versions
+./**/**/**/*.bin
+./**/*.TXT
+*.bin
