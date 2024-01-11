@@ -30,16 +30,9 @@ aplicada). Cada linha do arquivo contém os seguintes dados relativos a um deter
 - cidade do aluno (cadeia de 50 caracteres, ocupando as colunas 19 a 68 do arquivo texto);
 - curso do aluno (cadeia de 30 caracteres, ocupando as colunas 70 a 99 do arquivo texto).*/
 
-void leArquivoEscreveArquivo(Aluno *aluno){ /// terminar isso aq depois
-    FILE *arquivo = fopen("PROVAO.TXT", "r");
-    
-    if (arquivo == NULL){
-        printf("Erro ao abrir o arquivo\n");
-        exit(1);
-    }
-
-    int i = 0;
-    for (i = 0; i < 471705; i++){
+void leArquivoEscreveArquivo(Aluno *aluno, FILE* arquivo, int quantidade){ /// terminar isso aq depois
+    int i;
+    for (i = 0; i <quantidade; i++){
        *aluno = AlunoLer(arquivo);
 
     }
@@ -47,7 +40,7 @@ void leArquivoEscreveArquivo(Aluno *aluno){ /// terminar isso aq depois
 }
 
 void inicializaArea(TipoArea *Area, Contagem *C){
-    Area->r = (Aluno *)malloc(TAMANHOAREA * sizeof(Aluno));
+    Area->r = (Aluno*)malloc(TAMANHOAREA * sizeof(Aluno));
     Area->n = 0;
     C->comp = 0;
     C->transfEscrita = 0;
@@ -227,7 +220,26 @@ void Particao(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, TipoArea Area, int Esq,
         RetiraMin(&Area, &R, &area);
         EscreveMin(ArqEi, R, &Ei);
     }
+}
+
+void OrdenarQS(Contagem *contagem, FILE *arquivo, int quantidade) {
+  struct timespec inicio, fim;
+    FILE *arqLi, *arqEi, *arqLEs;
+    fseek(arquivo, 0, 0);
+    arqLi = arquivo;
+    arqEi = arquivo;
+    fseek(arquivo, (quantidade-1)*100, 0);
+    arqLEs = arquivo;
     
+  clock_gettime(CLOCK_REALTIME, &inicio);
 
+  QuickSortExterno(&arqLi, &arqEi, &arqLEs, 0, quantidade-1, contagem);
 
+  clock_gettime(CLOCK_REALTIME, &fim);
+
+  contagem->tempo = (fim.tv_sec - inicio.tv_sec) * 1e9 + (fim.tv_nsec - inicio.tv_nsec);
+
+    fclose(arqLi);
+    fclose(arqEi);
+    fclose(arqLEs);
 }
