@@ -62,7 +62,7 @@ int FitaObterNumeroDeFitaDeEntradas(Fita *f) {
   return c;
 }
 
-Fita *FM1GerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia) {
+Fita *FM1GerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analise *analise) {
   FILE *arquivoProvao = fopen("./PROVAO.TXT", "r");
   if (arquivoProvao == NULL) {
     printf("Não foi possível abrir o arquivo PROVAO.TXT");
@@ -78,74 +78,57 @@ Fita *FM1GerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia) {
   Heap heap = HeapCriar(10, HEAP_TYPE);
 
   int qtdAlunosLidos = 0;
-  while (!HeapCheio(&heap)) {
+  while (!HeapCheio(&heap) && qtdAlunosLidos < qtdLinhas) {
     Aluno a = AlunoLer(arquivoProvao);
-    qtdAlunosLidos++;
-    HeapInserir(&heap, &a);
-    // printf("LIDO (%d): ", qtdAlunosLidos);
-    // AlunoImprime(&a);
-    // if (foiMarcado)
-    //   printf(" (Foi marcado)");
+    analise->transferenciasLeitura++;
 
-    // printf("\n");
+    qtdAlunosLidos++;
+    HeapInserir(&heap, &a, analise);
   }
-  // printf("\n");
 
   int fitaSelecionada = 0;
   while (true) {
 
-    // printf("\nFITA SELECIONADA %d\n\n", fitaSelecionada);
-    // HeapImprime(&heap);
-    // printf("\n\n");
-
     FM1Bloco bloco = FM1BlocoCriar(10000);
     bool removeu;
     do {
-      // if (heap.ultimoRemovido != NULL) {
-      //   printf("ULTIMO REMOVIDO: ");
-      //   AlunoImprime(&(heap.ultimoRemovido->aluno));
-      //   printf("\n");
-      // }
 
       ItemHeap itemRemovido;
-      removeu = HeapRemove(&heap, &itemRemovido);
+      removeu = HeapRemove(&heap, &itemRemovido, analise);
       if (removeu) {
-        // printf("REMOVIDO DO HEAP E INSERIDO NO BLOCO: ");
-        // AlunoImprime(&itemRemovido.aluno);
-        // printf("\n");
 
         FM1BlocoInserirAluno(&bloco, &itemRemovido.aluno);
       } else if (heap.ultimoRemovido != NULL) {
         break;
       }
 
-      // printf("\n");
-
       if (feof(arquivoProvao) || qtdAlunosLidos >= qtdLinhas) {
-        // HeapImprime(&heap);
 
-        // printf("\n HEAP ITENS %d / HEAP MARCADOS %d\n", heap.qtdItens, heap.qtdItensMarcados);
-        while (HeapRemove(&heap, &itemRemovido))
+        while (HeapRemove(&heap, &itemRemovido, analise))
           FM1BlocoInserirAluno(&bloco, &itemRemovido.aluno);
 
         if (bloco.qtdItens > 0) {
-          FM1BlocoEscreverEmFita(&fitas[fitaSelecionada], &bloco);
-          printf("!Bloco inserido na fita %d com %d itens\n", fitaSelecionada, bloco.qtdItens);
+          int escritas = FM1BlocoEscreverEmFita(&fitas[fitaSelecionada], &bloco);
+          analise->transferenciasEscrita += escritas;
+          if (DEBUG)
+            printf("!Bloco inserido na fita %d com %d itens\n", fitaSelecionada, bloco.qtdItens);
           fitaSelecionada = (fitaSelecionada + 1) % FitaObterNumeroDeFitaDeEntradas(fitas);
         }
 
         HeapRemoverDesmarcados(&heap);
-        HeapDesmarcarTodosEReconstituir(&heap);
+        HeapDesmarcarTodosEReconstituir(&heap, analise);
 
         FM1Bloco blocoDosMarcadosRestantes = FM1BlocoCriar(10000);
-        while (HeapRemove(&heap, &itemRemovido))
+        while (HeapRemove(&heap, &itemRemovido, analise))
           FM1BlocoInserirAluno(&blocoDosMarcadosRestantes, &itemRemovido.aluno);
         if (blocoDosMarcadosRestantes.qtdItens > 0) {
-          FM1BlocoEscreverEmFita(&fitas[fitaSelecionada], &blocoDosMarcadosRestantes);
-          printf("!!Bloco inserido na fita %d com %d itens\n", fitaSelecionada, blocoDosMarcadosRestantes.qtdItens);
+          int escritas = FM1BlocoEscreverEmFita(&fitas[fitaSelecionada], &blocoDosMarcadosRestantes);
+          analise->transferenciasEscrita += escritas;
+          if (DEBUG)
+            printf("!!Bloco inserido na fita %d com %d itens\n", fitaSelecionada, blocoDosMarcadosRestantes.qtdItens);
         }
-        // printf("\n QTD ITENS DO BLOCOS: %d\n", bloco.qtdItens);
-        printf("Alunos lidos %d\n", qtdAlunosLidos);
+        if (DEBUG)
+          printf("Alunos lidos %d\n", qtdAlunosLidos);
 
         return fitas;
       }
@@ -154,35 +137,26 @@ Fita *FM1GerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia) {
         break;
 
       Aluno a = AlunoLer(arquivoProvao);
+      analise->transferenciasLeitura++;
       qtdAlunosLidos++;
-      // printf("LIDO (%d): ", qtdAlunosLidos);
-      // AlunoImprime(&a);
 
-      HeapInserir(&heap, &a);
-      // if (foiMarcado)
-      //   printf(" (Foi marcado)");
-      // printf("\n\n");
-      // HeapImprime(&heap);
+      HeapInserir(&heap, &a, analise);
+
     } while (removeu);
 
-    // FM1BlocoImprimir(&bloco);
-    FM1BlocoEscreverEmFita(&fitas[fitaSelecionada], &bloco);
-    printf("!Bloco inserido na fita %d com %d itens\n", fitaSelecionada, bloco.qtdItens);
+    int escritas = FM1BlocoEscreverEmFita(&fitas[fitaSelecionada], &bloco);
+    analise->transferenciasEscrita += escritas;
+    if (DEBUG)
+      printf("!Bloco inserido na fita %d com %d itens\n", fitaSelecionada, bloco.qtdItens);
     fitaSelecionada = (fitaSelecionada + 1) % FitaObterNumeroDeFitaDeEntradas(fitas);
-    // printf("\nANTES DE RESCONSTITUIR E DESMARCAR (POS %d)", HeapObterPosicaoPrimeiroItemMarcado(&heap));
-    // printf("\n HEAP ITENS %d / HEAP MARCADOS %d\n", heap.qtdItens, heap.qtdItensMarcados);
-    // HeapImprime(&heap);
-    HeapDesmarcarTodosEReconstituir(&heap);
-    // printf("\nDEPOIS DE RESCONSTITUIR E DESMARCAR");
-    // printf("\n HEAP ITENS %d / HEAP MARCADOS %d\n", heap.qtdItens, heap.qtdItensMarcados);
-    // HeapImprime(&heap);
-    // printf("\n");
+
+    HeapDesmarcarTodosEReconstituir(&heap, analise);
   }
 
   return fitas;
 }
 
-bool FM1JuntarNaFitaDeSaida(Fita *fitas) {
+bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise) {
   Heap heap = HeapCriar(QTD_FITAS, HEAP_TYPE);
   FM1Bloco *blocos = malloc(sizeof(FM1Bloco) * QTD_FITAS);
   int qtdBlocosEscritos = 0;
@@ -194,26 +168,29 @@ bool FM1JuntarNaFitaDeSaida(Fita *fitas) {
       if (!leuBloco)
         continue;
 
+      analise->transferenciasLeitura++;
+
       blocos[i].posicaoAtualNoBloco = 0;
       qtdNovoBloco += blocos[i].qtdItens;
       qtdBlocosLidos++;
+
       Aluno aluno;
       bool leuAluno = AlunoLerViaArquivoBinario(fitas[i].arquivo, &aluno);
-      if (leuAluno) {
-        blocos[i].posicaoAtualNoBloco++;
-        HeapInserirComFitaOrigem(&heap, &aluno, i);
-      }
+      if (!leuAluno)
+        continue;
+
+      analise->transferenciasLeitura++;
+      blocos[i].posicaoAtualNoBloco++;
+      HeapInserirComFitaOrigem(&heap, &aluno, i, analise);
     }
     if (qtdBlocosLidos == 0)
       break;
-
-    // HeapImprime(&heap);
 
     bool removeu = true;
     FM1Bloco novoBloco = FM1BlocoCriar(qtdNovoBloco);
     ItemHeap itemRemovido;
     do {
-      removeu = HeapRemove(&heap, &itemRemovido);
+      removeu = HeapRemove(&heap, &itemRemovido, analise);
       if (removeu) {
         Aluno aluno;
         FM1BlocoInserirAluno(&novoBloco, &itemRemovido.aluno);
@@ -223,21 +200,28 @@ bool FM1JuntarNaFitaDeSaida(Fita *fitas) {
         blocos[itemRemovido.fitaDeOrigem].posicaoAtualNoBloco++;
 
         bool leuNovoAluno = AlunoLerViaArquivoBinario(fitas[itemRemovido.fitaDeOrigem].arquivo, &aluno);
-        if (leuNovoAluno)
-          HeapInserirComFitaOrigem(&heap, &aluno, itemRemovido.fitaDeOrigem);
+        if (!leuNovoAluno)
+          continue;
+
+        HeapInserirComFitaOrigem(&heap, &aluno, itemRemovido.fitaDeOrigem, analise);
+        analise->transferenciasLeitura++;
       }
     } while (removeu);
     // FM1BlocoImprimir(&novoBloco);
     int saida = FM1ObterFitaDeSaida(fitas);
 
-    printf("Arquivo de saida recebeu bloco com %d registros em %d\n", novoBloco.qtdItens, saida);
-    FM1BlocoEscreverEmFita(&fitas[saida], &novoBloco);
+    if (DEBUG)
+      printf("Arquivo de saida recebeu bloco com %d registros em %d\n", novoBloco.qtdItens, saida);
+
+    int escritas = FM1BlocoEscreverEmFita(&fitas[saida], &novoBloco);
+    analise->transferenciasEscrita += escritas;
+
     qtdBlocosEscritos++;
   } while (true);
   return qtdBlocosEscritos == 1;
 }
 
-void FM1EspalharBlocosDaSaida(Fita *fitas) {
+void FM1EspalharBlocosDaSaida(Fita *fitas, Analise *analise) {
   int idxFitaSaida = FM1ObterFitaDeSaida(fitas);
 
   while (true) {
@@ -251,16 +235,21 @@ void FM1EspalharBlocosDaSaida(Fita *fitas) {
     bool leuBloco = FM1BlocoLerViaArquivoBinario(fitaSaida.arquivo, &bloco);
     if (!leuBloco)
       return;
+
+    analise->transferenciasLeitura++;
     bloco.posicaoAtualNoBloco = 0;
 
     fwrite(&bloco, sizeof(FM1Bloco), 1, fitas[idxFitaSelecionada].arquivo);
-    printf("BLOCO de saida (%d): %d\n", idxFitaSelecionada, bloco.qtdItens);
+    analise->transferenciasEscrita++;
+
+    if (DEBUG)
+      printf("BLOCO de saida (%d): %d\n", idxFitaSelecionada, bloco.qtdItens);
     Aluno aluno;
     do {
       int itensLidos = fread(&aluno, sizeof(Aluno), 1, fitaSaida.arquivo);
       bloco.posicaoAtualNoBloco += itensLidos;
       AlunoEscreverEmArquivoBin(&aluno, fitas[idxFitaSelecionada].arquivo);
-
+      analise->transferenciasEscrita++;
       if (itensLidos == 0)
         break;
 
@@ -286,12 +275,14 @@ bool FM1BlocoInserirAluno(FM1Bloco *bloco, Aluno *a) {
   return true;
 }
 
-void FM1BlocoEscreverEmFita(Fita *fita, FM1Bloco *bloco) {
+int FM1BlocoEscreverEmFita(Fita *fita, FM1Bloco *bloco) {
   fwrite(bloco, sizeof(FM1Bloco), 1, fita->arquivo);
+  int escritas = 0;
   for (int i = 0; i < bloco->qtdItens; i++) {
     fwrite(&(bloco->alunos[i]), sizeof(Aluno), 1, fita->arquivo);
+    escritas++;
   }
-  return;
+  return escritas;
 }
 
 void FM1BlocoImprimir(FM1Bloco *bloco) {

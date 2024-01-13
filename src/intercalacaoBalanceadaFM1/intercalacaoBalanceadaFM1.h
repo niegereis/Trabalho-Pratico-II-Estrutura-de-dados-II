@@ -27,23 +27,24 @@ typedef enum tipoDeFita { FITA_DE_SAIDA, FITA_DE_ENTRADA } TipoDeFita;
 
 typedef enum estrategiaDeIntercalacao { F2, FM1 } EstrategiaDeIntercalacao;
 
-Fita *FM1GerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia);
+Fita *FM1GerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analise *analise);
 
 FM1Bloco FM1BlocoCriar(int qtdMax);
 void FM1BlocoImprimir(FM1Bloco *bloco);
-void FM1BlocoEscreverEmFita(Fita *fita, FM1Bloco *bloco);
+int FM1BlocoEscreverEmFita(Fita *fita, FM1Bloco *bloco);
 bool FM1BlocoInserirAluno(FM1Bloco *bloco, Aluno *a);
-bool FM1JuntarNaFitaDeSaida(Fita *fitas);
+bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise);
 int FM1ObterFitaDeSaida(Fita *fitas);
 char *FitaObterCaminhoPelaPosicaoFM1(int p);
 bool FM1FinalizouOProcesso(Fita *fitas);
 bool FM1BlocoLerViaArquivoBinario(FILE *arquivo, FM1Bloco *bloco);
 void FM1FitaFecharArquivos(Fita *fitas);
 void FM1FitaResetarArquivos(Fita *fitas);
-void FM1EspalharBlocosDaSaida(Fita *fitas);
+void FM1EspalharBlocosDaSaida(Fita *fitas, Analise *analise);
 void FitaRegerarFitas(Fita *fitas, TipoDeFita tipo);
 
 void F2DefinirFitasDeSaida(Fita *fitas);
-bool FM2JuntarNaFitaDe(Fita *fitas, TipoDeFita);
+bool FM2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise);
+void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer, Analise *analise);
 
 #endif // INTERCALACAOBALANCEADAFM1_H

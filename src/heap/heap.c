@@ -4,7 +4,7 @@
 #include "heap.h"
 
 void HeapTroca(Heap *heap, int p1, int p2);
-void HeapReconstituir(Heap *heap, int pos);
+void HeapReconstituir(Heap *heap, int pos, Analise *analise);
 
 ItemHeap ItemHeapCriar(Aluno *aluno, int fitaDeOrigem) {
   ItemHeap itemHeap;
@@ -27,13 +27,14 @@ Heap HeapCriar(int tam, TipoHeap tipo) {
   return heap;
 }
 
-bool HeapInserir(Heap *heap, Aluno *aluno) {
+bool HeapInserir(Heap *heap, Aluno *aluno, Analise *analise) {
   if ((heap->qtdItens + heap->qtdItensMarcados) == heap->qtdMaxima)
     return false;
 
   ItemHeap novoItem = ItemHeapCriar(aluno, -1);
 
-  bool ehParaInserirMarcado = heap->ultimoRemovido != NULL && HeapItemAPesoMaiorQueB(heap, &novoItem, heap->ultimoRemovido);
+  bool ehParaInserirMarcado =
+      heap->ultimoRemovido != NULL && HeapItemAPesoMaiorQueB(heap, &novoItem, heap->ultimoRemovido, analise);
 
   if (ehParaInserirMarcado) {
     novoItem.marcado = true;
@@ -44,27 +45,27 @@ bool HeapInserir(Heap *heap, Aluno *aluno) {
   } else {
     heap->itensHeap[heap->qtdItens++] = novoItem;
     for (int i = (heap->qtdItens / 2) - 1; i >= 0; i--)
-      HeapReconstituir(heap, i);
+      HeapReconstituir(heap, i, analise);
   }
 
   return true;
 }
 
-bool HeapInserirComFitaOrigem(Heap *heap, Aluno *aluno, int fitaDeOrigem) {
+bool HeapInserirComFitaOrigem(Heap *heap, Aluno *aluno, int fitaDeOrigem, Analise *analise) {
   if (HeapCheio(heap))
     return false;
 
   ItemHeap novoItem = ItemHeapCriar(aluno, fitaDeOrigem);
   heap->itensHeap[heap->qtdItens++] = novoItem;
   for (int i = (heap->qtdItens / 2) - 1; i >= 0; i--)
-    HeapReconstituir(heap, i);
+    HeapReconstituir(heap, i, analise);
 
   return true;
 }
 
 bool HeapCheio(Heap *heap) { return heap->qtdItens + heap->qtdItensMarcados == heap->qtdMaxima; }
 
-void HeapReconstituir(Heap *heap, int pos) {
+void HeapReconstituir(Heap *heap, int pos, Analise *analise) {
   if (pos < 0)
     return;
 
@@ -80,22 +81,24 @@ void HeapReconstituir(Heap *heap, int pos) {
   ItemHeap itemHeapEsquerda = heap->itensHeap[esq];
   ItemHeap itemHeapDireita = heap->itensHeap[dir];
 
-  bool direitaPrioridadeSobreEsquerda = HeapItemAPesoMaiorQueB(heap, &itemHeapDireita, &itemHeapEsquerda);
-  bool direitaPrioridadeSobreCentro = HeapItemAPesoMaiorQueB(heap, &itemHeapDireita, &itemHeapCentro);
+  bool direitaPrioridadeSobreEsquerda = HeapItemAPesoMaiorQueB(heap, &itemHeapDireita, &itemHeapEsquerda, analise);
+  bool direitaPrioridadeSobreCentro = HeapItemAPesoMaiorQueB(heap, &itemHeapDireita, &itemHeapCentro, analise);
   if (direitaPrioridadeSobreEsquerda && direitaPrioridadeSobreCentro) {
     HeapTroca(heap, pos, dir);
-    HeapReconstituir(heap, dir);
+    HeapReconstituir(heap, dir, analise);
+    return;
   }
 
-  bool esquerdaMesmoPesoOuMaiorSobreDireita = HeapItemATemMesmoPesoOuMaiorQueB(heap, &itemHeapEsquerda, &itemHeapDireita);
-  bool esquerdaPrioridadeSobreCentro = HeapItemAPesoMaiorQueB(heap, &itemHeapEsquerda, &itemHeapCentro);
+  bool esquerdaMesmoPesoOuMaiorSobreDireita =
+      HeapItemATemMesmoPesoOuMaiorQueB(heap, &itemHeapEsquerda, &itemHeapDireita, analise);
+  bool esquerdaPrioridadeSobreCentro = HeapItemAPesoMaiorQueB(heap, &itemHeapEsquerda, &itemHeapCentro, analise);
   if (esquerdaMesmoPesoOuMaiorSobreDireita && esquerdaPrioridadeSobreCentro) {
     HeapTroca(heap, pos, esq);
-    HeapReconstituir(heap, esq);
+    HeapReconstituir(heap, esq, analise);
   }
 }
 
-void HeapDesmarcarTodosEReconstituir(Heap *heap) {
+void HeapDesmarcarTodosEReconstituir(Heap *heap, Analise *analise) {
   int posicaoPrimeiroItemMarcado = HeapObterPosicaoPrimeiroItemMarcado(heap);
 
   for (int i = posicaoPrimeiroItemMarcado + 1; i < heap->qtdMaxima; i++) {
@@ -107,7 +110,7 @@ void HeapDesmarcarTodosEReconstituir(Heap *heap) {
   }
 
   for (int i = (heap->qtdItens / 2) - 1; i >= 0; i--)
-    HeapReconstituir(heap, i);
+    HeapReconstituir(heap, i, analise);
 }
 
 int HeapObterPosicaoPrimeiroItemMarcado(Heap *heap) { return heap->qtdMaxima - heap->qtdItensMarcados - 1; }
@@ -117,7 +120,7 @@ void HeapTroca(Heap *heap, int p1, int p2) {
   heap->itensHeap[p2] = aux;
 }
 
-bool HeapRemove(Heap *heap, ItemHeap *itemObtido) {
+bool HeapRemove(Heap *heap, ItemHeap *itemObtido, Analise *analise) {
   if (heap->qtdItens <= 0)
     return false;
 
@@ -131,7 +134,7 @@ bool HeapRemove(Heap *heap, ItemHeap *itemObtido) {
   heap->itensHeap[0] = ultimoItem;
 
   for (int i = (heap->qtdItens / 2) - 1; i >= 0; i--)
-    HeapReconstituir(heap, i);
+    HeapReconstituir(heap, i, analise);
 
   return true;
 }
@@ -154,7 +157,7 @@ void HeapImprime(Heap *heap) {
   }
 }
 
-bool HeapVerificaSeEhValidoRecursivo(Heap *heap, int centro, bool valido) {
+bool HeapVerificaSeEhValidoRecursivo(Heap *heap, int centro, bool valido, Analise *analise) {
   if (centro > floor(heap->qtdItens / 2) - 1)
     return true;
 
@@ -167,24 +170,25 @@ bool HeapVerificaSeEhValidoRecursivo(Heap *heap, int centro, bool valido) {
   ItemHeap itemHeapEsquerda = heap->itensHeap[esquerda];
   ItemHeap itemHeapDireita = heap->itensHeap[direita];
 
-  bool centroTemPrioridadeADireita = HeapItemATemMesmoPesoOuMaiorQueB(heap, &itemHeapCentro, &itemHeapDireita);
-  bool centroPrioridadeEsquerda = HeapItemATemMesmoPesoOuMaiorQueB(heap, &itemHeapCentro, &itemHeapEsquerda);
+  bool centroTemPrioridadeADireita = HeapItemATemMesmoPesoOuMaiorQueB(heap, &itemHeapCentro, &itemHeapDireita, analise);
+  bool centroPrioridadeEsquerda = HeapItemATemMesmoPesoOuMaiorQueB(heap, &itemHeapCentro, &itemHeapEsquerda, analise);
 
   bool posicaoValida = centroTemPrioridadeADireita && centroPrioridadeEsquerda;
 
   bool esquerdaValida = true;
   if (centro != esquerda)
-    esquerdaValida = HeapVerificaSeEhValidoRecursivo(heap, esquerda, valido && posicaoValida);
+    esquerdaValida = HeapVerificaSeEhValidoRecursivo(heap, esquerda, valido && posicaoValida, analise);
 
-  bool direitaValida = HeapVerificaSeEhValidoRecursivo(heap, direita, valido && posicaoValida);
+  bool direitaValida = HeapVerificaSeEhValidoRecursivo(heap, direita, valido && posicaoValida, analise);
   return direitaValida && esquerdaValida;
 }
 
-bool HeapVerificaSeEhValido(Heap *heap) { return HeapVerificaSeEhValidoRecursivo(heap, 0, true); }
+bool HeapVerificaSeEhValido(Heap *heap, Analise *analise) { return HeapVerificaSeEhValidoRecursivo(heap, 0, true, analise); }
 
-bool HeapItemATemMesmoPesoOuMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b) {
+bool HeapItemATemMesmoPesoOuMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b, Analise *analise) {
   float notaAlunoA = ItemHeapObterNota(a);
   float notaAlunoB = ItemHeapObterNota(b);
+  analise->comparacoes++;
   if (h->tipo == HEAP_MAX) {
     return notaAlunoA >= notaAlunoB;
   } else {
@@ -192,10 +196,11 @@ bool HeapItemATemMesmoPesoOuMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b) {
   }
 }
 
-bool HeapItemAPesoMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b) {
+bool HeapItemAPesoMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b, Analise *analise) {
 
   float notaAlunoA = ItemHeapObterNota(a);
   float notaAlunoB = ItemHeapObterNota(b);
+  analise->comparacoes++;
   if (h->tipo == HEAP_MAX) {
     return notaAlunoA > notaAlunoB;
   } else {
@@ -203,17 +208,19 @@ bool HeapItemAPesoMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b) {
   }
 }
 
-void HeapEsvaziar(Heap *h) {
+void HeapEsvaziar(Heap *h, Analise *analise) {
   printf("\nRemoção inicializada!\n\n");
   ItemHeap removido;
   int qtdRemovidos = 0;
-  while (HeapRemove(h, &removido)) {
+  while (HeapRemove(h, &removido, analise)) {
     qtdRemovidos++;
     ItemHeapImprime(&removido);
   }
   printf("\nRemoção finalizada | Foram removidos: %d\n", qtdRemovidos);
 }
 
-void HeapImprimeValidade(Heap *h) { printf("\n%s valido!\n", HeapVerificaSeEhValido(h) ? "É" : "Não é"); }
+void HeapImprimeValidade(Heap *h, Analise *analise) {
+  printf("\n%s valido!\n", HeapVerificaSeEhValido(h, analise) ? "É" : "Não é");
+}
 
 void HeapRemoverDesmarcados(Heap *heap) { heap->qtdItens = 0; }
