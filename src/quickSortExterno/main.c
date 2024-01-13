@@ -3,22 +3,17 @@
 #include <stdbool.h>
 #include <time.h>
 #include "quickSortExterno.h"
-#include "../aluno/aluno.h"
+#include "aluno.h"
+#include "compartilhado.h"
 
 int main(){
-   void leArquivoEscreveArquivo(Aluno *aluno, File* arquivo, int quantidade){ /// terminar isso aq depois
-    FILE *arquivo = fopen("PROVAO.TXT", "r");
-    
-    if (arquivo == NULL){
-        printf("Erro ao abrir o arquivo\n");
-        exit(1);
-    }
+  FILE *a = fopen("PROVAO.TXT","r+");
+  if(a == NULL){perror("error");}
+  
+  Contagem cont;
+  inicializaContagem(&cont);
+  OrdenarQS(&cont, a, 10);
 
-    int i;
-    for (i = 0; i < 471705; i++){
-       *aluno = AlunoLer(arquivo);
-
-    }
-    fclose(arquivo);
-}
+  fclose(a);
+  return 0;
 }

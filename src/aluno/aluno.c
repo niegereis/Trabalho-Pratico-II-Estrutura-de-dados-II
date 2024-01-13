@@ -35,3 +35,8 @@ Aluno AlunoLer(FILE *f) {
 bool AlunoLerViaArquivoBinario(FILE *f, Aluno *alunoLido) { return fread(alunoLido, sizeof(Aluno), 1, f) == 1; }
 
 void AlunoEscreverEmArquivoBin(Aluno *aluno, FILE *arquivoBinario) { fwrite(aluno, sizeof(Aluno), 1, arquivoBinario); }
+
+void alunoEscreve(FILE *arquivo, Aluno al) {
+  fprintf(arquivo,"%s 0%.1f %s %-49s %-31s", al.numeroInscricao, al.nota, al.estado, al.cidade, al.curso);
+  //fseek(arquivo, 1, 1);
+}

@@ -6,8 +6,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../aluno/aluno.h"
-#include "../compartilhado/compartilhado.h"
+#include "aluno.h"
+#include "compartilhado.h"
 
 typedef long int TipoChave;
 
@@ -24,8 +24,9 @@ typedef struct TipoArea { // Tipo usado para representar a área de memória
   int n;                  // Número de registros armazenados
 } TipoArea;
 
-void QuickInicializaArea(TipoArea *, Contagem *);
+void QuickInicializaArea(TipoArea *);
 void QuickSortExterno(FILE **, FILE **, FILE **, int, int, Contagem *);
+void OrdenarQS(Contagem *contagem, FILE *arquivo, int quantidade) ;
 // void QuickLeSup(FILE **, Aluno *, int *, short *);
 // void QuickLeInf(FILE **, Aluno *, int *, short *);
 // void QuickInserirArea(TipoArea *, Aluno *, int *);

@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#define ALUNO_LINHA 101
+
 typedef struct aluno {
   char numeroInscricao[9];
   float nota;
@@ -21,5 +23,6 @@ void AlunoImprimeCompleto(Aluno *aluno);
 Aluno AlunoLer(FILE *f);
 bool AlunoLerViaArquivoBinario(FILE *f, Aluno *alunoLido);
 void AlunoEscreverEmArquivoBin(Aluno *aluno, FILE *arquivoBinario);
+void alunoEscreve(FILE *arquivo, Aluno al) ;
 
 #endif // ALUNO_H
