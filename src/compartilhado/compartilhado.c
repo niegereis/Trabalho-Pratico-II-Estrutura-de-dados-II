@@ -29,3 +29,14 @@ void AnaliseDefinirTempoPeloInicioEFim(Analise *analise, struct timespec inicio,
 
   analise->tempoTotal = ((fim.tv_sec - inicio.tv_sec) * 1e9 + (fim.tv_nsec - inicio.tv_nsec)) / 1e6;
 };
+
+Contagem *inicializaContagem() {
+  Contagem *cont = malloc(sizeof(Contagem));
+  cont->comp = 0;          // numero de comparacoes
+  cont->transf = 0;        // numero de transferencias
+  cont->transfEscrita = 0; // numero de transferencias de escrita
+  cont->transfLeitura = 0; // numero de transferencias de leitura
+  cont->tempo = 0;
+
+  return cont;
+}

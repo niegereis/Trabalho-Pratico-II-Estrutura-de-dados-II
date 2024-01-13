@@ -23,8 +23,11 @@ Aluno AlunoLer(FILE *f) {
 
   fscanf(f, "%s %f %s ", aluno.numeroInscricao, &aluno.nota, aluno.estado);
   fgets(aluno.cidade, 50, f);
+  for(int i = 1; i < 50; i++){if(aluno.cidade[i] == ' ' && aluno.cidade[i-1] == ' '){aluno.cidade[i-1] = '\0';}} //remove os espaços em branco
   fgetc(f);
   fgets(aluno.curso, 30, f);
+  for(int i = 1; i < 30; i++){if(aluno.curso[i] == ' ' && aluno.curso[i-1] == ' '){aluno.curso[i-1] = '\0';}} //remove os espaços em branco
+
 
   return aluno;
 }
@@ -32,3 +35,8 @@ Aluno AlunoLer(FILE *f) {
 bool AlunoLerViaArquivoBinario(FILE *f, Aluno *alunoLido) { return fread(alunoLido, sizeof(Aluno), 1, f) == 1; }
 
 void AlunoEscreverEmArquivoBin(Aluno *aluno, FILE *arquivoBinario) { fwrite(aluno, sizeof(Aluno), 1, arquivoBinario); }
+
+void alunoEscreve(FILE *arquivo, Aluno al) {
+  fprintf(arquivo,"%s 0%.1f %s %-49s %-31s", al.numeroInscricao, al.nota, al.estado, al.cidade, al.curso);
+  //fseek(arquivo, 1, 1);
+}

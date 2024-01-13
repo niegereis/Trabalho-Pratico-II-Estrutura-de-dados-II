@@ -18,7 +18,7 @@ typedef struct fita {
 } Fita;
 
 typedef struct contagem {
-  int comparacoes;   // numero de comparacoes
+  int comp;          // numero de comparacoes
   int transf;        // numero de transferencias
   int transfEscrita; // numero de transferencias de escrita
   int transfLeitura; // numero de transferencias de leitura
@@ -32,6 +32,7 @@ typedef struct analise {
 } Analise;
 
 Fita FitaCriar(FILE *arquivo, bool ehSaida);
+Contagem *inicializaContagem();
 
 Analise AnaliseCriar();
 void AnaliseImprime(Analise analise);
