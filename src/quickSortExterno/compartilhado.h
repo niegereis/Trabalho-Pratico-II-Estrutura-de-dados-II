@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "aluno.h"
 
 
 typedef struct fita {
@@ -23,5 +24,6 @@ typedef struct contagem {
 
 Fita FitaCriar(FILE *arquivo, bool ehSaida);
 void inicializaContagem(Contagem*);
+void copiaArquivo(FILE*, FILE*, int);
 
 #endif // !COMPARTILHADO_H

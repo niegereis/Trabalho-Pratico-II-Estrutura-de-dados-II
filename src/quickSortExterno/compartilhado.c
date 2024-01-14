@@ -14,3 +14,15 @@ void inicializaContagem(Contagem* cont){
   cont->transfLeitura = 0; // numero de transferencias de leitura
   cont->tempo = 0;  
 }
+
+void copiaArquivo(FILE* in, FILE* out, int tam ){
+  Aluno al;
+  for(int i = 0; i < tam; i++){
+    fseek(in, i*101, 0);
+    al = AlunoLer(in);
+    fseek(out, i*101, 0);
+    alunoEscreve(out, al);
+    fprintf(out," ");
+    fprintf(out,"\n");
+  }
+}
