@@ -7,6 +7,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define __USE_POSIX199309 1
+#include <time.h>
+
+#define DEBUG false
 
 typedef struct fita {
   FILE *arquivo;
@@ -21,7 +25,17 @@ typedef struct contagem {
   int tempo;         // tempo de execucao
 } Contagem;
 
+typedef struct analise {
+  int comparacoes;
+  int transferenciasEscrita, transferenciasLeitura;
+  long long int tempoTotal;
+} Analise;
+
 Fita FitaCriar(FILE *arquivo, bool ehSaida);
-Contagem* inicializaContagem();
+Contagem *inicializaContagem();
+
+Analise AnaliseCriar();
+void AnaliseImprime(Analise analise);
+void AnaliseDefinirTempoPeloInicioEFim(Analise *analise, struct timespec inicio, struct timespec fim);
 
 #endif // !COMPARTILHADO_H

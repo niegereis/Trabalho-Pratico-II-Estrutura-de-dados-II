@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 #include "../aluno/aluno.h"
-
+#include "../compartilhado/compartilhado.h"
 typedef struct itemHeap {
   Aluno aluno;
   int fitaDeOrigem;
@@ -27,21 +27,22 @@ typedef struct heap {
 } Heap;
 
 Heap HeapCriar(int tam, TipoHeap tipo);
-bool HeapInserir(Heap *heap, Aluno *aluno);
-bool HeapInserirComFitaOrigem(Heap *heap, Aluno *aluno, int fitaDeOrigem);
+bool HeapInserir(Heap *heap, Aluno *aluno, Analise *analise);
+bool HeapInserirComFitaOrigem(Heap *heap, Aluno *aluno, int fitaDeOrigem, Analise *analise);
 void HeapImprime(Heap *heap);
-bool HeapRemove(Heap *heap, ItemHeap *itemRemovido);
+bool HeapRemove(Heap *heap, ItemHeap *itemRemovido, Analise *analise);
 void ItemHeapImprime(ItemHeap *itemHeap);
-void HeapDesmarcarTodosEReconstituir(Heap *heap);
-bool HeapVerificaSeEhValido(Heap *heap);
-void HeapEsvaziar(Heap *h);
-void HeapImprimeValidade(Heap *h);
+void HeapDesmarcarTodosEReconstituir(Heap *heap, Analise *analise);
+void HeapEsvaziar(Heap *h, Analise *analise);
+void HeapImprimeValidade(Heap *h, Analise *analise);
 void HeapRemoverDesmarcados(Heap *heap);
 bool HeapCheio(Heap *heap);
 
-bool HeapVerificaSeEhValidoRecursivo(Heap *heap, int centro, bool valido);
-bool HeapItemATemMesmoPesoOuMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b);
-bool HeapItemAPesoMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b);
+bool HeapItemATemMesmoPesoOuMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b, Analise *analise);
+bool HeapItemAPesoMaiorQueB(Heap *h, ItemHeap *a, ItemHeap *b, Analise *analise);
 int HeapObterPosicaoPrimeiroItemMarcado(Heap *heap);
+
+bool HeapVerificaSeEhValido(Heap *heap, Analise *analise);
+bool HeapVerificaSeEhValidoRecursivo(Heap *heap, int centro, bool valido, Analise *analise);
 
 #endif // HEAP_H
