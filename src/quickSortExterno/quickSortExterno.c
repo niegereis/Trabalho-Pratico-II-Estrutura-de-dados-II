@@ -5,7 +5,7 @@
 #include "quickSortExterno.h"
 #include "aluno.h"
 #include "compartilhado.h"
-#define TAMANHOAREA 10
+
 
 //Para o método de quickSort externo, deve ser considerada a existência de memória interna disponível para armazenar um vetor
 // de, no máximo, 10 registros
@@ -40,11 +40,11 @@ void imprimeArea(TipoArea a){ /// terminar isso aq depois
     printf("|\n");
 }
 
-void inicializaArea(TipoArea *area){
-    area->r = (Aluno*)malloc(TAMANHOAREA * sizeof(Aluno));
-    area->n = 0;
+// void inicializaArea(TipoArea *area){
+//     area->r = (Aluno*)malloc(TAMANHOAREA * sizeof(Aluno));
+//     area->n = 0;
 
-}
+// }
 //ordenando area do quicksort externo
 // void inserirEOrdenarArea(TipoArea *area, Aluno aluno, Contagem *C){
 //     int i = area->n;
@@ -58,7 +58,7 @@ void inicializaArea(TipoArea *area){
 
 // }
 
-int ObterNumeroCelulas(TipoArea area){return area.n;}
+//int ObterNumeroCelulas(TipoArea area){return area.n;}
 
 
 
@@ -72,10 +72,10 @@ void LeSup(FILE **arqLEs, Aluno *ultLido, int *ls, short *ondeLer){
     *ondeLer = false;
 }
 
-void LeInf(FILE **arqLi, Aluno *ultLido, int *li, short *ondeLer){
+void LeInf(FILE **arqLEi, Aluno *ultLido, int *li, short *ondeLer){
     //fread(ultLido, sizeof(Aluno), 1, *arqLi);
-    fseek(*arqLi, (*li - 1) * ALUNO_LINHA, SEEK_SET);
-    *ultLido = AlunoLer(*arqLi);
+    fseek(*arqLEi, (*li - 1) * ALUNO_LINHA, SEEK_SET);
+    *ultLido = AlunoLer(*arqLEi);
     //fseek(*arqLi, (*li) * ALUNO_LINHA, SEEK_SET);
     (*li)++;
     *ondeLer = true;
@@ -106,19 +106,19 @@ void EscreveMax(FILE **arqLEs, Aluno R, int *Es){ // Escreve o maior elemento da
     //fwrite(&R, sizeof(Aluno), 1, *arqLEs);
     alunoEscreve(*arqLEs, R);
 
-    fseek(*arqLEs, (*Es) * ALUNO_LINHA, SEEK_SET);
+    //fseek(*arqLEs, (*Es) * ALUNO_LINHA, SEEK_SET);
     
     (*Es)--;
 }
 
-void EscreveMin(FILE **arqEi, Aluno R, int *Ei){ // Escreve o menor elemento da área no início do arquivo de saída
+void EscreveMin(FILE **arqLEi, Aluno R, int *Ei){ // Escreve o menor elemento da área no início do arquivo de saída
     // Escreve o menor elemento da área no início do arquivo de saída
     //fseek(*arqEi, (*Ei - 1) * sizeof(Aluno), SEEK_SET);
-    fseek(*arqEi, (*Ei - 1) * ALUNO_LINHA, SEEK_SET);
+    fseek(*arqLEi, (*Ei - 1) * ALUNO_LINHA, SEEK_SET);
 
     //fwrite(&R, sizeof(Aluno), 1, *arqEi);
-    alunoEscreve(*arqEi, R);
-    fseek(*arqEi, (*Ei) * ALUNO_LINHA, SEEK_SET);
+    alunoEscreve(*arqLEi, R);
+    //fseek(*arqEi, (*Ei) * ALUNO_LINHA, SEEK_SET);
     (*Ei)++;
 }
 
@@ -143,7 +143,7 @@ void RetiraMin(TipoArea *area, Aluno *aluno){
 
 // ------------------------------------------------------------------------------------------   
 
-void Particao(FILE **arqLi, FILE **arqEi, FILE **arqLEs, TipoArea area, int Esq, int Dir, int *i, int *j, Contagem *C){
+void Particao(FILE **arqEi, FILE **arqLEs, TipoArea area, int Esq, int Dir, int *i, int *j, Contagem *C){
     int ls = Dir, Es = Dir, li = Esq, Ei = Esq; 
     float Linf = INT_MIN, Lsup = INT_MAX;
     //int NRArea = 0; // Número de elementos na área
@@ -248,43 +248,43 @@ void Particao(FILE **arqLi, FILE **arqEi, FILE **arqLEs, TipoArea area, int Esq,
     printf("i:%d j:%d", *i, *j);
 }
 
-void QuickSortExterno(FILE **arqLi, FILE **arqEi, FILE **arqLEs, int Esq, int Dir, Contagem *C){ // função recusiva
+void QuickSortExterno(FILE **arqLEi, FILE **arqLEs, int Esq, int Dir, Contagem *C){ // função recusiva
     int i, j;
     TipoArea area;
-
-    inicializaArea(&area);
+    //inicializaArea(&area);
+    area.n =0;
     if (Dir - Esq < 1) return;
-    Particao(arqLi, arqEi, arqLEs, area, Esq, Dir, &i, &j, C);
-    printf("i:%d j:%d", i, j);
+    Particao(arqLEi, arqLEs, area, Esq, Dir, &i, &j, C);
+    
+
     if (i - Esq < Dir - j){
-        QuickSortExterno(arqLi, arqEi, arqLEs, Esq, i, C);
-        QuickSortExterno(arqLi, arqEi, arqLEs, j, Dir, C);
+        QuickSortExterno(arqLEi, arqLEs, Esq, i, C);
+        QuickSortExterno(arqLEi, arqLEs, j, Dir, C);
     } else {
-        QuickSortExterno(arqLi, arqEi, arqLEs, j, Dir, C);
-        QuickSortExterno(arqLi, arqEi, arqLEs, Esq, i, C);
+        QuickSortExterno(arqLEi, arqLEs, j, Dir, C);
+        QuickSortExterno(arqLEi, arqLEs, Esq, i, C);
     }
 
     
 }
 
-void OrdenarQS(Contagem *contagem, FILE *arquivo, int quantidade) {
+void OrdenarQS(Contagem *contagem, int quantidade) {
   struct timespec inicio, fim;
-    FILE *arqLi, *arqEi, *arqLEs;
-    fseek(arquivo, 0, 0);
-    arqLi = fopen("output.txt","r+");
-    arqEi = fopen("output.txt","r+");
+    FILE *arqLEi, *arqLEs;
+    //arqLi = fopen("output.txt","r+");
+    arqLEi = fopen("output.txt","r+");
     arqLEs = fopen("output.txt","r+");
     
   clock_gettime(CLOCK_REALTIME, &inicio);
 
-  QuickSortExterno(&arqLi, &arqEi, &arqLEs, 1, quantidade, contagem);
+  QuickSortExterno(&arqLEi, &arqLEs, 1, quantidade, contagem);
 
   clock_gettime(CLOCK_REALTIME, &fim);
 
   contagem->tempo = (fim.tv_sec - inicio.tv_sec) * 1e9 + (fim.tv_nsec - inicio.tv_nsec);
 
-    fclose(arqLi);
-    fclose(arqEi);
+    //fclose(arqLi);
+    fclose(arqLEi);
     fclose(arqLEs);
 }
 

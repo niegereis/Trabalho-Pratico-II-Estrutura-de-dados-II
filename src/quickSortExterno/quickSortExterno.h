@@ -8,6 +8,7 @@
 
 #include "aluno.h"
 #include "compartilhado.h"
+#define TAMANHOAREA 3
 
 typedef long int TipoChave;
 
@@ -20,13 +21,13 @@ typedef struct TipoPagina *TipoApontador;
 // struct de tipoArea
 typedef struct TipoArea { // Tipo usado para representar a área de memória
                           // interna
-  Aluno *r;               // Vetor de registros
+  Aluno r[TAMANHOAREA];               // Vetor de registros
   int n;                  // Número de registros armazenados
 } TipoArea;
 
 void QuickInicializaArea(TipoArea *);
-void QuickSortExterno(FILE **, FILE **, FILE **, int, int, Contagem *);
-void OrdenarQS(Contagem *contagem, FILE *arquivo, int quantidade) ;
+void QuickSortExterno(FILE **, FILE **, int, int, Contagem *);
+void OrdenarQS(Contagem *contagem, int quantidade) ;
 // void QuickLeSup(FILE **, Aluno *, int *, short *);
 // void QuickLeInf(FILE **, Aluno *, int *, short *);
 // void QuickInserirArea(TipoArea *, Aluno *, int *);

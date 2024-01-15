@@ -5,7 +5,7 @@
 #include "quickSortExterno.h"
 #include "aluno.h"
 #include "compartilhado.h"
-#define ORD 100
+#define ORD 10
 
 int main(){
   FILE *a = fopen("PROVAO.TXT","r");
@@ -14,12 +14,12 @@ int main(){
   if(o == NULL){perror("error");}
 
   copiaArquivo(a, o, ORD);
+  fclose(a);
+  fclose(o);
 
   Contagem cont;
   inicializaContagem(&cont);
-  OrdenarQS(&cont, o, ORD);
+  OrdenarQS(&cont, ORD);
 
-  fclose(a);
-  fclose(o);
   return 0;
 }
