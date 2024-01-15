@@ -5,7 +5,7 @@
 #include "quickSortExterno.h"
 #include "aluno.h"
 #include "compartilhado.h"
-#define ORD 10
+#define ORD 100
 
 int main(){
   FILE *a = fopen("PROVAO.TXT","r");

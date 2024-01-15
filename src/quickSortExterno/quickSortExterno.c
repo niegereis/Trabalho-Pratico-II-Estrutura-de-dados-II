@@ -5,7 +5,7 @@
 #include "quickSortExterno.h"
 #include "aluno.h"
 #include "compartilhado.h"
-#define TAMANHOAREA 3
+#define TAMANHOAREA 10
 
 //Para o método de quickSort externo, deve ser considerada a existência de memória interna disponível para armazenar um vetor
 // de, no máximo, 10 registros
@@ -164,7 +164,7 @@ void Particao(FILE **arqLi, FILE **arqEi, FILE **arqLEs, TipoArea area, int Esq,
             }
             else{
                 printf("\n%d ->",li);
-                LeInf(arqLi, &ultLido, &li, &ondeLer);
+                LeInf(arqEi, &ultLido, &li, &ondeLer);
                 printf("Lido inf: %.1f", ultLido.nota);
             }
             inserirArea(&area, &ultLido);
@@ -181,7 +181,7 @@ void Particao(FILE **arqLi, FILE **arqEi, FILE **arqLEs, TipoArea area, int Esq,
         }
         else if (li == Ei){
             printf("\n%d ->",li);
-            LeInf(arqLi, &ultLido, &li, &ondeLer);
+            LeInf(arqEi, &ultLido, &li, &ondeLer);
             printf("Lido inf: %.1f", ultLido.nota);
         }
         else if (ondeLer){
@@ -191,7 +191,7 @@ void Particao(FILE **arqLi, FILE **arqEi, FILE **arqLEs, TipoArea area, int Esq,
         }
         else {
             printf("\n%d ->",li);
-            LeInf(arqLi, &ultLido, &li, &ondeLer);
+            LeInf(arqEi, &ultLido, &li, &ondeLer);
             printf("Lido inf: %.1f", ultLido.nota);
         }
 
@@ -251,6 +251,7 @@ void Particao(FILE **arqLi, FILE **arqEi, FILE **arqLEs, TipoArea area, int Esq,
 void QuickSortExterno(FILE **arqLi, FILE **arqEi, FILE **arqLEs, int Esq, int Dir, Contagem *C){ // função recusiva
     int i, j;
     TipoArea area;
+
     inicializaArea(&area);
     if (Dir - Esq < 1) return;
     Particao(arqLi, arqEi, arqLEs, area, Esq, Dir, &i, &j, C);

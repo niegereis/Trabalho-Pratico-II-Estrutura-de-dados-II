@@ -1,10 +1,100 @@
+00370976 000.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
 00022952 000.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00367644 000.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00078506 000.0 AM MANAUS                                             ADMINISTRACAO                  
+00230537 000.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00435753 000.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00417534 000.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00159186 000.0 AM MANAUS                                             ADMINISTRACAO                  
+00032997 000.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00461082 000.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00136049 000.0 AM MANAUS                                             ADMINISTRACAO                  
+00213978 010.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00080301 018.3 AM MANAUS                                             ADMINISTRACAO                  
+00036392 018.8 AM MANAUS                                             ADMINISTRACAO                  
+00418828 020.0 AM MANAUS                                             ADMINISTRACAO                  
+00147344 020.0 AM MANAUS                                             ADMINISTRACAO                  
+00063830 021.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00123938 031.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00125100 022.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00339451 023.5 AM MANAUS                                             ADMINISTRACAO                  
+00457807 024.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00251361 024.8 AM MANAUS                                             ADMINISTRACAO                  
+00316162 028.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00293831 029.3 AM MANAUS                                             ADMINISTRACAO                  
+00071577 030.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00422511 031.3 AM MANAUS                                             ADMINISTRACAO                  
+00113382 031.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00123938 031.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00304166 032.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00462658 032.5 AM MANAUS                                             ADMINISTRACAO                  
+00082340 034.0 AM MANAUS                                             ADMINISTRACAO                  
+00224240 034.3 AM MANAUS                                             ADMINISTRACAO                  
+00159825 035.5 AM MANAUS                                             ADMINISTRACAO                  
+00337091 036.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00266061 036.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00024213 036.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00114422 037.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00368900 037.3 AM MANAUS                                             ADMINISTRACAO                  
 00113285 037.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00228618 037.3 AM MANAUS                                             ADMINISTRACAO                  
+00051080 038.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00356030 038.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00314937 038.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00291453 039.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00419670 039.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00207373 040.3 AM MANAUS                                             ADMINISTRACAO                  
+00251484 040.3 AM MANAUS                                             ADMINISTRACAO                  
+00036075 040.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
 00065840 041.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
-00453379 053.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00003517 042.0 AM MANAUS                                             ADMINISTRACAO                  
 00394362 042.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
-00355310 044.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00168351 043.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00234756 043.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00346924 043.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
 00355310 044.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
 00304832 045.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00022147 045.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00129347 045.5 AM MANAUS                                             ADMINISTRACAO                  
+00459126 046.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00220216 046.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00193803 046.5 AM MANAUS                                             ADMINISTRACAO                  
+00239866 046.8 AM MANAUS                                             ADMINISTRACAO                  
+00109386 046.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00463262 047.0 AM MANAUS                                             ADMINISTRACAO                  
+00317055 047.3 AM MANAUS                                             ADMINISTRACAO                  
+00356952 047.5 AM MANAUS                                             ADMINISTRACAO                  
+00452420 047.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00066569 047.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00026451 047.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00096183 048.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00071325 050.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
 00427785 051.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00387342 051.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00167833 051.5 AM MANAUS                                             ADMINISTRACAO                  
+00402164 051.8 AM MANAUS                                             ADMINISTRACAO                  
+00324555 053.3 AM MANAUS                                             ADMINISTRACAO                  
+00059542 053.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
 00453379 053.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00049975 053.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00115074 053.5 AM MANAUS                                             ADMINISTRACAO                  
+00378110 053.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00452861 054.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00115010 055.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00085413 055.8 AM MANAUS                                             ADMINISTRACAO                  
+00253930 056.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00265994 056.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00005659 056.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00261845 058.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00417884 058.8 AM MANAUS                                             ADMINISTRACAO                  
+00063641 059.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00012753 060.3 AM MANAUS                                             ADMINISTRACAO                  
+00295148 060.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00073527 061.0 AM MANAUS                                             ADMINISTRACAO                  
+00200258 061.3 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00116081 062.0 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00346552 062.5 AM MANAUS                                             ADMINISTRACAO                  
+00052638 063.5 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
+00217201 063.8 AM MANAUS                                             ADMINISTRACAO                  
+00145396 063.8 AM MANAUS                                             ADMINISTRACAO                  
+00428679 069.8 SE SAO CRISTOVAO                                      ADMINISTRACAO                  
