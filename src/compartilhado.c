@@ -1,0 +1,84 @@
+#include"compartilhado.h"
+#include"aluno.h"
+#include"heap.h"
+#include"intercalacaoBalanceadaFM1.h"
+#include"quickSortExterno.h"
+#include <limits.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+void copiaArquivo(FILE* out, int situacao, int tam ){
+  FILE *in;
+  switch (situacao){
+  case 1:
+    in = fopen("./arquivos/crescente.txt","r");
+    break;
+
+  case 2:
+    in = fopen("./arquivos/decrescente.txt","r");
+    break;
+
+  case 3:
+    in = fopen("./arquivos/aleatorio.txt","r");
+    break;
+  
+  }
+  if(in == NULL){
+        perror("error(input file):");
+        exit(1);
+  }
+  
+  Aluno al;
+  for(int i = 0; i < tam; i++){
+    fseek(in, i*101, 0);
+    al = AlunoLer(in);
+    fseek(out, i*101, 0);
+    alunoEscreve(out, al);
+    fprintf(out," ");
+    fprintf(out,"\n");
+  }
+  fclose(in);
+}
+
+
+Analise AnaliseCriar() {
+  Analise analise;
+  analise.comparacoes = 0;
+  analise.tempoTotal = 0;
+  analise.transferenciasEscrita = 0;
+  analise.transferenciasLeitura = 0;
+  return analise;
+}
+
+void AnaliseImprime(Analise analise) {
+  printf("\n============ ANALISE ==============\n");
+  printf("| Tempo Total:       %7lld (ms) |\n", analise.tempoTotal);
+  printf("| Comparações:          %9d |\n", analise.comparacoes);
+  printf("| Transferências Leitura: %7d |\n", analise.transferenciasLeitura);
+  printf("| Transferências Escrita: %7d |\n", analise.transferenciasEscrita);
+  printf("===================================\n");
+}
+
+void AnaliseDefinirTempoPeloInicioEFim(Analise *analise, struct timespec inicio, struct timespec fim) {
+  analise->tempoTotal = ((fim.tv_sec - inicio.tv_sec) * 1e9 + (fim.tv_nsec - inicio.tv_nsec)) / 1e6;
+}
+
+Analise ordenaMain(int quantidade, int metodo){
+  Analise analise = AnaliseCriar();
+
+  switch(metodo){
+    case(1)://2f fitas
+      IntercalacaoBalanceada(0, quantidade, &analise);
+      break;
+    case(2)://f+1 fitas
+      IntercalacaoBalanceada(1, quantidade, &analise);
+      break;
+    case(3)://QS externo
+      OrdenarQS(&analise, quantidade);
+      break;
+  }
+
+  return analise;
+}
