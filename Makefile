@@ -68,6 +68,7 @@ DEPS		:= $(OBJECTS:.o=.d)
 
 OUTPUTMAIN	:= $(call FIXPATH,$(OUTPUT)/$(MAIN))
 
+.SILENT:
 default: all clean
 
 all: $(OUTPUT) $(MAIN)

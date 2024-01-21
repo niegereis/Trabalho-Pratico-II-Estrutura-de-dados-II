@@ -16,6 +16,7 @@ typedef struct analise {
 
 Analise AnaliseCriar();
 void copiaArquivo(FILE*, int, int);
+void copiaArquivoBin(FILE*, FILE*, int);
 void AnaliseImprime(Analise analise);
 void AnaliseDefinirTempoPeloInicioEFim(Analise *analise, struct timespec inicio, struct timespec fim);
 Analise ordenaMain(int, int);

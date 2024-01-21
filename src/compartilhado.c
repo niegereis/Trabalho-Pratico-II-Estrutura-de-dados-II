@@ -42,6 +42,18 @@ void copiaArquivo(FILE* out, int situacao, int tam ){
   fclose(in);
 }
 
+void copiaArquivoBin(FILE* in, FILE* out, int tam ){
+  Aluno al;
+  fseek(in, 0, 0);
+  for(int i = 0; i < tam; i++){
+    AlunoLerViaArquivoBinario(in, &al);
+    fseek(out, i*101, 0);
+    alunoEscreve(out, al);
+    fprintf(out," ");
+    fprintf(out,"\n");
+  }
+}
+
 
 Analise AnaliseCriar() {
   Analise analise;
@@ -70,10 +82,10 @@ Analise ordenaMain(int quantidade, int metodo){
 
   switch(metodo){
     case(1)://2f fitas
-      IntercalacaoBalanceada(0, quantidade, &analise);
+      IntercalacaoBalanceada(F2, quantidade, &analise);
       break;
     case(2)://f+1 fitas
-      IntercalacaoBalanceada(1, quantidade, &analise);
+      IntercalacaoBalanceada(FM1, quantidade, &analise);
       break;
     case(3)://QS externo
       OrdenarQS(&analise, quantidade);
