@@ -17,3 +17,7 @@ Correções necessárias para terminar, Marque as que já foram implementadas:
 > Muito vazamento de memória com qualquer quantidade de alunos nos métodos de intercalação(Executar usando valgrind).
 
 > Tornar genérico o nome das funções de intercalação que abrangem os dois métodos(A maioria possui FM1 mesmo sendo usado em ambos).
+
+> Ajustar tamanhos do heap de acordo com o pdf.
+
+> Qualquer dúvida falar comigo.
