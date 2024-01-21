@@ -1,7 +1,7 @@
 #include"compartilhado.h"
 #include"aluno.h"
 #include"heap.h"
-#include"intercalacaoBalanceadaFM1.h"
+#include"intercalacaoBalanceada.h"
 #include"quickSortExterno.h"
 #include <limits.h>
 #include <stdbool.h>
@@ -9,7 +9,7 @@
 #include <string.h>
 
 
-void copiaArquivo(FILE* out, int situacao, int tam ){
+void copiaArquivo(FILE* out, int situacao, int tam ){//copia a quntidade de linhas definida pelo usuário do arquivo escolhido para output.txt
   FILE *in;
   switch (situacao){
   case 1:
@@ -42,8 +42,9 @@ void copiaArquivo(FILE* out, int situacao, int tam ){
   fclose(in);
 }
 
-void copiaArquivoBin(FILE* in, FILE* out, int tam ){
+void copiaArquivoBin(FILE* in, int tam ){//Lê fita final e a escreve no output.txt
   Aluno al;
+   FILE* out = fopen("./arquivos/output.txt", "w+");
   fseek(in, 0, 0);
   for(int i = 0; i < tam; i++){
     AlunoLerViaArquivoBinario(in, &al);
@@ -52,6 +53,7 @@ void copiaArquivoBin(FILE* in, FILE* out, int tam ){
     fprintf(out," ");
     fprintf(out,"\n");
   }
+  fclose(out);
 }
 
 
@@ -88,7 +90,7 @@ Analise ordenaMain(int quantidade, int metodo){
       IntercalacaoBalanceada(FM1, quantidade, &analise);
       break;
     case(3)://QS externo
-      OrdenarQS(&analise, quantidade);
+      ordenarQS(&analise, quantidade);
       break;
   }
 

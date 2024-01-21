@@ -1,4 +1,4 @@
-#include "intercalacaoBalanceadaFM1.h"
+#include "intercalacaoBalanceada.h"
 #include <dirent.h>
 #include <time.h>
 #include <stdlib.h>

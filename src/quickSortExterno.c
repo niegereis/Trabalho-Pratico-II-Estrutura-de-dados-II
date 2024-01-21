@@ -6,34 +6,21 @@
 #include "quickSortExterno.h"
 
 
-void imprimeArea(TipoArea a){ /// terminar isso aq depois
-    int i;
-    printf("\n");
-    for(i = 0; i < TAMANHOAREA; i++){
-        if(i < a.n)
-            printf("|%.1f ", a.r[i].nota);
-        else    
-            printf("|   ");
-    }
-    printf("|\n");
-}
-
-
-void LeSup(FILE **arqLEs, Aluno *ultLido, int *ls, short *ondeLer){
+void leSup(FILE **arqLEs, Aluno *ultLido, int *ls, short *ondeLer){
     fseek(*arqLEs, (*ls-1) * ALUNO_LINHA, SEEK_SET);
     *ultLido = AlunoLer(*arqLEs);
     (*ls)--;
     *ondeLer = false;
 }
 
-void LeInf(FILE **arqLEi, Aluno *ultLido, int *li, short *ondeLer){
+void leInf(FILE **arqLEi, Aluno *ultLido, int *li, short *ondeLer){
     fseek(*arqLEi, (*li - 1) * ALUNO_LINHA, SEEK_SET);
     *ultLido = AlunoLer(*arqLEi);
     (*li)++;
     *ondeLer = true;
 }
 
-void InsereItem(Aluno aluno, TipoArea *area){ // insere o ultimo lido na area
+void inserirArea(TipoArea *area, Aluno aluno){
     int i = area->n;
     while (i > 0 && aluno.nota < area->r[i - 1].nota){
         area->r[i] = area->r[i - 1];
@@ -42,19 +29,16 @@ void InsereItem(Aluno aluno, TipoArea *area){ // insere o ultimo lido na area
     area->r[i] = aluno;
     area->n++;
 }
-void inserirArea(TipoArea *area, Aluno *ultLido){
-    InsereItem(*ultLido, area);
-}
 
 
-void EscreveMax(FILE **arqLEs, Aluno R, int *Es){ // Escreve o maior elemento da área no final do arquivo de saída
+void escreveMax(FILE **arqLEs, Aluno R, int *es){ // Escreve o maior elemento da área no final do arquivo de saída
     // Escreve o maior elemento da área no final do arquivo de saída
-    fseek(*arqLEs, (*Es - 1) * ALUNO_LINHA, SEEK_SET);
+    fseek(*arqLEs, (*es - 1) * ALUNO_LINHA, SEEK_SET);
     alunoEscreve(*arqLEs, R);
-    (*Es)--;
+    (*es)--;
 }
 
-void EscreveMin(FILE **arqLEi, Aluno R, int *Ei){ // Escreve o menor elemento da área no início do arquivo de saída
+void escreveMin(FILE **arqLEi, Aluno R, int *Ei){ // Escreve o menor elemento da área no início do arquivo de saída
     // Escreve o menor elemento da área no início do arquivo de saída
     fseek(*arqLEi, (*Ei - 1) * ALUNO_LINHA, SEEK_SET);
     alunoEscreve(*arqLEi, R);
@@ -63,7 +47,7 @@ void EscreveMin(FILE **arqLEi, Aluno R, int *Ei){ // Escreve o menor elemento da
 
 // ---------------------------- RETIRANDO O ULTIMO ITEM DA AREA ----------------------------
 
-void RetiraMax(TipoArea *area, Aluno *aluno){
+void retiraMax(TipoArea *area, Aluno *aluno){
     *aluno = area->r[area->n - 1];
     area->n--;
 }
@@ -72,7 +56,7 @@ void RetiraMax(TipoArea *area, Aluno *aluno){
 
 // ---------------------------- RETIRANDO O PRIMEIRO ITEM DA AREA ----------------------------
 
-void RetiraMin(TipoArea *area, Aluno *aluno){
+void retiraMin(TipoArea *area, Aluno *aluno){
     *aluno = area->r[0];
     area->n--;
     for (int i = 0; i < area->n; i++){
@@ -82,14 +66,14 @@ void RetiraMin(TipoArea *area, Aluno *aluno){
 
 // ------------------------------------------------------------------------------------------   
 
-void Particao(FILE **arqEi, FILE **arqLEs, TipoArea area, int Esq, int Dir, int *i, int *j, Analise *analise){
-    int ls = Dir, Es = Dir, li = Esq, Ei = Esq; 
-    float Linf = INT_MIN, Lsup = INT_MAX;
+void particao(FILE **arqEi, FILE **arqLEs, TipoArea area, int esq, int dir, int *i, int *j, Analise *analise){
+    int ls = dir, es = dir, li = esq, Ei = esq; 
+    float lInf = INT_MIN, lSup = INT_MAX;
     short ondeLer = true;
     Aluno ultLido, R;
    
-    *i = Esq - 1;
-    *j = Dir + 1;
+    *i = esq - 1;
+    *j = dir + 1;
 
     analise->comparacoes++;
     while (ls >= li){
@@ -97,105 +81,105 @@ void Particao(FILE **arqEi, FILE **arqLEs, TipoArea area, int Esq, int Dir, int 
         if (area.n < TAMANHOAREA - 1){ // verificar se tem parte do pivo vazio
             if (ondeLer){
                 analise->transferenciasLeitura++;
-                LeSup(arqLEs, &ultLido, &ls, &ondeLer);
+                leSup(arqLEs, &ultLido, &ls, &ondeLer);
             }
             else{
                 analise->transferenciasLeitura++;
-                LeInf(arqEi, &ultLido, &li, &ondeLer);
+                leInf(arqEi, &ultLido, &li, &ondeLer);
             }
-            inserirArea(&area, &ultLido);
+            inserirArea(&area, ultLido);
             continue;
             
         }
         analise->comparacoes++;
-        if (ls == Es){ // se o ls for igual ao Es, então o ls é o maior elemento da área
+        if (ls == es){ // se o ls for igual ao es, então o ls é o maior elemento da área
             analise->transferenciasLeitura++;
-            LeSup(arqLEs, &ultLido, &ls, &ondeLer);
+            leSup(arqLEs, &ultLido, &ls, &ondeLer);
         }
         else if (li == Ei){
             analise->comparacoes++;
             analise->transferenciasLeitura++;
-            LeInf(arqEi, &ultLido, &li, &ondeLer);
+            leInf(arqEi, &ultLido, &li, &ondeLer);
         }
         else if (ondeLer){
             analise->comparacoes += 2;
             analise->transferenciasLeitura++;
-            LeSup(arqLEs, &ultLido, &ls, &ondeLer);
+            leSup(arqLEs, &ultLido, &ls, &ondeLer);
         }
         else {
             analise->comparacoes += 2;
             analise->transferenciasLeitura++;
-            LeInf(arqEi, &ultLido, &li, &ondeLer);
+            leInf(arqEi, &ultLido, &li, &ondeLer);
         }
 
         
         analise->comparacoes++;
-        if (ultLido.nota > Lsup){ // se o ultimo lido for maior que o limite superior
+        if (ultLido.nota > lSup){ // se o ultimo lido for maior que o limite superior
             analise->transferenciasEscrita++;
-            *j = Es;
-            EscreveMax(arqLEs, ultLido, &Es);
+            *j = es;
+            escreveMax(arqLEs, ultLido, &es);
             continue;
         }
 
         analise->comparacoes++;
-        if(ultLido.nota < Linf){
+        if(ultLido.nota < lInf){
             analise->transferenciasEscrita++;
             *i = Ei;
-            EscreveMin(arqEi, ultLido, &Ei);
+            escreveMin(arqEi, ultLido, &Ei);
             continue;
         }
 
         // colocar a funçao de inserir pivo
         // ------------------------------------------------------
 
-        inserirArea(&area, &ultLido);
+        inserirArea(&area, ultLido);
 
         // ------------------------------------------------------
         analise->comparacoes++;
-        if (Ei - Esq < Dir - Es){ // retira o aluno com maior nota
+        if (Ei - esq < dir - es){ // retira o aluno com maior nota
         //retirar o maior item do pivo
             analise->transferenciasEscrita++;
-            RetiraMin(&area, &R);
-            EscreveMin(arqEi, R, &Ei);
-            Linf = R.nota;
+            retiraMin(&area, &R);
+            escreveMin(arqEi, R, &Ei);
+            lInf = R.nota;
         } else { // retira o aluno com menor nota
         //retira menor item do pivo
             analise->transferenciasEscrita++;
-            RetiraMax(&area, &R);
-            EscreveMax(arqLEs, R, &Es);
-            Lsup = R.nota;
+            retiraMax(&area, &R);
+            escreveMax(arqLEs, R, &es);
+            lSup = R.nota;
         }
     }
 
     analise->comparacoes++;
-    while (Ei <= Es){
+    while (Ei <= es){
         analise->comparacoes++; // numero de comparações
         analise->transferenciasEscrita++; // numero de transferencias de escrita
-        RetiraMin(&area, &R);
-        EscreveMin(arqEi, R, &Ei);
+        retiraMin(&area, &R);
+        escreveMin(arqEi, R, &Ei);
     }
 }
 
-void QuickSortExterno(FILE **arqLEi, FILE **arqLEs, int Esq, int Dir, Analise *analise){ // função recusiva
+void quickSortExterno(FILE **arqLEi, FILE **arqLEs, int esq, int dir, Analise *analise){ // função recusiva
     int i, j;
     TipoArea area;
     area.n =0;
-    if (Dir - Esq < 1) return;
-    Particao(arqLEi, arqLEs, area, Esq, Dir, &i, &j, analise);
+    if (dir - esq < 1) return;
+    particao(arqLEi, arqLEs, area, esq, dir, &i, &j, analise);
     
 
-    if (i - Esq < Dir - j){
-        QuickSortExterno(arqLEi, arqLEs, Esq, i, analise);
-        QuickSortExterno(arqLEi, arqLEs, j, Dir, analise);
+    if (i - esq < dir - j){
+        quickSortExterno(arqLEi, arqLEs, esq, i, analise);
+        quickSortExterno(arqLEi, arqLEs, j, dir, analise);
     } else {
-        QuickSortExterno(arqLEi, arqLEs, j, Dir, analise);
-        QuickSortExterno(arqLEi, arqLEs, Esq, i, analise);
+        quickSortExterno(arqLEi, arqLEs, j, dir, analise);
+        quickSortExterno(arqLEi, arqLEs, esq, i, analise);
     }
 
     
 }
 
-void OrdenarQS(Analise *analise, int quantidade) {
+void ordenarQS(Analise *analise, int quantidade) {
   struct timespec inicio, fim;
     FILE *arqLEi, *arqLEs;
     //arqLi = fopen("output.txt","r+");
@@ -206,11 +190,11 @@ void OrdenarQS(Analise *analise, int quantidade) {
         exit(1);
     }
     
-  clock_gettime(CLOCK_REALTIME, &inicio);
+  clock_gettime(1, &inicio);
 
-  QuickSortExterno(&arqLEi, &arqLEs, 1, quantidade, analise);
+  quickSortExterno(&arqLEi, &arqLEs, 1, quantidade, analise);
 
-  clock_gettime(CLOCK_REALTIME, &fim);
+  clock_gettime(1, &fim);
 
   AnaliseDefinirTempoPeloInicioEFim(analise, inicio, fim);
     //fclose(arqLi);

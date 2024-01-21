@@ -1,4 +1,4 @@
-#include "intercalacaoBalanceadaFM1.h"
+#include "intercalacaoBalanceada.h"
 #include <dirent.h>
 #include <time.h>
 #include <stdlib.h>
@@ -121,7 +121,7 @@ bool FM2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise) {
 void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer, Analise *analise) {
   struct timespec inicio, fim;
 
-  clock_gettime(CLOCK_MONOTONIC, &inicio);
+  clock_gettime(1, &inicio);
   Fita *fitas = FM1GerarBlocos(linhasALer, estrategia, analise);
   if (fitas == NULL) {
     printf("Ocorreu um erro inesperado!");
@@ -163,6 +163,6 @@ void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer,
     }
   }
   FM1FitaFecharArquivos(fitas);
-  clock_gettime(CLOCK_MONOTONIC, &fim);
+  clock_gettime(1, &fim);
   AnaliseDefinirTempoPeloInicioEFim(analise, inicio, fim);
 }

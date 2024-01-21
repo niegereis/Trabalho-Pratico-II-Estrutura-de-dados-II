@@ -1,5 +1,5 @@
-#ifndef INTERCALACAOBALANCEADAFM1_H
-#define INTERCALACAOBALANCEADAFM1_H
+#ifndef INTERCALACAOBALANCEADA_H
+#define INTERCALACAOBALANCEADA_H
 
 #include <stdbool.h>
 #include<stdio.h>
@@ -51,4 +51,4 @@ void F2DefinirFitasDeSaida(Fita *fitas);
 bool FM2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise);
 void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer, Analise *analise);
 
-#endif // INTERCALACAOBALANCEADAFM1_H
+#endif // INTERCALACAOBALANCEADA_H

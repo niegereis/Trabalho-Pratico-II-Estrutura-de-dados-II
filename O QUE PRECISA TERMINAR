@@ -1,0 +1,19 @@
+Correções necessárias para terminar, Marque as que já foram implementadas:
+
+> Implementar [-P](imprimir os dados dos alunos no terminal ao término da ordenaçao).
+
+> Separar as fitas geradas dos métodos e intercalaçao nas suas respectivas pastas.
+
+> mudar a funçao "IntercalacaoBalanceada" para que essa retorne o nome do arquivo bin contendo a ordenaçao final.
+
+> #defines diferentes para quantidades de fitas diferentes para os dois metodos de intercalação(20 para 2f e 19 para FM1).
+
+> corrigir Warnings
+
+> todas as instâncias de "FM1BlocoCriar()" utilizam uma constante.
+
+> Segfault com arquivos muito grandes nos métodos de intercalação(provavelmente relacionado com o tópico logo acima).
+
+> Muito vazamento de memória com qualquer quantidade de alunos nos métodos de intercalação(Executar usando valgrind).
+
+> Tornar genérico o nome das funções de intercalação que abrangem os dois métodos(A maioria possui FM1 mesmo sendo usado em ambos).
