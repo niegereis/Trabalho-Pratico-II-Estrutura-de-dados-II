@@ -3,7 +3,7 @@
 #define TAMMAX 471705
 
 int main(int argc, char** argv){
-    if ((argc != 4 && argc != 5) || (atoi(argv[1]) < 1 || atoi(argv[1]) > 3) || (atoi(argv[2]) < 0 || atoi(argv[2]) > TAMMAX) || (atoi(argv[3]) < 1 || atoi(argv[3]) > 3)) {
+    if ((argc != 4 && argc != 5) || (atoi(argv[1]) < 1 || atoi(argv[1]) > 3) || (atoi(argv[2]) < 1 || atoi(argv[2]) > TAMMAX) || (atoi(argv[3]) < 1 || atoi(argv[3]) > 3)) {
         printf("Argumentos inválidos\n");
         printf("./output/main <metodo> <quantidade> <situacao>");
         printf("\n<metodo>\n");
@@ -11,7 +11,7 @@ int main(int argc, char** argv){
         printf("\t2 - Intercalação balanceada de vários caminhos (f+1 fitas)\n");
         printf("\t3 - Quicksort externo\n");
         printf("<quantidade>\n");
-        printf("\tvalor inteiro\n");
+        printf("\tvalor inteiro entre 1 e 471705\n");
         printf("<situacao>\n");
         printf("\t1 - crescente\n");
         printf("\t2 - decrescente\n");
