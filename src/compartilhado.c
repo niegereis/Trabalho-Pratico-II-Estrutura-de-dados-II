@@ -96,3 +96,18 @@ Analise ordenaMain(int quantidade, int metodo){
 
   return analise;
 }
+
+void imprimeTerminal(int quantidade) {
+  Aluno aluno;
+  FILE *output = fopen("./arquivos/output.txt", "r");
+    if(output == NULL){
+        perror("error(print file):");
+        exit(1);
+    }
+  fseek(output, 0, 0);
+  for(int i = 0; i < quantidade; i++){
+    aluno = AlunoLer(output);
+    AlunoImprimeCompleto(&aluno);
+  }
+    fclose(output);
+}

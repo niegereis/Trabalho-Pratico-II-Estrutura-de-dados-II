@@ -1,6 +1,7 @@
 Correções necessárias para terminar, Marque as que já foram implementadas:
 
-> Implementar [-P](imprimir os dados dos alunos no terminal ao término da ordenaçao).
+>  ---Implementar [-P](imprimir os dados dos alunos no terminal ao término da ordenaçao). FEITO---
+
 
 > Separar as fitas geradas dos métodos e intercalaçao nas suas respectivas pastas.
 
@@ -18,6 +19,6 @@ Correções necessárias para terminar, Marque as que já foram implementadas:
 
 > Tornar genérico o nome das funções de intercalação que abrangem os dois métodos(A maioria possui FM1 mesmo sendo usado em ambos).
 
-> Ajustar tamanhos do heap de acordo com o pdf.
+> Ajustar tamanhos do heap de acordo com o pdf. --
 
 > Qualquer dúvida falar comigo.

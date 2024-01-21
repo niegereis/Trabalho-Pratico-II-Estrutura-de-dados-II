@@ -20,5 +20,7 @@ void copiaArquivoBin(FILE*, int);
 void AnaliseImprime(Analise analise);
 void AnaliseDefinirTempoPeloInicioEFim(Analise *analise, struct timespec inicio, struct timespec fim);
 Analise ordenaMain(int, int);
+void imprimeTerminal(int);
+
 
 #endif // !COMPARTILHADO_H

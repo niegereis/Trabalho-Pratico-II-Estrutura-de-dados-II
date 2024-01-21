@@ -1,5 +1,6 @@
 #include "compartilhado.h"
 #include <stdlib.h> 
+#include <string.h>
 #define TAMMAX 471705
 
 int main(int argc, char** argv){
@@ -19,10 +20,13 @@ int main(int argc, char** argv){
         exit(1);
     }
 
-    int metodo, quantidade, situacao;
+    int metodo, quantidade, situacao, p = 0;
     metodo = atoi(argv[1]);
     quantidade = atoi(argv[2]);
     situacao = atoi(argv[3]);
+
+    if(argc == 5 && (strcmp(argv[4], "-P") || strcmp(argv[4], "-p")))
+        p = 1;
 
 
     FILE *output = fopen("./arquivos/output.txt", "w+");
@@ -36,6 +40,8 @@ int main(int argc, char** argv){
 
     Analise analise;
     analise = ordenaMain(quantidade, metodo);
+    if(p)
+        imprimeTerminal(quantidade);
     AnaliseImprime(analise);
 
 
