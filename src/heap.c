@@ -1,8 +1,4 @@
-#include "heap.h"
-#include <math.h>
-#include <stdbool.h>
-#include <stdlib.h>
-
+#include "../lib/heap.h"
 
 void HeapTroca(Heap *heap, int p1, int p2);
 void HeapReconstituir(Heap *heap, int pos, Analise *analise);

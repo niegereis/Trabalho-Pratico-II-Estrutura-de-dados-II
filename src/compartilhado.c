@@ -1,61 +1,59 @@
-#include"compartilhado.h"
-#include"aluno.h"
-#include"heap.h"
-#include"intercalacaoBalanceada.h"
-#include"quickSortExterno.h"
+#include "../lib/compartilhado.h"
+#include "../lib/aluno.h"
+#include "../lib/heap.h"
+#include "../lib/intercalacaoBalanceada.h"
+#include "../lib/quickSortExterno.h"
 #include <limits.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 
-
-void copiaArquivo(FILE* out, int situacao, int tam ){//copia a quntidade de linhas definida pelo usuário do arquivo escolhido para output.txt
+void copiaArquivo(FILE *out, int situacao,
+                  int tam) { // copia a quntidade de linhas definida pelo usuário do arquivo escolhido para output.txt
   FILE *in;
-  switch (situacao){
+  switch (situacao) {
   case 1:
-    in = fopen("./arquivos/crescente.txt","r");
+    in = fopen("./arquivos/crescente.txt", "r");
     break;
 
   case 2:
-    in = fopen("./arquivos/decrescente.txt","r");
+    in = fopen("./arquivos/decrescente.txt", "r");
     break;
 
   case 3:
-    in = fopen("./arquivos/aleatorio.txt","r");
+    in = fopen("./arquivos/aleatorio.txt", "r");
     break;
-  
   }
-  if(in == NULL){
-        perror("error(input file):");
-        exit(1);
+  if (in == NULL) {
+    perror("error(input file):");
+    exit(1);
   }
-  
+
   Aluno al;
-  for(int i = 0; i < tam; i++){
-    fseek(in, i*101, 0);
+  for (int i = 0; i < tam; i++) {
+    fseek(in, i * 101, 0);
     al = AlunoLer(in);
-    fseek(out, i*101, 0);
+    fseek(out, i * 101, 0);
     alunoEscreve(out, al);
-    fprintf(out," ");
-    fprintf(out,"\n");
+    fprintf(out, " ");
+    fprintf(out, "\n");
   }
   fclose(in);
 }
 
-void copiaArquivoBin(FILE* in, int tam ){//Lê fita final e a escreve no output.txt
+void copiaArquivoBin(FILE *in, int tam) { // Lê fita final e a escreve no output.txt
   Aluno al;
-   FILE* out = fopen("./arquivos/output.txt", "w+");
+  FILE *out = fopen("./arquivos/output.txt", "w+");
   fseek(in, 0, 0);
-  for(int i = 0; i < tam; i++){
+  for (int i = 0; i < tam; i++) {
     AlunoLerViaArquivoBinario(in, &al);
-    fseek(out, i*101, 0);
+    fseek(out, i * 101, 0);
     alunoEscreve(out, al);
-    fprintf(out," ");
-    fprintf(out,"\n");
+    fprintf(out, " ");
+    fprintf(out, "\n");
   }
   fclose(out);
 }
-
 
 Analise AnaliseCriar() {
   Analise analise;
@@ -79,19 +77,19 @@ void AnaliseDefinirTempoPeloInicioEFim(Analise *analise, struct timespec inicio,
   analise->tempoTotal = ((fim.tv_sec - inicio.tv_sec) * 1e9 + (fim.tv_nsec - inicio.tv_nsec)) / 1e6;
 }
 
-Analise ordenaMain(int quantidade, int metodo){
+Analise ordenaMain(int quantidade, int metodo) {
   Analise analise = AnaliseCriar();
 
-  switch(metodo){
-    case(1)://2f fitas
-      IntercalacaoBalanceada(F2, quantidade, &analise);
-      break;
-    case(2)://f+1 fitas
-      IntercalacaoBalanceada(FM1, quantidade, &analise);
-      break;
-    case(3)://QS externo
-      ordenarQS(&analise, quantidade);
-      break;
+  switch (metodo) {
+  case (1): // 2f fitas
+    IntercalacaoBalanceada(F2, quantidade, &analise);
+    break;
+  case (2): // f+1 fitas
+    IntercalacaoBalanceada(FM1, quantidade, &analise);
+    break;
+  case (3): // QS externo
+    ordenarQS(&analise, quantidade);
+    break;
   }
 
   return analise;

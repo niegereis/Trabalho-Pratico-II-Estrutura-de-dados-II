@@ -55,7 +55,11 @@
     "heap.h": "c",
     "compartilhado.h": "c",
     "aluno.h": "c",
-    "intercalacaobalanceadafm1.h": "c"
+    "intercalacaobalanceadafm1.h": "c",
+    "intercalacaobalanceada.h": "c",
+    "types.h": "c",
+    "stat.h": "c",
+    "time.h": "c"
   },
   "editor.tabSize": 2,
   "C_Cpp.clang_format_fallbackStyle": "{ ColumnLimit: 130 }",

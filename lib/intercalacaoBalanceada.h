@@ -1,54 +1,76 @@
 #ifndef INTERCALACAOBALANCEADA_H
 #define INTERCALACAOBALANCEADA_H
 
+#include "../lib/aluno.h"
+#include "../lib/compartilhado.h"
+#include "../lib/heap.h"
+
+#include <dirent.h>
+#include <math.h>
 #include <stdbool.h>
-#include<stdio.h>
-#include "aluno.h"
-#include "compartilhado.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <time.h>
 
-#define QTD_FITAS 10
+#define QTD_FITAS_FM1 20
+#define QTD_FITAS_2F 20
+
 #define HEAP_TYPE HEAP_MAX
-
-
 
 typedef struct fita {
   FILE *arquivo;
   bool ehSaida;
 } Fita;
 
-typedef struct fM1Bloco {
+typedef struct bloco {
   Aluno *alunos;
   int qtdItens;
   int qtdMax;
 
   // usado na fase de intercalacao
   int posicaoAtualNoBloco;
-} FM1Bloco;
-
-typedef enum tipoDeFita { FITA_DE_SAIDA, FITA_DE_ENTRADA } TipoDeFita;
+} Bloco;
 
 typedef enum estrategiaDeIntercalacao { F2, FM1 } EstrategiaDeIntercalacao;
+typedef enum tipoDeFita { FITA_DE_SAIDA, FITA_DE_ENTRADA } TipoDeFita;
 
-Fita *FM1GerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analise *analise);
+// FUNÇÕES - FITAS
 
-Fita FitaCriar(FILE *arquivo, bool ehSaida);
+Fita FitaCria(FILE *arquivo, bool ehSaida);
+Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analise *analise);
+void FitaFecharArquivos(Fita *fitas, EstrategiaDeIntercalacao estrategia);
+void FitaRegerarFitas(Fita *fitas, TipoDeFita tipo, EstrategiaDeIntercalacao estrategia);
+Fita *FitaGerarFitas(int qtd, EstrategiaDeIntercalacao estrategia);
+int FitaObterNumeroDeFitaDeEntradas(Fita *f, EstrategiaDeIntercalacao estrategia);
+void FitaResetarArquivos(Fita *fitas, EstrategiaDeIntercalacao estrategia);
+int FitaObterQuantidadeDeFitas(EstrategiaDeIntercalacao estrategia);
 
-FM1Bloco FM1BlocoCriar(int qtdMax);
-void FM1BlocoImprimir(FM1Bloco *bloco);
-int FM1BlocoEscreverEmFita(Fita *fita, FM1Bloco *bloco);
-bool FM1BlocoInserirAluno(FM1Bloco *bloco, Aluno *a);
-bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise);
+// FUNÇÕES - BLOCO
+
+Bloco BlocoCria(int qtdMax);
+void BlocoImprimir(Bloco *bloco);
+int BlocoEscreverEmFita(Fita *fita, Bloco *bloco);
+bool BlocoInserirAluno(Bloco *bloco, Aluno *a);
+bool BlocoLerViaArquivoBinario(FILE *arquivo, Bloco *bloco);
+
+// FUNÇÕES - F + 1 fitas
+
 int FM1ObterFitaDeSaida(Fita *fitas);
-char *FitaObterCaminhoPelaPosicaoFM1(int p);
+void FM1DefinirFitaSaida(Fita *fitas);
+bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise);
 bool FM1FinalizouOProcesso(Fita *fitas);
-bool FM1BlocoLerViaArquivoBinario(FILE *arquivo, FM1Bloco *bloco);
-void FM1FitaFecharArquivos(Fita *fitas);
-void FM1FitaResetarArquivos(Fita *fitas);
 void FM1EspalharBlocosDaSaida(Fita *fitas, Analise *analise);
-void FitaRegerarFitas(Fita *fitas, TipoDeFita tipo);
+
+// FUNÇÕES - 2 F fitas
 
 void F2DefinirFitasDeSaida(Fita *fitas);
-bool FM2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise);
+bool F2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise);
+
+// FUNÇÕES - Intercalação
+
 void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer, Analise *analise);
 
 #endif // INTERCALACAOBALANCEADA_H

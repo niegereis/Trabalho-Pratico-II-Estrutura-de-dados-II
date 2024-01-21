@@ -1,9 +1,12 @@
 #ifndef HEAP_H
 #define HEAP_H
 
-#include<stdbool.h>
 #include "aluno.h"
 #include "compartilhado.h"
+
+#include <math.h>
+#include <stdbool.h>
+#include <stdlib.h>
 
 typedef struct itemHeap {
   Aluno aluno;

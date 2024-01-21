@@ -1,21 +1,7 @@
-#include "intercalacaoBalanceada.h"
-#include <dirent.h>
-#include <time.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <string.h>
-#include <math.h>
-#include "heap.h"
+#include "../lib/heap.h"
+#include "../lib/intercalacaoBalanceada.h"
 
-Fita FitaCriar(FILE *arquivo, bool ehSaida) {
-  Fita f;
-  f.arquivo = arquivo;
-  f.ehSaida = ehSaida;
-  return f;
-}
-
-char *FitaObterCaminhoPelaPosicao2F(int p) {
+char *F2FitaObterCaminhoPelaPosicao(int p) {
   char *caminhoArquivo = malloc(sizeof(char) * 54);
   strncpy(caminhoArquivo, "./fitas/fitas2F/fita_", 46);
 
@@ -32,17 +18,17 @@ char *FitaObterCaminhoPelaPosicao2F(int p) {
 }
 
 void F2DefinirFitasDeSaida(Fita *fitas) {
-  for (int i = ceil(QTD_FITAS / 2); i < QTD_FITAS; i++)
+  for (int i = ceil(QTD_FITAS_2F / 2); i < QTD_FITAS_2F; i++)
     fitas[i].ehSaida = true;
 }
 
-int FM2ObterFitaInicial(Fita *fitas, TipoDeFita tipo) { return tipo == FITA_DE_ENTRADA ? 0 : floor(QTD_FITAS / 2); }
+int F2ObterFitaInicial(TipoDeFita tipo) { return tipo == FITA_DE_ENTRADA ? 0 : floor(QTD_FITAS_2F / 2); }
 
-int FM2ObterFitaFinal(Fita *fitas, TipoDeFita tipo) { return tipo == FITA_DE_ENTRADA ? floor(QTD_FITAS / 2) - 1 : QTD_FITAS - 1; }
+int F2ObterFitaFinal(TipoDeFita tipo) { return tipo == FITA_DE_ENTRADA ? floor(QTD_FITAS_2F / 2) - 1 : QTD_FITAS_2F - 1; }
 
-int FM2ObterProximaFitaDoTipo(Fita *fitas, TipoDeFita tipo, int fitaAtual) {
-  int fitaInicialDoTipo = FM2ObterFitaInicial(fitas, tipo);
-  int fitaFinalDoTipo = FM2ObterFitaFinal(fitas, tipo);
+int F2ObterProximaFitaDoTipo(TipoDeFita tipo, int fitaAtual) {
+  int fitaInicialDoTipo = F2ObterFitaInicial(tipo);
+  int fitaFinalDoTipo = F2ObterFitaFinal(tipo);
 
   fitaAtual++;
   if (fitaAtual >= fitaFinalDoTipo)
@@ -51,20 +37,20 @@ int FM2ObterProximaFitaDoTipo(Fita *fitas, TipoDeFita tipo, int fitaAtual) {
   return fitaAtual;
 }
 
-bool FM2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise) {
-  int fitaInicialDoOutroTipo = FM2ObterFitaInicial(fitas, tipo == FITA_DE_ENTRADA ? FITA_DE_SAIDA : FITA_DE_ENTRADA);
-  int fitaFinalDoOutroTipo = FM2ObterFitaFinal(fitas, tipo == FITA_DE_ENTRADA ? FITA_DE_SAIDA : FITA_DE_ENTRADA);
+bool F2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise) {
+  int fitaInicialDoOutroTipo = F2ObterFitaInicial(tipo == FITA_DE_ENTRADA ? FITA_DE_SAIDA : FITA_DE_ENTRADA);
+  int fitaFinalDoOutroTipo = F2ObterFitaFinal(tipo == FITA_DE_ENTRADA ? FITA_DE_SAIDA : FITA_DE_ENTRADA);
 
-  Heap heap = HeapCriar(QTD_FITAS, HEAP_TYPE);
-  int fitaAtual = FM2ObterFitaInicial(fitas, tipo);
+  Heap heap = HeapCriar(QTD_FITAS_2F, HEAP_TYPE);
+  int fitaAtual = F2ObterFitaInicial(tipo);
 
   int qtdTotalBlocosFormados = 0;
   while (true) {
-    FM1Bloco *blocos = malloc(sizeof(FM1Bloco) * QTD_FITAS);
+    Bloco *blocos = malloc(sizeof(Bloco) * QTD_FITAS_2F);
     int qtdNovoBloco = 0;
     int qtdBlocosLidos = 0;
     for (int i = fitaInicialDoOutroTipo; i <= fitaFinalDoOutroTipo; i++) {
-      bool leuBloco = FM1BlocoLerViaArquivoBinario(fitas[i].arquivo, &blocos[i]);
+      bool leuBloco = BlocoLerViaArquivoBinario(fitas[i].arquivo, &blocos[i]);
 
       if (!leuBloco)
         continue;
@@ -87,7 +73,7 @@ bool FM2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise) {
     if (qtdBlocosLidos == 0)
       break;
 
-    FM1Bloco novoBloco = FM1BlocoCriar(qtdNovoBloco);
+    Bloco novoBloco = BlocoCria(qtdNovoBloco);
     while (true) {
       Aluno aluno;
       ItemHeap itemRemovido;
@@ -95,7 +81,7 @@ bool FM2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise) {
       if (!removeu)
         break;
 
-      FM1BlocoInserirAluno(&novoBloco, &itemRemovido.aluno);
+      BlocoInserirAluno(&novoBloco, &itemRemovido.aluno);
 
       if (blocos[itemRemovido.fitaDeOrigem].posicaoAtualNoBloco == blocos[itemRemovido.fitaDeOrigem].qtdItens)
         continue;
@@ -108,61 +94,12 @@ bool FM2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise) {
     }
 
     qtdTotalBlocosFormados++;
-    int escritas = FM1BlocoEscreverEmFita(&fitas[fitaAtual], &novoBloco);
+    int escritas = BlocoEscreverEmFita(&fitas[fitaAtual], &novoBloco);
     analise->transferenciasEscrita += escritas;
     if (DEBUG)
       printf("!Bloco inserido na fita %d com %d itens\n", fitaAtual, novoBloco.qtdItens);
-    fitaAtual = FM2ObterProximaFitaDoTipo(fitas, tipo, fitaAtual);
+    fitaAtual = F2ObterProximaFitaDoTipo(tipo, fitaAtual);
   }
 
   return qtdTotalBlocosFormados == 1;
-}
-
-void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer, Analise *analise) {
-  struct timespec inicio, fim;
-
-  clock_gettime(1, &inicio);
-  Fita *fitas = FM1GerarBlocos(linhasALer, estrategia, analise);
-  if (fitas == NULL) {
-    printf("Ocorreu um erro inesperado!");
-    exit(1);
-  }
-  printf("INTERCALANDO...\n");
-
-  bool finalizou = false;
-
-  if (estrategia == FM1) {
-    while (true) {
-
-      FM1FitaResetarArquivos(fitas);
-      bool x = FM1JuntarNaFitaDeSaida(fitas, analise);
-      FitaRegerarFitas(fitas, FITA_DE_ENTRADA);
-
-      if (x)
-        break;
-
-      FM1FitaResetarArquivos(fitas);
-      FM1EspalharBlocosDaSaida(fitas, analise);
-      FitaRegerarFitas(fitas, FITA_DE_SAIDA);
-    }
-  } else {
-    while (true) {
-      FM1FitaResetarArquivos(fitas);
-      finalizou = FM2JuntarNaFitaDe(fitas, FITA_DE_SAIDA, analise);
-      FitaRegerarFitas(fitas, FITA_DE_ENTRADA);
-
-      if (finalizou)
-        break;
-
-      FM1FitaResetarArquivos(fitas);
-      finalizou = FM2JuntarNaFitaDe(fitas, FITA_DE_ENTRADA, analise);
-      FitaRegerarFitas(fitas, FITA_DE_SAIDA);
-
-      if (finalizou)
-        break;
-    }
-  }
-  FM1FitaFecharArquivos(fitas);
-  clock_gettime(1, &fim);
-  AnaliseDefinirTempoPeloInicioEFim(analise, inicio, fim);
 }
