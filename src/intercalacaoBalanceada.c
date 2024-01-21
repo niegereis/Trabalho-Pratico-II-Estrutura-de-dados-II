@@ -59,11 +59,11 @@ char *FitaObterCaminhoPelaPosicao(int p, EstrategiaDeIntercalacao estrategia) {
     strncpy(caminhoArquivo, "./fitas/2F/fita_", 43);
 
   // converte numero para string
-  char stringNumero[3];
+  char stringNumero[4];
   sprintf(stringNumero, "%d", p);
 
   // concatena a palavra fita_ com o valor textual da variável i
-  strncat(caminhoArquivo, stringNumero, 1);
+  strncat(caminhoArquivo, stringNumero, p < 9 ? 1 : 2);
 
   // concatena .txt a palavra fita_<i>
   strncat(caminhoArquivo, ".bin", 5);
@@ -247,15 +247,18 @@ void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer,
 
   bool finalizou = false;
   printf("\nGEROU BLOCOS!\n");
+  int fitaSaida;
   if (estrategia == FM1) {
     while (true) {
 
       FitaResetarArquivos(fitas, estrategia);
-      bool x = FM1JuntarNaFitaDeSaida(fitas, analise);
+      bool x = FM1JuntarNaFitaDeSaida(fitas, analise, &fitaSaida);
       FitaRegerarFitas(fitas, FITA_DE_ENTRADA, FM1);
 
-      if (x)
+      if (x) {
+
         break;
+      }
 
       FitaResetarArquivos(fitas, estrategia);
       FM1EspalharBlocosDaSaida(fitas, analise);

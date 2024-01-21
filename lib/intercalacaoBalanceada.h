@@ -60,7 +60,7 @@ bool BlocoLerViaArquivoBinario(FILE *arquivo, Bloco *bloco);
 
 int FM1ObterFitaDeSaida(Fita *fitas);
 void FM1DefinirFitaSaida(Fita *fitas);
-bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise);
+bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise, int *fitaSaida);
 bool FM1FinalizouOProcesso(Fita *fitas);
 void FM1EspalharBlocosDaSaida(Fita *fitas, Analise *analise);
 

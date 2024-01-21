@@ -3,14 +3,14 @@
 
 void FM1DefinirFitaSaida(Fita *fitas) { fitas[QTD_FITAS_FM1 - 1].ehSaida = true; }
 
-bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise) {
-  Heap heap = HeapCriar(QTD_FITAS_FM1 - 2, HEAP_TYPE);
-  Bloco *blocos = malloc(sizeof(Bloco) * QTD_FITAS_FM1 - 1);
+bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise, int *fitaSaida) {
+  Heap heap = HeapCriar(QTD_FITAS_FM1, HEAP_TYPE);
+  Bloco *blocos = malloc(sizeof(Bloco) * QTD_FITAS_FM1);
   int qtdBlocosEscritos = 0;
   do {
     int qtdNovoBloco = 0;
     int qtdBlocosLidos = 0;
-    for (int i = 0; i < (QTD_FITAS_FM1 - 2); i++) {
+    for (int i = 0; i < QTD_FITAS_FM1 - 2; i++) {
       int leuBloco = BlocoLerViaArquivoBinario(fitas[i].arquivo, &blocos[i]);
       if (!leuBloco)
         continue;
@@ -39,6 +39,7 @@ bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise) {
     do {
       removeu = HeapRemove(&heap, &itemRemovido, analise);
       if (removeu) {
+
         Aluno aluno;
         BlocoInserirAluno(&novoBloco, &itemRemovido.aluno);
         if (blocos[itemRemovido.fitaDeOrigem].posicaoAtualNoBloco >= blocos[itemRemovido.fitaDeOrigem].qtdItens) {
@@ -61,9 +62,10 @@ bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise) {
 
     int escritas = BlocoEscreverEmFita(&fitas[saida], &novoBloco);
     analise->transferenciasEscrita += escritas;
-
     qtdBlocosEscritos++;
   } while (true);
+
+  *fitaSaida = FM1ObterFitaDeSaida(fitas);
   return qtdBlocosEscritos == 1;
 }
 
