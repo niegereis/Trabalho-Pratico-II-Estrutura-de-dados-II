@@ -39,6 +39,11 @@ void BlocoImprimir(Bloco *bloco) {
   printf("\n========================================================================\n");
 }
 
+void BlocoImprimeMetadados(Bloco *bloco) {
+  printf("BLOCO\n");
+  printf("QTD Itens: %d\n", bloco->qtdItens);
+}
+
 bool BlocoLerViaArquivoBinario(FILE *arquivo, Bloco *bloco) { return fread(bloco, sizeof(Bloco), 1, arquivo) == 1; }
 
 // FITA
@@ -125,7 +130,7 @@ Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analis
           analise->transferenciasEscrita += escritas;
           if (DEBUG)
             printf("!Bloco inserido na fita %d com %d itens\n", fitaSelecionada, bloco.qtdItens);
-          fitaSelecionada = (fitaSelecionada + 1) % FitaObterNumeroDeFitaDeEntradas(fitas, estrategia);
+          fitaSelecionada = (fitaSelecionada + 1) % FitaObterIndexPrimeiraFitaDeEntradas(fitas, estrategia);
         }
 
         HeapRemoverDesmarcados(&heap);
@@ -161,7 +166,7 @@ Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analis
     analise->transferenciasEscrita += escritas;
     if (DEBUG)
       printf("!Bloco inserido na fita %d com %d itens\n", fitaSelecionada, bloco.qtdItens);
-    fitaSelecionada = (fitaSelecionada + 1) % FitaObterNumeroDeFitaDeEntradas(fitas, estrategia);
+    fitaSelecionada = (fitaSelecionada + 1) % FitaObterIndexPrimeiraFitaDeEntradas(fitas, estrategia);
 
     HeapDesmarcarTodosEReconstituir(&heap, analise);
   }
@@ -217,19 +222,32 @@ Fita *FitaGerarFitas(int qtd, EstrategiaDeIntercalacao estrategia) {
   return fitas;
 }
 
-int FitaObterNumeroDeFitaDeEntradas(Fita *f, EstrategiaDeIntercalacao estrategia) {
+int FitaObterIndexPrimeiraFitaDeEntradas(Fita *f, EstrategiaDeIntercalacao estrategia) {
   int c = 0;
   for (int i = 0; i < FitaObterQuantidadeDeFitas(estrategia); i++) {
     if (!f[i].ehSaida)
       c++;
   }
-  return c;
+  return c - 1;
 }
 
 int FitaObterQuantidadeDeFitas(EstrategiaDeIntercalacao estrategia) { return estrategia == FM1 ? QTD_FITAS_FM1 : QTD_FITAS_2F; }
 
 int FitaObterQuantidadeItemsDoHeap(EstrategiaDeIntercalacao estrategia) {
   return estrategia == FM1 ? QTD_FITAS_FM1 - 1 : QTD_FITAS_2F / 2;
+}
+
+void FitaConverterParaArquivoOutput(Fita *fita) {
+  fseek(fita->arquivo, sizeof(Bloco), 0);
+  FILE *output = fopen("./arquivos/output.txt", "w+");
+  bool leu = true;
+  while (leu) {
+    Aluno aluno;
+    int qtd = fread(&aluno, sizeof(Aluno), 1, fita->arquivo);
+    leu = qtd == 1;
+    AlunoEscreveSeparadosPorNovaLinha(output, &aluno);
+  }
+  fclose(output);
 }
 
 // INTERCALACAO
@@ -243,10 +261,8 @@ void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer,
     printf("Ocorreu um erro inesperado!");
     exit(1);
   }
-  printf("INTERCALANDO...\n");
 
   bool finalizou = false;
-  printf("\nGEROU BLOCOS!\n");
   int fitaSaida;
   if (estrategia == FM1) {
     while (true) {
@@ -256,7 +272,6 @@ void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer,
       FitaRegerarFitas(fitas, FITA_DE_ENTRADA, FM1);
 
       if (x) {
-
         break;
       }
 
@@ -267,20 +282,25 @@ void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer,
   } else {
     while (true) {
       FitaResetarArquivos(fitas, estrategia);
-      finalizou = F2JuntarNaFitaDe(fitas, FITA_DE_SAIDA, analise);
+      finalizou = F2JuntarNaFitaDe(fitas, FITA_DE_SAIDA, analise, &fitaSaida);
       FitaRegerarFitas(fitas, FITA_DE_ENTRADA, F2);
 
-      if (finalizou)
+      if (finalizou) {
         break;
+      }
 
       FitaResetarArquivos(fitas, estrategia);
-      finalizou = F2JuntarNaFitaDe(fitas, FITA_DE_ENTRADA, analise);
+      finalizou = F2JuntarNaFitaDe(fitas, FITA_DE_ENTRADA, analise, &fitaSaida);
       FitaRegerarFitas(fitas, FITA_DE_SAIDA, F2);
 
-      if (finalizou)
+      if (finalizou) {
         break;
+      }
     }
   }
+
+  FitaConverterParaArquivoOutput(&fitas[fitaSaida]);
+
   FitaFecharArquivos(fitas, estrategia);
   clock_gettime(1, &fim);
   AnaliseDefinirTempoPeloInicioEFim(analise, inicio, fim);

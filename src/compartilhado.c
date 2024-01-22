@@ -34,7 +34,7 @@ void copiaArquivo(FILE *out, int situacao,
     fseek(in, i * 101, 0);
     al = AlunoLer(in);
     fseek(out, i * 101, 0);
-    alunoEscreve(out, al);
+    AlunoEscreve(out, al);
     fprintf(out, " ");
     fprintf(out, "\n");
   }
@@ -48,7 +48,7 @@ void copiaArquivoBin(FILE *in, int tam) { // Lê fita final e a escreve no outpu
   for (int i = 0; i < tam; i++) {
     AlunoLerViaArquivoBinario(in, &al);
     fseek(out, i * 101, 0);
-    alunoEscreve(out, al);
+    AlunoEscreve(out, al);
     fprintf(out, " ");
     fprintf(out, "\n");
   }

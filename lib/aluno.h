@@ -1,8 +1,8 @@
 #ifndef ALUNO_H
 #define ALUNO_H
 
-#include<stdio.h>
-#include<stdbool.h>
+#include <stdbool.h>
+#include <stdio.h>
 
 #define ALUNO_LINHA 101
 
@@ -20,6 +20,7 @@ void AlunoImprimeCompleto(Aluno *aluno);
 Aluno AlunoLer(FILE *f);
 bool AlunoLerViaArquivoBinario(FILE *f, Aluno *alunoLido);
 void AlunoEscreverEmArquivoBin(Aluno *aluno, FILE *arquivoBinario);
-void alunoEscreve(FILE *arquivo, Aluno al) ;
+void AlunoEscreve(FILE *arquivo, Aluno al);
+void AlunoEscreveSeparadosPorNovaLinha(FILE *arquivo, Aluno *aluno);
 
 #endif // ALUNO_H

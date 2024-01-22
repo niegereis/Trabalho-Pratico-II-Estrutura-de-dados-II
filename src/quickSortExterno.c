@@ -32,14 +32,14 @@ void inserirArea(TipoArea *area, Aluno aluno) {
 void escreveMax(FILE **arqLEs, Aluno R, int *es) { // Escreve o maior elemento da área no final do arquivo de saída
   // Escreve o maior elemento da área no final do arquivo de saída
   fseek(*arqLEs, (*es - 1) * ALUNO_LINHA, SEEK_SET);
-  alunoEscreve(*arqLEs, R);
+  AlunoEscreve(*arqLEs, R);
   (*es)--;
 }
 
 void escreveMin(FILE **arqLEi, Aluno R, int *Ei) { // Escreve o menor elemento da área no início do arquivo de saída
   // Escreve o menor elemento da área no início do arquivo de saída
   fseek(*arqLEi, (*Ei - 1) * ALUNO_LINHA, SEEK_SET);
-  alunoEscreve(*arqLEi, R);
+  AlunoEscreve(*arqLEi, R);
   (*Ei)++;
 }
 

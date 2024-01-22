@@ -44,7 +44,7 @@ Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analis
 void FitaFecharArquivos(Fita *fitas, EstrategiaDeIntercalacao estrategia);
 void FitaRegerarFitas(Fita *fitas, TipoDeFita tipo, EstrategiaDeIntercalacao estrategia);
 Fita *FitaGerarFitas(int qtd, EstrategiaDeIntercalacao estrategia);
-int FitaObterNumeroDeFitaDeEntradas(Fita *f, EstrategiaDeIntercalacao estrategia);
+int FitaObterIndexPrimeiraFitaDeEntradas(Fita *f, EstrategiaDeIntercalacao estrategia);
 void FitaResetarArquivos(Fita *fitas, EstrategiaDeIntercalacao estrategia);
 int FitaObterQuantidadeDeFitas(EstrategiaDeIntercalacao estrategia);
 
@@ -55,6 +55,7 @@ void BlocoImprimir(Bloco *bloco);
 int BlocoEscreverEmFita(Fita *fita, Bloco *bloco);
 bool BlocoInserirAluno(Bloco *bloco, Aluno *a);
 bool BlocoLerViaArquivoBinario(FILE *arquivo, Bloco *bloco);
+void BlocoImprimeMetadados(Bloco *bloco);
 
 // FUNÇÕES - F + 1 fitas
 
@@ -67,7 +68,7 @@ void FM1EspalharBlocosDaSaida(Fita *fitas, Analise *analise);
 // FUNÇÕES - 2 F fitas
 
 void F2DefinirFitasDeSaida(Fita *fitas);
-bool F2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise);
+bool F2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise, int *fitaSaida);
 
 // FUNÇÕES - Intercalação
 

@@ -37,7 +37,7 @@ int F2ObterProximaFitaDoTipo(TipoDeFita tipo, int fitaAtual) {
   return fitaAtual;
 }
 
-bool F2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise) {
+bool F2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise, int *fitaSaida) {
   int fitaInicialDoOutroTipo = F2ObterFitaInicial(tipo == FITA_DE_ENTRADA ? FITA_DE_SAIDA : FITA_DE_ENTRADA);
   int fitaFinalDoOutroTipo = F2ObterFitaFinal(tipo == FITA_DE_ENTRADA ? FITA_DE_SAIDA : FITA_DE_ENTRADA);
 
@@ -95,6 +95,7 @@ bool F2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise) {
 
     qtdTotalBlocosFormados++;
     int escritas = BlocoEscreverEmFita(&fitas[fitaAtual], &novoBloco);
+    *fitaSaida = fitaAtual;
     analise->transferenciasEscrita += escritas;
     if (DEBUG)
       printf("!Bloco inserido na fita %d com %d itens\n", fitaAtual, novoBloco.qtdItens);

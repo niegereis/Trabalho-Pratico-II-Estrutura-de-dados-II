@@ -3,7 +3,7 @@
 
 void FM1DefinirFitaSaida(Fita *fitas) { fitas[QTD_FITAS_FM1 - 1].ehSaida = true; }
 
-bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise, int *fitaSaida) {
+bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise, int *fitaSaidaIndex) {
   Heap heap = HeapCriar(QTD_FITAS_FM1, HEAP_TYPE);
   Bloco *blocos = malloc(sizeof(Bloco) * QTD_FITAS_FM1);
   int qtdBlocosEscritos = 0;
@@ -63,9 +63,9 @@ bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise, int *fitaSaida) {
     int escritas = BlocoEscreverEmFita(&fitas[saida], &novoBloco);
     analise->transferenciasEscrita += escritas;
     qtdBlocosEscritos++;
+    *fitaSaidaIndex = saida;
   } while (true);
 
-  *fitaSaida = FM1ObterFitaDeSaida(fitas);
   return qtdBlocosEscritos == 1;
 }
 
