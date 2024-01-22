@@ -137,7 +137,7 @@ bool HeapRemove(Heap *heap, ItemHeap *itemObtido, Analise *analise) {
 }
 
 void ItemHeapImprime(ItemHeap *itemHeap) {
-  AlunoImprime(&itemHeap->aluno);
+  //AlunoImprime(&itemHeap->aluno);
   printf(" (%s marcado!)", itemHeap->marcado ? "Está" : "Não está");
   printf("\n");
 }

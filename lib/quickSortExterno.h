@@ -13,7 +13,6 @@ typedef struct TipoArea { // Tipo usado para representar a área de memória
   int n;                  // Número de registros armazenados
 } TipoArea;
 
-void quickSortExterno(FILE **, FILE **, int, int, Analise *);
 void ordenarQS(Analise*, int) ;
 
 #endif

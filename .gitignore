@@ -5,3 +5,4 @@ a.ts
 ./**/**/**/*.bin
 ./**/*.TXT
 *.bin
+./arquivos/output.txt

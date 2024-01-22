@@ -12,9 +12,8 @@ Aluno AlunoCriar(char *numeroInscricao, double nota, char *estado, char *cidade,
 }
 
 void AlunoImprime(Aluno *aluno) { printf("Inscrição: %s => Nota: %.1f", aluno->numeroInscricao, aluno->nota); }
-void AlunoImprimeCompleto(Aluno *aluno) {
-  printf("Inscrição: %s => Nota: %.1f, E: %s, C: %s, CURSO: %s.", aluno->numeroInscricao, aluno->nota, aluno->estado,
-         aluno->cidade, aluno->curso);
+void AlunoImprimeCompleto(Aluno *al) {
+  printf("%s %05.1f %s %-49s %s\n", al->numeroInscricao, al->nota, al->estado, al->cidade, al->curso);
 }
 
 Aluno AlunoLer(FILE *f) {

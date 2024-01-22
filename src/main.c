@@ -1,5 +1,8 @@
 #include "../lib/compartilhado.h"
+#include <stdbool.h>
 #include <stdlib.h>
+#include <string.h>
+
 #define TAMMAX 471705
 
 int main(int argc, char **argv) {
@@ -21,6 +24,8 @@ int main(int argc, char **argv) {
   }
 
   int metodo, quantidade, situacao;
+  bool p = false;
+
   metodo = atoi(argv[1]);
   quantidade = atoi(argv[2]);
   situacao = atoi(argv[3]);
@@ -31,11 +36,17 @@ int main(int argc, char **argv) {
     exit(1);
   }
 
+  if (argc == 5 && (strcmp(argv[4], "-P") || strcmp(argv[4], "-p")))
+    p = true;
+
   copiaArquivo(output, situacao, quantidade);
   fclose(output);
 
   Analise analise;
   analise = ordenaMain(quantidade, metodo);
+  AnaliseImprime(analise);
+  if (p)
+    imprimeTerminal(quantidade);
   AnaliseImprime(analise);
 
   return 0;
