@@ -18,7 +18,7 @@
 #define QTD_FITAS_FM1 20
 #define QTD_FITAS_2F 20
 
-#define HEAP_TYPE HEAP_MAX
+#define HEAP_TYPE HEAP_MIN
 
 typedef struct fita {
   FILE *arquivo;
@@ -40,7 +40,7 @@ typedef enum tipoDeFita { FITA_DE_SAIDA, FITA_DE_ENTRADA } TipoDeFita;
 // FUNÇÕES - FITAS
 
 Fita FitaCria(FILE *arquivo, bool ehSaida);
-Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analise *analise);
+Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analise *analise, int *blocosGerados);
 void FitaFecharArquivos(Fita *fitas, EstrategiaDeIntercalacao estrategia);
 void FitaRegerarFitas(Fita *fitas, TipoDeFita tipo, EstrategiaDeIntercalacao estrategia);
 Fita *FitaGerarFitas(int qtd, EstrategiaDeIntercalacao estrategia);

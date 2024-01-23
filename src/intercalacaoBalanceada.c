@@ -22,7 +22,7 @@ bool BlocoInserirAluno(Bloco *bloco, Aluno *a) {
 
 int BlocoEscreverEmFita(Fita *fita, Bloco *bloco) {
   fwrite(bloco, sizeof(Bloco), 1, fita->arquivo);
-  int escritas = 0;
+  int escritas = 1;
   for (int i = 0; i < bloco->qtdItens; i++) {
     fwrite(&(bloco->alunos[i]), sizeof(Aluno), 1, fita->arquivo);
     escritas++;
@@ -80,13 +80,12 @@ void FitaFecharArquivos(Fita *fitas, EstrategiaDeIntercalacao estrategia) {
     fclose(fitas[i].arquivo);
 }
 
-Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analise *analise) {
+Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analise *analise, int *blocosGerados) {
   FILE *arquivoProvao = fopen("./arquivos/output.txt", "r");
   if (arquivoProvao == NULL) {
     printf("Erro(output.txt): ");
     return NULL;
   }
-
   Fita *fitas = FitaGerarFitas(FitaObterQuantidadeDeFitas(estrategia), estrategia);
   if (estrategia == FM1)
     FM1DefinirFitaSaida(fitas);
@@ -107,7 +106,7 @@ Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analis
   int fitaSelecionada = 0;
   while (true) {
 
-    Bloco bloco = BlocoCria(10000);
+    Bloco bloco = BlocoCria(qtdLinhas);
     bool removeu;
     do {
 
@@ -120,12 +119,13 @@ Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analis
         break;
       }
 
-      if (feof(arquivoProvao) || qtdAlunosLidos >= qtdLinhas) {
+      if (feof(arquivoProvao) || qtdAlunosLidos >= qtdLinhas - 1) {
 
         while (HeapRemove(&heap, &itemRemovido, analise))
           BlocoInserirAluno(&bloco, &itemRemovido.aluno);
 
         if (bloco.qtdItens > 0) {
+          (*blocosGerados)++;
           int escritas = BlocoEscreverEmFita(&fitas[fitaSelecionada], &bloco);
           analise->transferenciasEscrita += escritas;
           if (DEBUG)
@@ -140,6 +140,7 @@ Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analis
         while (HeapRemove(&heap, &itemRemovido, analise))
           BlocoInserirAluno(&blocoDosMarcadosRestantes, &itemRemovido.aluno);
         if (blocoDosMarcadosRestantes.qtdItens > 0) {
+          (*blocosGerados)++;
           int escritas = BlocoEscreverEmFita(&fitas[fitaSelecionada], &blocoDosMarcadosRestantes);
           analise->transferenciasEscrita += escritas;
           if (DEBUG)
@@ -163,6 +164,9 @@ Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analis
     } while (removeu);
 
     int escritas = BlocoEscreverEmFita(&fitas[fitaSelecionada], &bloco);
+    if (bloco.qtdItens > 0)
+      (*blocosGerados)++;
+
     analise->transferenciasEscrita += escritas;
     if (DEBUG)
       printf("!Bloco inserido na fita %d com %d itens\n", fitaSelecionada, bloco.qtdItens);
@@ -256,10 +260,16 @@ void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer,
   struct timespec inicio, fim;
 
   clock_gettime(1, &inicio);
-  Fita *fitas = FitaGerarBlocos(linhasALer, estrategia, analise);
+  int blocosGerados = 0;
+  Fita *fitas = FitaGerarBlocos(linhasALer, estrategia, analise, &blocosGerados);
   if (fitas == NULL) {
     printf("Ocorreu um erro inesperado!");
     exit(1);
+  }
+
+  if (blocosGerados <= 1) {
+    FitaConverterParaArquivoOutput(&fitas[0]);
+    return;
   }
 
   bool finalizou = false;
