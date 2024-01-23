@@ -241,18 +241,18 @@ int FitaObterQuantidadeItemsDoHeap(EstrategiaDeIntercalacao estrategia) {
   return estrategia == FM1 ? QTD_FITAS_FM1 - 1 : QTD_FITAS_2F / 2;
 }
 
-void FitaConverterParaArquivoOutput(Fita *fita) {
-  fseek(fita->arquivo, sizeof(Bloco), 0);
-  FILE *output = fopen("./arquivos/output.txt", "w+");
-  bool leu = true;
-  while (leu) {
-    Aluno aluno;
-    int qtd = fread(&aluno, sizeof(Aluno), 1, fita->arquivo);
-    leu = qtd == 1;
-    AlunoEscreveSeparadosPorNovaLinha(output, &aluno);
-  }
-  fclose(output);
-}
+// void FitaConverterParaArquivoOutput(Fita *fita) {
+//   fseek(fita->arquivo, sizeof(Bloco), 0);
+//   FILE *output = fopen("./arquivos/output.txt", "w+");
+//   bool leu = true;
+//   while (leu) {
+//     Aluno aluno;
+//     int qtd = fread(&aluno, sizeof(Aluno), 1, fita->arquivo);
+//     leu = qtd == 1;
+//     AlunoEscreveSeparadosPorNovaLinha(output, &aluno);
+//   }
+//   fclose(output);
+// }
 
 // INTERCALACAO
 
@@ -268,7 +268,8 @@ void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer,
   }
 
   if (blocosGerados <= 1) {
-    FitaConverterParaArquivoOutput(&fitas[0]);
+    //FitaConverterParaArquivoOutput(&fitas[0]);
+    copiaArquivoBin(fitas[0].arquivo, linhasALer);
     return;
   }
 
@@ -309,7 +310,9 @@ void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer,
     }
   }
 
-  FitaConverterParaArquivoOutput(&fitas[fitaSaida]);
+  //FitaConverterParaArquivoOutput(&fitas[fitaSaida]);
+  copiaArquivoBin(fitas[fitaSaida].arquivo, linhasALer);
+
 
   FitaFecharArquivos(fitas, estrategia);
   clock_gettime(1, &fim);

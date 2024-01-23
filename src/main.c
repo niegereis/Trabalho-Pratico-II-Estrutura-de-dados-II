@@ -41,12 +41,17 @@ int main(int argc, char **argv) {
 
   copiaArquivo(output, situacao, quantidade);
   fclose(output);
+  if (p){
+    printf("\nAntes da ordenação:\n");
+    imprimeTerminal(quantidade);
+  }
 
   Analise analise;
   analise = ordenaMain(quantidade, metodo);
-  AnaliseImprime(analise);
-  if (p)
+  if (p){
+    printf("\nDepois da ordenação:\n");
     imprimeTerminal(quantidade);
+  }
   AnaliseImprime(analise);
 
   return 0;

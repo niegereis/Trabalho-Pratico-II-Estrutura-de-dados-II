@@ -46,6 +46,7 @@ void copiaArquivoBin(FILE *in, int tam) { // Lê fita final e a escreve no outpu
   FILE *out = fopen("./arquivos/output.txt", "w+");
   fseek(in, 0, 0);
   for (int i = 0; i < tam; i++) {
+    fseek(in, (i*(sizeof(Aluno)) + sizeof(Bloco)), 0);
     AlunoLerViaArquivoBinario(in, &al);
     fseek(out, i * 101, 0);
     AlunoEscreve(out, al);

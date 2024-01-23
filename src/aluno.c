@@ -11,7 +11,7 @@ Aluno AlunoCriar(char *numeroInscricao, double nota, char *estado, char *cidade,
   return aluno;
 }
 
-void AlunoImprime(Aluno *aluno) { printf("Inscrição: %s => Nota: %.1f", aluno->numeroInscricao, aluno->nota); }
+// void AlunoImprime(Aluno *aluno) { printf("Inscrição: %s => Nota: %.1f", aluno->numeroInscricao, aluno->nota); }
 void AlunoImprimeCompleto(Aluno *al) {
   printf("%s %05.1f %s %-49s %s\n", al->numeroInscricao, al->nota, al->estado, al->cidade, al->curso);
 }
@@ -45,7 +45,7 @@ void AlunoEscreve(FILE *arquivo, Aluno al) {
   fprintf(arquivo, "%s %05.1f %s %-49s %-31s", al.numeroInscricao, al.nota, al.estado, al.cidade, al.curso);
 }
 
-void AlunoEscreveSeparadosPorNovaLinha(FILE *arquivo, Aluno *aluno) {
+// void AlunoEscreveSeparadosPorNovaLinha(FILE *arquivo, Aluno *aluno) {
 
-  fprintf(arquivo, "%s %05.1f %s %-49s %-31s\n", aluno->numeroInscricao, aluno->nota, aluno->estado, aluno->cidade, aluno->curso);
-}
+//   fprintf(arquivo, "%s %05.1f %s %-49s %-31s\n", aluno->numeroInscricao, aluno->nota, aluno->estado, aluno->cidade, aluno->curso);
+// }
