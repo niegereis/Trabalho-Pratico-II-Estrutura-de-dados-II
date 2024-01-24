@@ -287,6 +287,10 @@ void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer,
 
   if (blocosGerados <= 1) {
     copiaArquivoBin(fitas[0].arquivo, linhasALer);
+
+    FitaFecharArquivos(fitas, estrategia);
+    clock_gettime(1, &fim);
+    AnaliseDefinirTempoPeloInicioEFim(analise, inicio, fim);
     return;
   }
 
