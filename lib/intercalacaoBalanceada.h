@@ -47,7 +47,7 @@ Fita *FitaGerarFitas(int qtd, EstrategiaDeIntercalacao estrategia);
 int FitaObterIndexPrimeiraFitaDeEntradas(Fita *f, EstrategiaDeIntercalacao estrategia);
 void FitaResetarArquivos(Fita *fitas, EstrategiaDeIntercalacao estrategia);
 int FitaObterQuantidadeDeFitas(EstrategiaDeIntercalacao estrategia);
-
+void FitaImprime(Fita *fita);
 // FUNÇÕES - BLOCO
 
 Bloco BlocoCria(int qtdMax);

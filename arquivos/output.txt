@@ -1,200 +1,1000 @@
-00104249 000.0 RS PELOTAS                                            PEDAGOGIA                     
-00415580 000.0 MG UBERLANDIA                                         PEDAGOGIA                     
-00042617 000.0 MG UBERLANDIA                                         PEDAGOGIA                     
-00103130 000.0 MG UBERLANDIA                                         PEDAGOGIA                     
-00308484 000.0 MG UBERLANDIA                                         PEDAGOGIA                     
-00090518 000.0 SP SAO PAULO                                          DIREITO                       
-00067884 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00146345 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00235030 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00018193 000.0 SP CAMPINAS                                           PEDAGOGIA                     
-00231384 000.0 SP SAO PAULO                                          DIREITO                       
-00067640 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00269699 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00196381 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00362153 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00208600 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00080376 000.0 SP SAO PAULO                                          DIREITO                       
-00059573 000.0 MT CUIABA                                             ADMINISTRACAO                 
-00358358 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00041751 000.0 SP CAMPINAS                                           PEDAGOGIA                     
-00240052 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00151750 000.0 MT PRIMAVERA DO LESTE                                 ADMINISTRACAO                 
-00370724 000.0 MT CUIABA                                             ADMINISTRACAO                 
-00068714 000.0 SP SAO PAULO                                          DIREITO                       
-00423855 000.0 MT CUIABA                                             ADMINISTRACAO                 
-00234877 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00319998 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00144889 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00050118 000.0 SP SAO PAULO                                          DIREITO                       
-00105750 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00048195 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00189774 000.0 SP CAMPINAS                                           PEDAGOGIA                     
-00432819 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00368132 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00070605 000.0 SP SAO PAULO                                          DIREITO                       
-00207334 000.0 MT CUIABA                                             ADMINISTRACAO                 
-00200213 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00295343 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00216563 000.0 SP CAMPINAS                                           PEDAGOGIA                     
-00315794 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00153454 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00216830 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00191718 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00156559 000.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                     
-00057202 000.0 MT AGUA BOA                                           ADMINISTRACAO                 
-00278782 000.0 RJ PETROPOLIS                                         PEDAGOGIA                     
-00193432 000.0 SP CAMPINAS                                           PEDAGOGIA                     
-00466365 000.0 SP SAO PAULO                                          DIREITO                       
-00239419 000.0 MT CUIABA                                             ADMINISTRACAO                 
-00436974 000.0 RJ PETROPOLIS                                         PEDAGOGIA                     
-00401785 000.0 RJ PETROPOLIS                                         PEDAGOGIA                     
-00333866 000.0 SP SAO PAULO                                          DIREITO                       
-00401323 000.0 RJ PETROPOLIS                                         PEDAGOGIA                     
-00221815 000.0 RJ PETROPOLIS                                         PEDAGOGIA                     
-00462788 000.0 PB PATOS                                              GEOGRAFIA                     
-00344920 000.0 SP CAMPINAS                                           PEDAGOGIA                     
-00455997 000.0 RJ PETROPOLIS                                         PEDAGOGIA                     
-00378600 000.0 RJ PETROPOLIS                                         PEDAGOGIA                     
-00077603 000.0 RJ PETROPOLIS                                         PEDAGOGIA                     
-00218879 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00237034 000.0 SP CAMPINAS                                           PEDAGOGIA                     
-00427534 000.0 SP SAO PAULO                                          DIREITO                       
-00366736 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00032598 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00099859 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00238775 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00373277 000.0 SP SAO PAULO                                          DIREITO                       
-00399194 000.0 SP SAO PAULO                                          DIREITO                       
-00077475 000.0 RJ ITAPERUNA                                          LETRAS                        
-00041022 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00148979 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00019639 000.0 SP SAO PAULO                                          DIREITO                       
-00453474 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00103715 000.0 SP CAMPINAS                                           PEDAGOGIA                     
-00256048 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00283009 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00178833 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00047497 000.0 DF BRASILIA                                           ADMINISTRACAO                 
-00435459 000.0 SP SAO PAULO                                          DIREITO                       
-00023938 000.0 SP CAMPINAS                                           PEDAGOGIA                     
-00132842 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00430041 000.0 SP SAO PAULO                                          DIREITO                       
-00122410 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00423059 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00431894 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00016541 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00369177 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00021673 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00229442 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00090690 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00174325 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00451149 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00029700 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00178641 000.0 SC CHAPECO                                            GEOGRAFIA                     
-00139293 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00424999 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00255433 000.0 SP SAO PAULO                                          DIREITO                       
-00468672 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00231676 000.0 RS CARAZINHO                                          PEDAGOGIA                     
-00024394 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00345950 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00228902 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00206184 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00385494 000.0 RS PASSO FUNDO                                        PEDAGOGIA                     
-00006060 000.0 RJ MACAE                                              LETRAS                        
-00080879 000.0 AL PALMEIRA DOS INDIOS                                GEOGRAFIA                     
-00252793 000.0 RS SAO LEOPOLDO                                       PEDAGOGIA                     
-00173381 000.0 RS BENTO GONCALVES                                    PEDAGOGIA                     
-00182960 000.0 RS CAXIAS DO SUL                                      PEDAGOGIA                     
-00144473 000.0 DF BRASILIA                                           ADMINISTRACAO                 
-00389827 000.0 RS BENTO GONCALVES                                    PEDAGOGIA                     
-00312136 000.0 SP SAO PAULO                                          DIREITO                       
-00185308 000.0 RS BENTO GONCALVES                                    PEDAGOGIA                     
-00126730 000.0 RJ MACAE                                              LETRAS                        
-00027873 000.0 SP SAO PAULO                                          DIREITO                       
-00072808 000.0 DF BRASILIA                                           ADMINISTRACAO                 
-00220810 000.0 RS BENTO GONCALVES                                    PEDAGOGIA                     
-00100640 000.0 RS BENTO GONCALVES                                    PEDAGOGIA                     
-00005149 000.0 RS BENTO GONCALVES                                    PEDAGOGIA                     
-00454736 000.0 DF BRASILIA                                           ADMINISTRACAO                 
-00128051 000.0 RS RIO GRANDE                                         PEDAGOGIA                     
-00357670 000.0 RS RIO GRANDE                                         PEDAGOGIA                     
-00065149 000.0 RS RIO GRANDE                                         PEDAGOGIA                     
-00362861 000.0 RS RIO GRANDE                                         PEDAGOGIA                     
-00181749 000.0 RS RIO GRANDE                                         PEDAGOGIA                     
-00300643 000.0 RS RIO GRANDE                                         PEDAGOGIA                     
-00353784 000.0 RS RIO GRANDE                                         PEDAGOGIA                     
-00124574 000.0 RS RIO GRANDE                                         PEDAGOGIA                     
-00448993 000.0 RJ MACAE                                              LETRAS                        
-00319715 000.0 RJ MACAE                                              LETRAS                        
-00131956 000.0 RS RIO GRANDE                                         PEDAGOGIA                     
-00167477 000.0 RS RIO GRANDE                                         PEDAGOGIA                     
-00286836 000.0 RS RIO GRANDE                                         PEDAGOGIA                     
-00376966 000.0 BA ILHEUS                                             DIREITO                       
-00313396 000.0 BA ILHEUS                                             DIREITO                       
-00046885 000.0 SC ITAJAI                                             LETRAS                        
-00106850 000.0 PE RECIFE                                             PEDAGOGIA                     
-00333347 000.0 PE RECIFE                                             PEDAGOGIA                     
-00445109 000.0 SC ITAJAI                                             LETRAS                        
-00171097 000.0 PR SAO JOSE DOS PINHAIS                               PEDAGOGIA                     
-00221890 000.0 DF BRASILIA                                           ADMINISTRACAO                 
-00459296 000.0 SC ITAJAI                                             LETRAS                        
-00228090 000.0 SP SAO PAULO                                          DIREITO                       
-00266238 000.0 SP SAO PAULO                                          DIREITO                       
-00147293 000.0 SC ITAJAI                                             LETRAS                        
-00161557 000.0 PR CURITIBA                                           PEDAGOGIA                     
-00275579 000.0 PR CURITIBA                                           PEDAGOGIA                     
-00204868 000.0 SC ITAJAI                                             LETRAS                        
-00421217 000.0 BA ILHEUS                                             DIREITO                       
-00340998 000.0 BA ILHEUS                                             DIREITO                       
-00343347 000.0 SP SAO PAULO                                          DIREITO                       
-00256722 000.0 BA ILHEUS                                             DIREITO                       
-00148888 000.0 SP SAO PAULO                                          DIREITO                       
-00063175 000.0 PR SAO JOSE DOS PINHAIS                               PEDAGOGIA                     
-00178164 000.0 SC ITAJAI                                             LETRAS                        
-00202081 000.0 BA ILHEUS                                             DIREITO                       
-00422812 000.0 SC ITAJAI                                             LETRAS                        
-00226413 000.0 BA ILHEUS                                             DIREITO                       
-00129034 000.0 BA ILHEUS                                             DIREITO                       
-00012556 000.0 SC ITAJAI                                             LETRAS                        
-00409882 000.0 BA ILHEUS                                             DIREITO                       
-00022973 000.0 BA ILHEUS                                             DIREITO                       
-00455551 000.0 MG ALFENAS                                            DIREITO                       
-00209495 000.0 SC ITAJAI                                             LETRAS                        
-00296025 000.0 SP SAO PAULO                                          DIREITO                       
-00199883 000.0 RS PORTO ALEGRE                                       PEDAGOGIA                     
-00229061 000.0 RS PORTO ALEGRE                                       PEDAGOGIA                     
-00104658 000.0 SP SAO PAULO                                          DIREITO                       
-00183017 000.0 RS PORTO ALEGRE                                       PEDAGOGIA                     
-00153751 000.0 SC ITAJAI                                             LETRAS                        
-00151019 000.0 RS PORTO ALEGRE                                       PEDAGOGIA                     
-00154889 000.0 RS PORTO ALEGRE                                       PEDAGOGIA                     
-00047593 000.0 RS PORTO ALEGRE                                       PEDAGOGIA                     
-00057348 000.0 PR SAO JOSE DOS PINHAIS                               PEDAGOGIA                     
-00031690 000.0 SP SAO PAULO                                          DIREITO                       
-00332190 000.0 PR CURITIBA                                           PEDAGOGIA                     
-00433877 000.0 PR SAO JOSE DOS PINHAIS                               PEDAGOGIA                     
-00289843 000.0 PR CURITIBA                                           PEDAGOGIA                     
-00283821 000.0 RS PORTO ALEGRE                                       PEDAGOGIA                     
-00392661 000.0 PR CURITIBA                                           PEDAGOGIA                     
-00010134 000.0 RS PORTO ALEGRE                                       PEDAGOGIA                     
-00334401 000.0 MG UBERLANDIA                                         PEDAGOGIA                     
-00401301 000.0 SP SAO PAULO                                          DIREITO                       
-00264160 000.0 MG UBERLANDIA                                         PEDAGOGIA                     
-00352541 000.0 SP SAO PAULO                                          DIREITO                       
-00150623 000.0 MG UBERLANDIA                                         PEDAGOGIA                     
-00412790 000.0 MT CUIABA                                             ADMINISTRACAO                 
-00234532 000.0 MG UBERLANDIA                                         PEDAGOGIA                     
-00377151 000.0 SP GUARULHOS                                          GEOGRAFIA                     
-00128378 000.0 MG UBERLANDIA                                         PEDAGOGIA                     
-00265304 000.0 RS PELOTAS                                            PEDAGOGIA                     
-00194381 000.0 RS PELOTAS                                            PEDAGOGIA                     
-00246027 000.0 RS PELOTAS                                            PEDAGOGIA                     
-00145108 000.0 SP SAO PAULO                                          DIREITO                       
-00094718 000.0 RS PELOTAS                                            PEDAGOGIA                     
-00368544 000.0 SP GUARULHOS                                          GEOGRAFIA                     
-00071710 000.0 RS PELOTAS                                            PEDAGOGIA                     
-00045705 000.0 RS PELOTAS                                            PEDAGOGIA                     
-00022799 000.0 AL PENEDO                                             LETRAS                        
-00022799 000.0 AL PENEDO                                             LETRAS                        
+00031616 080.0 ES VITORIA                                            DIREITO                        
+00386502 080.0 MG VICOSA                                             AGRONOMIA                      
+00417525 080.0 MG UBERLANDIA                                         ODONTOLOGIA                    
+00030585 080.0 SP SAO MANUEL                                         PEDAGOGIA                      
+00445534 080.0 RJ DUQUE DE CAXIAS                                    PEDAGOGIA                      
+00149974 080.0 MA SAO LUIS                                           HISTORIA                       
+00243851 080.0 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00153559 080.0 RS RIO GRANDE                                         ENGENHARIA CIVIL               
+00287481 080.0 SP PIRACICABA                                         AGRONOMIA                      
+00013353 080.0 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00173561 080.0 RS RIO GRANDE                                         ENGENHARIA CIVIL               
+00172487 080.0 SP SANTOS                                             ADMINISTRACAO                  
+00431453 080.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00166826 080.0 GO GOIANIA                                            ODONTOLOGIA                    
+00118085 080.0 SP CAMPINAS                                           PEDAGOGIA                      
+00252983 080.0 SC BLUMENAU                                           ODONTOLOGIA                    
+00174854 080.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00280260 080.0 SP CAMPINAS                                           ENFERMAGEM                     
+00147473 080.0 RJ CAMPOS DOS GOYTACAZES                              ODONTOLOGIA                    
+00050683 080.0 SP SAO CAETANO DO SUL                                 ENGENHARIA MECANICA            
+00095829 080.0 MG BELO HORIZONTE                                     MEDICINA VETERINARIA           
+00044488 080.0 SC FLORIANOPOLIS                                      ODONTOLOGIA                    
+00084709 080.0 MG BELO HORIZONTE                                     FONOAUDIOLOGIA                 
+00285151 080.0 SP CAMPINAS                                           CIENCIAS BIOLOGICAS            
+00467247 080.0 ES VITORIA                                            ODONTOLOGIA                    
+00273213 080.0 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00382727 080.0 RS RIO GRANDE                                         ENGENHARIA CIVIL               
+00061867 080.0 SP SAO PAULO                                          ADMINISTRACAO                  
+00022707 080.0 SP SAO PAULO                                          MEDICINA VETERINARIA           
+00299010 080.0 SE SAO CRISTOVAO                                      ENGENHARIA CIVIL               
+00390073 080.0 RS PORTO ALEGRE                                       ODONTOLOGIA                    
+00353144 080.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00425333 080.0 SP RIO CLARO                                          GEOGRAFIA                      
+00153597 080.0 MG BELO HORIZONTE                                     FARMACIA                       
+00047239 080.0 MA SAO LUIS                                           PEDAGOGIA                      
+00153518 080.0 SP SAO PAULO                                          HISTORIA                       
+00246289 080.0 GO GOIANIA                                            ODONTOLOGIA                    
+00024671 080.0 ES VITORIA                                            ODONTOLOGIA                    
+00178743 080.0 SP PIRACICABA                                         ODONTOLOGIA                    
+00347475 080.0 SP SAO PAULO                                          PEDAGOGIA                      
+00433284 080.0 PR LONDRINA                                           MEDICINA VETERINARIA           
+00099837 080.0 RJ RIO DE JANEIRO                                     HISTORIA                       
+00248059 080.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00222949 080.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                      
+00075953 080.0 SP SAO PAULO                                          ODONTOLOGIA                    
+00071821 080.0 MG BELO HORIZONTE                                     PEDAGOGIA                      
+00041620 080.0 PR FRANCISCO BELTRAO                                  PEDAGOGIA                      
+00393960 080.0 RN NATAL                                              HISTORIA                       
+00254392 080.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00203148 080.0 MG BELO HORIZONTE                                     ODONTOLOGIA                    
+00282515 080.0 MT CUIABA                                             AGRONOMIA                      
+00321730 080.0 RS PELOTAS                                            ENFERMAGEM                     
+00178215 080.0 MG UBERLANDIA                                         ODONTOLOGIA                    
+00388832 080.0 RS PORTO ALEGRE                                       PEDAGOGIA                      
+00368434 080.0 SP SAO JOSE DOS CAMPOS                                ODONTOLOGIA                    
+00158610 080.0 MG BELO HORIZONTE                                     ENGENHARIA CIVIL               
+00361927 080.0 MG BELO HORIZONTE                                     ENGENHARIA CIVIL               
+00446578 080.0 SP ARARAQUARA                                         ODONTOLOGIA                    
+00099307 080.0 SC ITAJAI                                             ODONTOLOGIA                    
+00385175 080.0 SC JOINVILLE                                          ENGENHARIA ELETRICA            
+00188066 080.0 PR CURITIBA                                           ODONTOLOGIA                    
+00394162 080.0 GO GOIANIA                                            PEDAGOGIA                      
+00359427 080.0 CE FORTALEZA                                          ENGENHARIA MECANICA            
+00301163 080.0 RJ RESENDE                                            ENGENHARIA ELETRICA            
+00135107 080.0 SP SAO CARLOS                                         ENGENHARIA CIVIL               
+00257580 080.0 GO ANAPOLIS                                           HISTORIA                       
+00452498 080.0 RS PORTO ALEGRE                                       ENGENHARIA CIVIL               
+00457364 080.0 RS PASSO FUNDO                                        ODONTOLOGIA                    
+00287525 080.0 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00141742 080.0 SC JOINVILLE                                          ENGENHARIA ELETRICA            
+00226340 080.0 RJ RIO DE JANEIRO                                     HISTORIA                       
+00054423 080.0 RJ RIO DE JANEIRO                                     ODONTOLOGIA                    
+00425163 080.0 SP FRANCA                                             HISTORIA                       
+00004357 080.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00226133 080.0 PB JOAO PESSOA                                        HISTORIA                       
+00271824 080.0 PR LONDRINA                                           CIENCIAS BIOLOGICAS            
+00204105 080.0 MA SAO LUIS                                           HISTORIA                       
+00049185 080.0 SC BRUSQUE                                            HISTORIA                       
+00024263 080.0 RS SANTA MARIA                                        ODONTOLOGIA                    
+00113587 080.0 RJ RIO DE JANEIRO                                     ODONTOLOGIA                    
+00316000 080.0 PR LONDRINA                                           ENGENHARIA CIVIL               
+00205411 080.0 RS SANTA CRUZ DO SUL                                  ODONTOLOGIA                    
+00457097 080.0 BA SALVADOR                                           HISTORIA                       
+00265755 080.0 SP SAO CARLOS                                         ENGENHARIA CIVIL               
+00014085 080.0 PR CURITIBA                                           ODONTOLOGIA                    
+00060019 080.0 RN NATAL                                              ENFERMAGEM                     
+00408367 080.0 MG JUIZ DE FORA                                       ENGENHARIA CIVIL               
+00040952 080.0 MG MONTES CLAROS                                      ODONTOLOGIA                    
+00355788 080.0 SP ASSIS                                              CIENCIAS BIOLOGICAS            
+00426342 080.0 SP SAO PAULO                                          PEDAGOGIA                      
+00025445 080.0 RJ RIO DE JANEIRO                                     HISTORIA                       
+00306567 080.0 SP BOTUCATU                                           AGRONOMIA                      
+00023350 080.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00035269 080.0 SP SAO PAULO                                          ADMINISTRACAO                  
+00307090 080.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00404579 080.0 SP SAO JOSE DOS CAMPOS                                ODONTOLOGIA                    
+00302106 080.0 RJ RIO DE JANEIRO                                     ODONTOLOGIA                    
+00264755 080.1 SP SAO PAULO                                          ECONOMIA                       
+00221488 080.2 PI TERESINA                                           MEDICINA                       
+00455198 080.3 MG BELO HORIZONTE                                     DIREITO                        
+00251348 080.3 BA SALVADOR                                           DIREITO                        
+00190184 080.3 PR MARINGA                                            DIREITO                        
+00261640 080.3 PB JOAO PESSOA                                        DIREITO                        
+00147465 080.3 SC FLORIANOPOLIS                                      ADMINISTRACAO                  
+00040866 080.3 PR CURITIBA                                           ADMINISTRACAO                  
+00090480 080.3 RJ RIO DE JANEIRO                                     DIREITO                        
+00250899 080.3 SC FLORIANOPOLIS                                      MATEMATICA                     
+00355168 080.4 DF BRASILIA                                           ECONOMIA                       
+00258330 080.4 MG ALFENAS                                            MEDICINA                       
+00323634 080.5 SP SAO PAULO                                          ADMINISTRACAO                  
+00126104 080.5 PR LONDRINA                                           PEDAGOGIA                      
+00451027 080.5 RS CANOAS                                             PEDAGOGIA                      
+00127161 080.5 CE FORTALEZA                                          PEDAGOGIA                      
+00444524 080.5 SP SANTO ANDRE                                        PEDAGOGIA                      
+00446262 080.5 MG NOVA LIMA                                          DIREITO                        
+00136341 080.5 SP MOGI-GUACU                                         PEDAGOGIA                      
+00407644 080.5 DF BRASILIA                                           PEDAGOGIA                      
+00383589 080.5 MA SAO LUIS                                           PEDAGOGIA                      
+00274597 080.5 RS PORTO ALEGRE                                       PEDAGOGIA                      
+00111804 080.5 RS PORTO ALEGRE                                       PEDAGOGIA                      
+00066912 080.5 RJ RIO DE JANEIRO                                     MATEMATICA                     
+00057215 080.5 SP RIBEIRAO PRETO                                     ADMINISTRACAO                  
+00023175 080.5 RN NATAL                                              ADMINISTRACAO                  
+00051686 080.5 SP CAMPINAS                                           ADMINISTRACAO                  
+00052785 080.5 RO JI-PARANA                                          PEDAGOGIA                      
+00104534 080.5 RJ MACAE                                              PEDAGOGIA                      
+00100763 080.5 SP CAMPINAS                                           ENGENHARIA MECANICA            
+00246917 080.5 SP SAO PAULO                                          PEDAGOGIA                      
+00328204 080.5 PR GUARAPUAVA                                         PEDAGOGIA                      
+00368315 080.5 SP MIRASSOL                                           PEDAGOGIA                      
+00163365 080.5 ES CACHOEIRO DE ITAPEMIRIM                            PEDAGOGIA                      
+00271165 080.5 PR CURITIBA                                           ENGENHARIA MECANICA            
+00247543 080.5 PR CURITIBA                                           PEDAGOGIA                      
+00292167 080.5 SC PALHOCA                                            DIREITO                        
+00077962 080.5 SP SAO PAULO                                          ADMINISTRACAO                  
+00436243 080.5 SP SAO PAULO                                          ADMINISTRACAO                  
+00210642 080.5 BA SALVADOR                                           PEDAGOGIA                      
+00079517 080.5 SP SAO PAULO                                          MATEMATICA                     
+00373143 080.5 SC BRUSQUE                                            PEDAGOGIA                      
+00225151 080.5 MG UBERLANDIA                                         ADMINISTRACAO                  
+00357578 080.5 BA SALVADOR                                           ENGENHARIA MECANICA            
+00286333 080.6 PE RECIFE                                             ENGENHARIA ELETRICA            
+00443543 080.6 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00191886 080.6 SP SAO CARLOS                                         ENGENHARIA ELETRICA            
+00106530 080.6 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00031572 080.6 MT CUIABA                                             ENGENHARIA ELETRICA            
+00141467 080.6 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00094491 080.6 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00163307 080.6 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00406436 080.6 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00207753 080.6 MG UBERLANDIA                                         ENGENHARIA ELETRICA            
+00010957 080.6 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00115713 080.6 SP ILHA SOLTEIRA                                      ENGENHARIA ELETRICA            
+00133769 080.6 CE FORTALEZA                                          ENGENHARIA ELETRICA            
+00207133 080.6 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00091458 080.8 MG BELO HORIZONTE                                     ADMINISTRACAO                  
+00062655 080.8 SP SAO PAULO                                          DIREITO                        
+00234651 080.8 PE RECIFE                                             ADMINISTRACAO                  
+00316072 080.8 SP SAO PAULO                                          ADMINISTRACAO                  
+00410195 080.8 SP SAO PAULO                                          ADMINISTRACAO                  
+00044756 081.0 MG VICOSA                                             ENGENHARIA CIVIL               
+00052728 081.0 PR CURITIBA                                           ENGENHARIA CIVIL               
+00132094 081.0 RJ RIO DE JANEIRO                                     DIREITO                        
+00233641 081.0 AL MACEIO                                             ENGENHARIA CIVIL               
+00327080 081.0 SP SAO PAULO                                          FONOAUDIOLOGIA                 
+00248853 081.0 SC FLORIANOPOLIS                                      ENGENHARIA MECANICA            
+00032350 081.0 SC FLORIANOPOLIS                                      ENGENHARIA MECANICA            
+00009052 081.0 RS PELOTAS                                            JORNALISMO                     
+00193706 081.0 MG VICOSA                                             ENGENHARIA CIVIL               
+00367769 081.0 RJ RIO DE JANEIRO                                     ENGENHARIA MECANICA            
+00358113 081.0 RS CANOAS                                             PEDAGOGIA                      
+00038071 081.0 BA SALVADOR                                           JORNALISMO                     
+00189920 081.0 GO GOIANIA                                            ENGENHARIA CIVIL               
+00063203 081.0 SP SAO PAULO                                          ADMINISTRACAO                  
+00095553 081.0 BA FEIRA DE SANTANA                                   ENGENHARIA CIVIL               
+00301302 081.0 BA FEIRA DE SANTANA                                   MATEMATICA                     
+00463080 081.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00361060 081.0 SP SAO CARLOS                                         ENGENHARIA CIVIL               
+00377692 081.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00421523 081.0 RJ RIO DE JANEIRO                                     ENGENHARIA MECANICA            
+00392012 081.0 RJ RIO DE JANEIRO                                     ENGENHARIA MECANICA            
+00084892 081.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00411231 081.0 RN NATAL                                              DIREITO                        
+00451519 081.0 GO GOIANIA                                            ENGENHARIA CIVIL               
+00075776 081.0 SP CAMPINAS                                           PEDAGOGIA                      
+00428567 081.0 RS SANTA MARIA                                        ENGENHARIA CIVIL               
+00341390 081.0 ES VITORIA                                            ENGENHARIA CIVIL               
+00410389 081.0 PR CURITIBA                                           ENGENHARIA MECANICA            
+00131527 081.0 SP SAO PAULO                                          DIREITO                        
+00133080 081.0 PR CURITIBA                                           ENGENHARIA MECANICA            
+00435285 081.0 SC FLORIANOPOLIS                                      ENGENHARIA CIVIL               
+00393140 081.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00040717 081.0 BA SALVADOR                                           ENGENHARIA CIVIL               
+00197321 081.0 SP SAO CAETANO DO SUL                                 ENGENHARIA CIVIL               
+00182936 081.0 SP SAO PAULO                                          DIREITO                        
+00103027 081.3 MT CUIABA                                             ODONTOLOGIA                    
+00268353 081.3 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00411938 081.3 SP PIRACICABA                                         ODONTOLOGIA                    
+00337280 081.3 MA SAO LUIS                                           HISTORIA                       
+00161194 081.3 BA SALVADOR                                           HISTORIA                       
+00050822 081.3 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00104643 081.3 MG BELO HORIZONTE                                     ODONTOLOGIA                    
+00158753 081.3 SC JOINVILLE                                          ODONTOLOGIA                    
+00264624 081.3 PR CURITIBA                                           CIENCIAS BIOLOGICAS            
+00104766 081.3 RS PORTO ALEGRE                                       ODONTOLOGIA                    
+00123866 081.3 RS PORTO ALEGRE                                       ODONTOLOGIA                    
+00128959 081.3 GO GOIANIA                                            ODONTOLOGIA                    
+00145740 081.3 RJ NITEROI                                            ODONTOLOGIA                    
+00431405 081.3 MG BELO HORIZONTE                                     CIENCIAS BIOLOGICAS            
+00141162 081.3 SC FLORIANOPOLIS                                      HISTORIA                       
+00072692 081.3 MG BELO HORIZONTE                                     CIENCIAS BIOLOGICAS            
+00358461 081.3 BA SALVADOR                                           HISTORIA                       
+00029543 081.3 MG UBERLANDIA                                         ENGENHARIA ELETRICA            
+00211231 081.3 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00171612 081.3 MT CUIABA                                             ODONTOLOGIA                    
+00409621 081.3 PR CURITIBA                                           ENGENHARIA ELETRICA            
+00378301 081.3 SP SAO PAULO                                          ADMINISTRACAO                  
+00213974 081.3 MG MONTES CLAROS                                      ODONTOLOGIA                    
+00083813 081.3 PE CARUARU                                            ODONTOLOGIA                    
+00160959 081.3 MG BELO HORIZONTE                                     CIENCIAS BIOLOGICAS            
+00025349 081.3 PR CURITIBA                                           ADMINISTRACAO                  
+00098835 081.3 PR CURITIBA                                           ODONTOLOGIA                    
+00360864 081.3 SP SAO PAULO                                          ADMINISTRACAO                  
+00349303 081.3 MS CAMPO GRANDE                                       ODONTOLOGIA                    
+00280918 081.3 PR GUARAPUAVA                                         AGRONOMIA                      
+00420260 081.3 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00129487 081.3 DF BRASILIA                                           ENGENHARIA ELETRICA            
+00356176 081.3 DF BRASILIA                                           HISTORIA                       
+00452394 081.3 RS PORTO ALEGRE                                       HISTORIA                       
+00348719 081.3 BA SALVADOR                                           HISTORIA                       
+00347335 081.3 MG BELO HORIZONTE                                     ODONTOLOGIA                    
+00300418 081.3 SP SAO PAULO                                          ODONTOLOGIA                    
+00279419 081.3 DF BRASILIA                                           CIENCIAS BIOLOGICAS            
+00095293 081.3 RJ RIO DE JANEIRO                                     ODONTOLOGIA                    
+00039416 081.3 RS SANTA CRUZ DO SUL                                  ODONTOLOGIA                    
+00287067 081.3 PR CURITIBA                                           ADMINISTRACAO                  
+00226656 081.3 RJ SEROPEDICA                                         AGRONOMIA                      
+00047264 081.3 SP SAO PAULO                                          ODONTOLOGIA                    
+00207510 081.3 SP BOTUCATU                                           MEDICINA VETERINARIA           
+00350507 081.3 DF BRASILIA                                           ADMINISTRACAO                  
+00002467 081.3 SP JABOTICABAL                                        MEDICINA VETERINARIA           
+00196817 081.3 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00322679 081.3 ES VITORIA                                            ENGENHARIA ELETRICA            
+00304830 081.3 PR LONDRINA                                           ODONTOLOGIA                    
+00320959 081.3 MG UBERLANDIA                                         ENGENHARIA ELETRICA            
+00022189 081.3 SP RIO CLARO                                          CIENCIAS BIOLOGICAS            
+00263488 081.3 ES VITORIA                                            ENGENHARIA ELETRICA            
+00312356 081.3 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00116630 081.3 RS SANTA CRUZ DO SUL                                  ODONTOLOGIA                    
+00446168 081.3 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00465897 081.3 MG CORONEL FABRICIANO                                 CIENCIAS BIOLOGICAS            
+00231849 081.3 MT CUIABA                                             ODONTOLOGIA                    
+00333646 081.3 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00020592 081.3 SC FLORIANOPOLIS                                      ENGENHARIA ELETRICA            
+00105704 081.3 SP ARACATUBA                                          ODONTOLOGIA                    
+00258934 081.3 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00331833 081.3 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00196817 081.3 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00313838 081.3 MG MONTES CLAROS                                      ODONTOLOGIA                    
+00361546 081.3 CE FORTALEZA                                          HISTORIA                       
+00289182 081.3 RJ RIO DE JANEIRO                                     MATEMATICA                     
+00215231 081.3 RS PORTO ALEGRE                                       ODONTOLOGIA                    
+00101483 081.3 AM MANAUS                                             ENGENHARIA ELETRICA            
+00243044 081.4 SC FLORIANOPOLIS                                      ECONOMIA                       
+00336135 081.5 BA SALVADOR                                           PEDAGOGIA                      
+00469827 081.5 PR CURITIBA                                           ENGENHARIA MECANICA            
+00138232 081.5 SP RIBEIRAO PRETO                                     FONOAUDIOLOGIA                 
+00192690 081.5 SP GUARATINGUETA                                      ENGENHARIA MECANICA            
+00413764 081.5 RS PORTO ALEGRE                                       ADMINISTRACAO                  
+00290088 081.5 RS SAO LEOPOLDO                                       PEDAGOGIA                      
+00126442 081.5 RS CAXIAS DO SUL                                      PEDAGOGIA                      
+00104701 081.5 ES LINHARES                                           ADMINISTRACAO                  
+00181415 081.5 SP CAMPINAS                                           PEDAGOGIA                      
+00410741 081.5 PR CAMPO MOURAO                                       PEDAGOGIA                      
+00446713 081.5 AL SANTANA DO IPANEMA                                 PEDAGOGIA                      
+00422992 081.5 PA BELEM                                              PEDAGOGIA                      
+00436487 081.5 MG BELO HORIZONTE                                     ENGENHARIA MECANICA            
+00251992 081.5 SP SAO PAULO                                          ADMINISTRACAO                  
+00469827 081.5 PR CURITIBA                                           ENGENHARIA MECANICA            
+00246884 081.5 MG BELO HORIZONTE                                     FONOAUDIOLOGIA                 
+00115975 081.5 SC FLORIANOPOLIS                                      GEOGRAFIA                      
+00034000 081.5 SP SAO CARLOS                                         ENGENHARIA QUIMICA             
+00392910 081.5 SP SAO PAULO                                          DIREITO                        
+00255323 081.8 SP SAO PAULO                                          ARQUITETURA E URBANISMO        
+00424534 081.8 MG BELO HORIZONTE                                     GEOGRAFIA                      
+00226388 081.8 MG BELO HORIZONTE                                     GEOGRAFIA                      
+00431532 081.8 RS PORTO ALEGRE                                       ADMINISTRACAO                  
+00464025 081.8 BA SALVADOR                                           ADMINISTRACAO                  
+00199152 081.9 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00460984 081.9 SP SAO CARLOS                                         ENGENHARIA ELETRICA            
+00467348 081.9 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00353895 081.9 RN NATAL                                              ENGENHARIA ELETRICA            
+00371943 081.9 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00321538 081.9 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00148472 081.9 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00432718 081.9 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00431260 081.9 RN NATAL                                              ENGENHARIA ELETRICA            
+00264182 082.0 MG BELO HORIZONTE                                     ENGENHARIA CIVIL               
+00319144 082.0 AM MANAUS                                             PEDAGOGIA                      
+00026963 082.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00082249 082.0 SP SAO PAULO                                          JORNALISMO                     
+00207651 082.0 SP SAO PAULO                                          ENGENHARIA MECANICA            
+00259807 082.0 MS CAMPO GRANDE                                       ENGENHARIA CIVIL               
+00350661 082.0 RS PORTO ALEGRE                                       ADMINISTRACAO                  
+00394029 082.0 MG BELO HORIZONTE                                     PEDAGOGIA                      
+00319982 082.0 RS PORTO ALEGRE                                       PEDAGOGIA                      
+00340173 082.0 RS PORTO ALEGRE                                       PEDAGOGIA                      
+00272468 082.0 PR JANDAIA DO SUL                                     PEDAGOGIA                      
+00315504 082.0 SP SANTO ANDRE                                        PEDAGOGIA                      
+00108295 082.0 RJ RIO DE JANEIRO                                     LETRAS                         
+00211798 082.0 GO GOIANIA                                            ENGENHARIA CIVIL               
+00061263 082.0 PR LONDRINA                                           ENGENHARIA CIVIL               
+00014839 082.0 PE RECIFE                                             PEDAGOGIA                      
+00060464 082.0 BA CAMACARI                                           PEDAGOGIA                      
+00453747 082.0 MG JUIZ DE FORA                                       ENGENHARIA CIVIL               
+00267573 082.0 MG BELO HORIZONTE                                     MATEMATICA                     
+00229741 082.0 RS PORTO ALEGRE                                       ENGENHARIA CIVIL               
+00216463 082.0 CE FORTALEZA                                          PEDAGOGIA                      
+00152238 082.0 DF BRASILIA                                           PEDAGOGIA                      
+00355896 082.0 PR CIANORTE                                           LETRAS                         
+00133807 082.0 RS PORTO ALEGRE                                       PEDAGOGIA                      
+00021506 082.0 SP SAO PAULO                                          PEDAGOGIA                      
+00338453 082.0 PR CURITIBA                                           PEDAGOGIA                      
+00418624 082.0 RJ PETROPOLIS                                         PEDAGOGIA                      
+00442111 082.0 PR LONDRINA                                           ENGENHARIA CIVIL               
+00234297 082.0 SP PAULINIA                                           PEDAGOGIA                      
+00179808 082.0 RS PORTO ALEGRE                                       ENGENHARIA CIVIL               
+00196472 082.0 SP SAO PAULO                                          ADMINISTRACAO                  
+00124965 082.0 PE RECIFE                                             ENGENHARIA MECANICA            
+00315711 082.0 SP SAO PAULO                                          ENGENHARIA MECANICA            
+00459154 082.0 PR MARINGA                                            PEDAGOGIA                      
+00257730 082.0 AL MACEIO                                             PEDAGOGIA                      
+00126889 082.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                      
+00362418 082.0 RJ BARRA MANSA                                        PEDAGOGIA                      
+00123315 082.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00102935 082.3 PE RECIFE                                             MATEMATICA                     
+00235139 082.3 SC FLORIANOPOLIS                                      ADMINISTRACAO                  
+00253729 082.3 PE RECIFE                                             ADMINISTRACAO                  
+00384310 082.3 BA SALVADOR                                           ADMINISTRACAO                  
+00200349 082.5 SP PIRACICABA                                         AGRONOMIA                      
+00466060 082.5 MG VICOSA                                             AGRONOMIA                      
+00071306 082.5 RS PORTO ALEGRE                                       ADMINISTRACAO                  
+00317162 082.5 MS CAMPO GRANDE                                       ODONTOLOGIA                    
+00232119 082.5 SC FLORIANOPOLIS                                      ENGENHARIA ELETRICA            
+00207081 082.5 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00392853 082.5 SP MIRANDOPOLIS                                       PEDAGOGIA                      
+00054188 082.5 GO GOIANIA                                            ODONTOLOGIA                    
+00169527 082.5 MG BELO HORIZONTE                                     HISTORIA                       
+00443458 082.5 SP CAMPINAS                                           HISTORIA                       
+00197652 082.5 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00148806 082.5 PR CURITIBA                                           ODONTOLOGIA                    
+00101626 082.5 MS CAMPO GRANDE                                       ODONTOLOGIA                    
+00241494 082.5 ES VITORIA                                            ENGENHARIA ELETRICA            
+00370409 082.5 MG LAVRAS                                             AGRONOMIA                      
+00348970 082.5 RJ RIO DE JANEIRO                                     ENGENHARIA MECANICA            
+00401641 082.5 RS CAPAO DO LEAO                                      MEDICINA VETERINARIA           
+00218583 082.5 RS CANELA                                             HISTORIA                       
+00347930 082.5 RS PORTO ALEGRE                                       ODONTOLOGIA                    
+00432415 082.5 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00252750 082.5 SC FLORIANOPOLIS                                      ENGENHARIA ELETRICA            
+00116100 082.5 BA SALVADOR                                           CIENCIAS BIOLOGICAS            
+00091891 082.5 PR CURITIBA                                           ADMINISTRACAO                  
+00293955 082.5 RS PORTO ALEGRE                                       HISTORIA                       
+00039625 082.5 PR MARINGA                                            ODONTOLOGIA                    
+00258511 082.5 MA SAO LUIS                                           HISTORIA                       
+00423222 082.5 BA SALVADOR                                           ENGENHARIA ELETRICA            
+00156850 082.5 PR LONDRINA                                           ODONTOLOGIA                    
+00086577 082.5 RJ RIO DE JANEIRO                                     MATEMATICA                     
+00417050 082.5 RJ RIO DE JANEIRO                                     ARQUITETURA E URBANISMO        
+00383084 082.5 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00058426 082.5 MG BELO HORIZONTE                                     CIENCIAS BIOLOGICAS            
+00225762 082.5 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00199941 082.5 RS SANTA MARIA                                        ODONTOLOGIA                    
+00409043 082.5 RS PORTO ALEGRE                                       ENGENHARIA MECANICA            
+00440639 082.5 RS PORTO ALEGRE                                       ADMINISTRACAO                  
+00440925 082.5 PR CURITIBA                                           FISICA                         
+00427321 082.5 SP RIBEIRAO PRETO                                     ENFERMAGEM                     
+00205289 082.5 SP SAO PAULO                                          DIREITO                        
+00113138 082.5 BA SALVADOR                                           ODONTOLOGIA                    
+00108334 082.5 RS PASSO FUNDO                                        ODONTOLOGIA                    
+00410863 082.5 RS SANTA MARIA                                        ADMINISTRACAO                  
+00269869 082.5 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00268281 082.5 RS SANTA MARIA                                        HISTORIA                       
+00470779 082.5 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00368569 082.5 RJ RIO DE JANEIRO                                     CIENCIAS BIOLOGICAS            
+00204288 082.5 ES VITORIA                                            ODONTOLOGIA                    
+00100998 082.5 MG ITAJUBA                                            ENGENHARIA ELETRICA            
+00025580 082.5 RS PORTO ALEGRE                                       HISTORIA                       
+00235427 082.5 SP SAO PAULO                                          DIREITO                        
+00370986 082.5 MG VICOSA                                             AGRONOMIA                      
+00083771 082.5 SP PIRACICABA                                         ODONTOLOGIA                    
+00233299 082.5 RS PORTO ALEGRE                                       ODONTOLOGIA                    
+00368925 082.5 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00065125 082.5 RS SAO LEOPOLDO                                       HISTORIA                       
+00291994 082.5 PR PALOTINA                                           MEDICINA VETERINARIA           
+00403252 082.5 RS SANTA CRUZ DO SUL                                  ODONTOLOGIA                    
+00103186 082.5 BA SALVADOR                                           HISTORIA                       
+00294136 082.5 RJ RIO DE JANEIRO                                     ENGENHARIA MECANICA            
+00264116 082.5 PB JOAO PESSOA                                        HISTORIA                       
+00269391 082.5 MG BELO HORIZONTE                                     ENGENHARIA MECANICA            
+00024632 082.5 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00389817 082.5 SP SAO PAULO                                          ODONTOLOGIA                    
+00004349 082.5 MG UBERLANDIA                                         ENGENHARIA MECANICA            
+00301343 082.7 RS PORTO ALEGRE                                       ECONOMIA                       
+00105439 082.8 SP SAO PAULO                                          ADMINISTRACAO                  
+00424768 082.8 RJ RIO DE JANEIRO                                     MATEMATICA                     
+00317318 082.8 SP SAO PAULO                                          ADMINISTRACAO                  
+00365396 083.0 RS SANTO ANGELO                                       PEDAGOGIA                      
+00160624 083.0 PR CURITIBA                                           ENGENHARIA CIVIL               
+00311171 083.0 SC BLUMENAU                                           ADMINISTRACAO                  
+00452045 083.0 MG VICOSA                                             ENGENHARIA CIVIL               
+00043644 083.0 MG BELO HORIZONTE                                     ADMINISTRACAO                  
+00260688 083.0 RS GUAPORE                                            PEDAGOGIA                      
+00347303 083.0 SP SAO PAULO                                          PEDAGOGIA                      
+00245306 083.0 AL MACEIO                                             ENGENHARIA CIVIL               
+00299673 083.0 MG OURO PRETO                                         ENGENHARIA CIVIL               
+00178755 083.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00446575 083.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00457456 083.0 CE FORTALEZA                                          ENGENHARIA CIVIL               
+00215387 083.0 RS PORTO ALEGRE                                       ENGENHARIA CIVIL               
+00081125 083.0 DF BRASILIA                                           PEDAGOGIA                      
+00235641 083.0 PR CURITIBA                                           ENGENHARIA CIVIL               
+00357698 083.0 RS PORTO ALEGRE                                       ENGENHARIA CIVIL               
+00169255 083.0 SP CAMPINAS                                           ENGENHARIA CIVIL               
+00095032 083.0 CE FORTALEZA                                          ENGENHARIA CIVIL               
+00333512 083.0 MG BELO HORIZONTE                                     ENGENHARIA CIVIL               
+00166752 083.0 SP MIRASSOL                                           PEDAGOGIA                      
+00356834 083.0 SP SAO PAULO                                          MATEMATICA                     
+00190730 083.0 SE SAO CRISTOVAO                                      PEDAGOGIA                      
+00418916 083.0 SP SAO CAETANO DO SUL                                 ENGENHARIA CIVIL               
+00152429 083.0 MG BELO HORIZONTE                                     FONOAUDIOLOGIA                 
+00076356 083.1 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00181291 083.1 SP SAO BERNARDO DO CAMPO                              ENGENHARIA ELETRICA            
+00122672 083.1 SP GUARATINGUETA                                      ENGENHARIA ELETRICA            
+00210505 083.1 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00032173 083.1 AM MANAUS                                             ENGENHARIA ELETRICA            
+00065512 083.1 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00236096 083.1 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00435865 083.1 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00362978 083.1 PE RECIFE                                             ENGENHARIA ELETRICA            
+00137825 083.1 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00387986 083.3 RS PORTO ALEGRE                                       MATEMATICA                     
+00359262 083.3 SP SAO PAULO                                          ADMINISTRACAO                  
+00094529 083.3 SP CAMPINAS                                           ADMINISTRACAO                  
+00259545 083.3 RJ RIO DE JANEIRO                                     DIREITO                        
+00221704 083.5 RJ RIO DE JANEIRO                                     FONOAUDIOLOGIA                 
+00223728 083.5 SP SAO JOSE DO RIO PRETO                              MATEMATICA                     
+00249008 083.5 MG ALMENARA                                           PEDAGOGIA                      
+00164326 083.5 RS CANOAS                                             PEDAGOGIA                      
+00363570 083.5 DF BRASILIA                                           PEDAGOGIA                      
+00043863 083.5 RN NATAL                                              PEDAGOGIA                      
+00132662 083.5 SP SANTO ANDRE                                        PEDAGOGIA                      
+00448883 083.5 SP PIRACICABA                                         MATEMATICA                     
+00185916 083.5 SP CAMPINAS                                           PEDAGOGIA                      
+00459596 083.5 RJ RIO DE JANEIRO                                     PEDAGOGIA                      
+00426084 083.5 SP SANTO ANDRE                                        PEDAGOGIA                      
+00018127 083.5 SC FLORIANOPOLIS                                      ENGENHARIA MECANICA            
+00392293 083.5 MT DIAMANTINO                                         PEDAGOGIA                      
+00262564 083.5 PR CURITIBA                                           ENGENHARIA MECANICA            
+00170594 083.5 MG BELO HORIZONTE                                     PEDAGOGIA                      
+00019667 083.5 DF BRASILIA                                           ENGENHARIA CIVIL               
+00426549 083.5 RS PORTO ALEGRE                                       ENGENHARIA MECANICA            
+00340466 083.5 RJ RIO DE JANEIRO                                     PEDAGOGIA                      
+00259909 083.5 ES VITORIA                                            PEDAGOGIA                      
+00004451 083.5 PR CURITIBA                                           PEDAGOGIA                      
+00335141 083.5 SC JOINVILLE                                          ENGENHARIA MECANICA            
+00404850 083.5 RS SANTA MARIA                                        ADMINISTRACAO                  
+00123658 083.5 RS BENTO GONCALVES                                    PEDAGOGIA                      
+00126103 083.5 RS NOVA PRATA                                         PEDAGOGIA                      
+00101399 083.5 SP SAO PAULO                                          ENGENHARIA MECANICA            
+00117902 083.5 SP SAO JOSE DOS CAMPOS                                ENGENHARIA MECANICA            
+00198783 083.5 PR CURITIBA                                           ENGENHARIA QUIMICA             
+00305978 083.5 RS PORTO ALEGRE                                       PEDAGOGIA                      
+00259608 083.5 SP CAMPINAS                                           PEDAGOGIA                      
+00378792 083.5 MG BELO HORIZONTE                                     FONOAUDIOLOGIA                 
+00324415 083.5 RS NOVO HAMBURGO                                      PEDAGOGIA                      
+00120196 083.5 SP SAO PAULO                                          ADMINISTRACAO                  
+00308554 083.5 DF BRASILIA                                           ENGENHARIA MECANICA            
+00358104 083.5 SE SAO CRISTOVAO                                      PEDAGOGIA                      
+00101788 083.8 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00146926 083.8 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00327509 083.8 MG UBERLANDIA                                         ODONTOLOGIA                    
+00122411 083.8 MG BELO HORIZONTE                                     ODONTOLOGIA                    
+00449689 083.8 PR CURITIBA                                           ENGENHARIA ELETRICA            
+00448289 083.8 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00138591 083.8 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00332028 083.8 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00385784 083.8 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00235590 083.8 SC FLORIANOPOLIS                                      ENGENHARIA ELETRICA            
+00198673 083.8 BA SALVADOR                                           ODONTOLOGIA                    
+00455545 083.8 RJ RIO DE JANEIRO                                     ODONTOLOGIA                    
+00114614 083.8 RJ SAO GONCALO                                        HISTORIA                       
+00066042 083.8 SP SAO PAULO                                          MEDICINA VETERINARIA           
+00114779 083.8 SP SAO PAULO                                          ADMINISTRACAO                  
+00342601 083.8 RJ RIO DE JANEIRO                                     ODONTOLOGIA                    
+00249100 083.8 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00000154 083.8 PE RECIFE                                             ENGENHARIA ELETRICA            
+00321642 083.8 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00267343 083.8 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00001578 083.8 SP SAO JOSE DOS CAMPOS                                ODONTOLOGIA                    
+00005205 083.8 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00030062 083.8 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00331820 083.8 MG BELO HORIZONTE                                     MATEMATICA                     
+00074565 083.8 SC FLORIANOPOLIS                                      ODONTOLOGIA                    
+00272325 083.8 SP PIRACICABA                                         AGRONOMIA                      
+00432817 083.8 SP SAO PAULO                                          HISTORIA                       
+00287284 083.8 SC BLUMENAU                                           ODONTOLOGIA                    
+00227337 083.8 SP SAO PAULO                                          ODONTOLOGIA                    
+00009267 083.8 RS PORTO ALEGRE                                       ODONTOLOGIA                    
+00025871 083.8 MG BELO HORIZONTE                                     ODONTOLOGIA                    
+00350514 083.9 RJ RIO DE JANEIRO                                     ECONOMIA                       
+00459456 084.0 RS PORTO ALEGRE                                       ENGENHARIA CIVIL               
+00357206 084.0 RN NATAL                                              ENGENHARIA CIVIL               
+00076276 084.0 SP SAO PAULO                                          ENGENHARIA MECANICA            
+00266992 084.0 RS PORTO ALEGRE                                       ENGENHARIA CIVIL               
+00339515 084.0 PR PONTA GROSSA                                       ENGENHARIA CIVIL               
+00384238 084.0 PE RECIFE                                             ENGENHARIA CIVIL               
+00086841 084.0 RJ RIO DE JANEIRO                                     QUIMICA                        
+00252568 084.0 SP CAMPINAS                                           ENGENHARIA CIVIL               
+00124371 084.0 MG BELO HORIZONTE                                     ENGENHARIA CIVIL               
+00043955 084.0 SP CAMPINAS                                           ENGENHARIA CIVIL               
+00029196 084.0 RS PORTO ALEGRE                                       ENGENHARIA MECANICA            
+00042053 084.0 RJ RIO DE JANEIRO                                     ENGENHARIA MECANICA            
+00376327 084.0 PR CURITIBA                                           ENGENHARIA CIVIL               
+00158738 084.0 RJ RIO DE JANEIRO                                     PEDAGOGIA                      
+00338457 084.0 SP SAO PAULO                                          PEDAGOGIA                      
+00032875 084.0 MG BELO HORIZONTE                                     GEOGRAFIA                      
+00017744 084.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00368482 084.0 SP SAO CARLOS                                         ENGENHARIA MECANICA            
+00032644 084.0 BA SALVADOR                                           ENGENHARIA CIVIL               
+00318099 084.1 RS PORTO ALEGRE                                       FISICA                         
+00088968 084.3 RS PORTO ALEGRE                                       ADMINISTRACAO                  
+00082780 084.3 PR LONDRINA                                           ADMINISTRACAO                  
+00385147 084.3 SC FLORIANOPOLIS                                      ADMINISTRACAO                  
+00157257 084.4 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00399839 084.4 PR CURITIBA                                           ENGENHARIA ELETRICA            
+00063061 084.4 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00238971 084.4 PE RECIFE                                             ENGENHARIA ELETRICA            
+00069648 084.4 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00290282 084.4 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00281924 084.4 RS SANTA MARIA                                        ENGENHARIA ELETRICA            
+00134097 084.4 PE RECIFE                                             ENGENHARIA ELETRICA            
+00290707 084.4 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00250039 084.4 PE RECIFE                                             ENGENHARIA ELETRICA            
+00232523 084.4 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00050964 084.4 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00327115 084.4 ES VITORIA                                            ENGENHARIA ELETRICA            
+00051931 084.4 MG UBERLANDIA                                         ENGENHARIA ELETRICA            
+00048443 084.4 MG JUIZ DE FORA                                       ENGENHARIA ELETRICA            
+00349055 084.4 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00018307 084.4 MG SANTA RITA DO SAPUCAI                              ENGENHARIA ELETRICA            
+00164978 084.4 AM MANAUS                                             ENGENHARIA ELETRICA            
+00303485 084.4 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00406536 084.5 PE RECIFE                                             PEDAGOGIA                      
+00282231 084.5 SP TAUBATE                                            PEDAGOGIA                      
+00158908 084.5 SP RIBEIRAO PRETO                                     ECONOMIA                       
+00339105 084.5 SP SAO CARLOS                                         ENGENHARIA MECANICA            
+00312696 084.5 SC FLORIANOPOLIS                                      DIREITO                        
+00199963 084.5 SP SAO PAULO                                          ENGENHARIA MECANICA            
+00308337 084.5 SC FLORIANOPOLIS                                      ENGENHARIA MECANICA            
+00339344 084.5 SC FLORIANOPOLIS                                      ENGENHARIA MECANICA            
+00365709 084.5 SC FLORIANOPOLIS                                      ENGENHARIA MECANICA            
+00326657 084.5 PR LONDRINA                                           MATEMATICA                     
+00268974 084.5 MG OURO PRETO                                         MATEMATICA                     
+00141389 084.5 SP SANTOS                                             PEDAGOGIA                      
+00053632 084.5 SC FLORIANOPOLIS                                      ENGENHARIA MECANICA            
+00187590 084.8 RJ RIO DE JANEIRO                                     DIREITO                        
+00050840 084.8 RJ NITEROI                                            MATEMATICA                     
+00187268 084.8 SC FLORIANOPOLIS                                      ADMINISTRACAO                  
+00135819 085.0 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00398674 085.0 RS PORTO ALEGRE                                       PEDAGOGIA                      
+00191387 085.0 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00008554 085.0 PR CURITIBA                                           ENGENHARIA CIVIL               
+00065290 085.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00409676 085.0 DF BRASILIA                                           ENGENHARIA ELETRICA            
+00097044 085.0 CE FORTALEZA                                          HISTORIA                       
+00097562 085.0 PR CURITIBA                                           ODONTOLOGIA                    
+00123405 085.0 SP SAO BERNARDO DO CAMPO                              ENGENHARIA ELETRICA            
+00054918 085.0 SP SAO PAULO                                          CIENCIAS BIOLOGICAS            
+00343804 085.0 RS PORTO ALEGRE                                       HISTORIA                       
+00329862 085.0 SP SAO CARLOS                                         ENGENHARIA CIVIL               
+00121199 085.0 DF BRASILIA                                           ENGENHARIA ELETRICA            
+00381601 085.0 SC BLUMENAU                                           ODONTOLOGIA                    
+00354733 085.0 RN NATAL                                              HISTORIA                       
+00096788 085.0 PR CURITIBA                                           ENGENHARIA ELETRICA            
+00422752 085.0 RJ RIO DE JANEIRO                                     ENGENHARIA MECANICA            
+00286913 085.0 ES VITORIA                                            ENGENHARIA ELETRICA            
+00434952 085.0 RS PORTO ALEGRE                                       PEDAGOGIA                      
+00330358 085.0 RJ RIO DE JANEIRO                                     ENGENHARIA MECANICA            
+00066059 085.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00406014 085.0 RS PORTO ALEGRE                                       HISTORIA                       
+00043440 085.0 SP BAURU                                              PEDAGOGIA                      
+00418101 085.0 SP ILHA SOLTEIRA                                      ENGENHARIA ELETRICA            
+00137763 085.0 SP PIRACICABA                                         AGRONOMIA                      
+00180159 085.0 MG JUIZ DE FORA                                       HISTORIA                       
+00290933 085.0 RS SANTA MARIA                                        ENGENHARIA CIVIL               
+00124082 085.0 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00461865 085.0 SC FLORIANOPOLIS                                      ENGENHARIA MECANICA            
+00300160 085.0 SP CAMPINAS                                           PEDAGOGIA                      
+00233990 085.0 RJ SAO GONCALO                                        HISTORIA                       
+00062125 085.0 RJ RIO DE JANEIRO                                     ENGENHARIA QUIMICA             
+00069647 085.0 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00131086 085.0 MG BELO HORIZONTE                                     HISTORIA                       
+00092089 085.0 SP MARILIA                                            PEDAGOGIA                      
+00155079 085.0 RN NATAL                                              ENGENHARIA CIVIL               
+00136485 085.0 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00420658 085.0 PB JOAO PESSOA                                        ENGENHARIA CIVIL               
+00436930 085.0 SP SAO CAETANO DO SUL                                 ENGENHARIA CIVIL               
+00422015 085.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00090186 085.0 MS CAMPO GRANDE                                       ODONTOLOGIA                    
+00000238 085.0 MG ALFENAS                                            ODONTOLOGIA                    
+00114326 085.0 RJ RIO DE JANEIRO                                     ADMINISTRACAO                  
+00232857 085.0 SC FLORIANOPOLIS                                      ENGENHARIA ELETRICA            
+00440220 085.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00162915 085.0 RS PORTO ALEGRE                                       HISTORIA                       
+00440675 085.0 GO GOIANIA                                            LETRAS                         
+00343246 085.0 MG BELO HORIZONTE                                     ENGENHARIA CIVIL               
+00091521 085.0 SP BAURU                                              ENGENHARIA ELETRICA            
+00047815 085.0 MG BELO HORIZONTE                                     ENGENHARIA CIVIL               
+00264651 085.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00303458 085.0 SP SAO JOSE DOS CAMPOS                                ENGENHARIA MECANICA            
+00039023 085.0 SC BLUMENAU                                           ENGENHARIA CIVIL               
+00402018 085.0 MG BELO HORIZONTE                                     FISICA                         
+00029571 085.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00087243 085.0 PE RECIFE                                             PEDAGOGIA                      
+00177162 085.0 PR PONTA GROSSA                                       ODONTOLOGIA                    
+00062532 085.0 RS PORTO ALEGRE                                       HISTORIA                       
+00200731 085.0 MG DIAMANTINA                                         HISTORIA                       
+00330108 085.0 RS PORTO ALEGRE                                       ENGENHARIA CIVIL               
+00056366 085.0 SP SAO CARLOS                                         MATEMATICA                     
+00323572 085.0 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00000063 085.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00248774 085.0 MG OURO PRETO                                         ENGENHARIA CIVIL               
+00030895 085.0 CE FORTALEZA                                          ENGENHARIA ELETRICA            
+00218554 085.0 RJ RIO DE JANEIRO                                     HISTORIA                       
+00454850 085.0 RJ RIO DE JANEIRO                                     ENFERMAGEM                     
+00013403 085.0 DF BRASILIA                                           ODONTOLOGIA                    
+00304951 085.0 ES VITORIA                                            ENGENHARIA ELETRICA            
+00329212 085.0 RS SAO LEOPOLDO                                       HISTORIA                       
+00090815 085.0 RJ RIO DE JANEIRO                                     HISTORIA                       
+00379745 085.0 SP CAMPINAS                                           CIENCIAS BIOLOGICAS            
+00379500 085.0 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00244664 085.0 GO GOIANIA                                            AGRONOMIA                      
+00079981 085.3 SP SAO PAULO                                          GEOGRAFIA                      
+00313061 085.6 SP SAO CAETANO DO SUL                                 ENGENHARIA ELETRICA            
+00262358 085.6 SP SAO CAETANO DO SUL                                 ENGENHARIA ELETRICA            
+00353445 085.6 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00111621 085.6 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00365611 085.6 PR CURITIBA                                           ENGENHARIA ELETRICA            
+00468390 085.6 PE RECIFE                                             ENGENHARIA ELETRICA            
+00111621 085.6 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00189033 085.6 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00255203 086.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00426782 086.0 AP MACAPA                                             PEDAGOGIA                      
+00163662 086.0 SE SAO CRISTOVAO                                      ENGENHARIA CIVIL               
+00358010 086.0 RS IJUI                                               PEDAGOGIA                      
+00255933 086.0 SP SAO PAULO                                          ENGENHARIA MECANICA            
+00222462 086.0 RS PORTO ALEGRE                                       ENGENHARIA CIVIL               
+00416790 086.0 RJ RIO DE JANEIRO                                     ENGENHARIA MECANICA            
+00094464 086.0 RJ ITAPERUNA                                          LETRAS                         
+00143773 086.0 GO GOIANIA                                            ENGENHARIA CIVIL               
+00076240 086.0 PE RECIFE                                             ENGENHARIA CIVIL               
+00013108 086.0 CE FORTALEZA                                          FISICA                         
+00135374 086.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00017748 086.0 SP SAO CAETANO DO SUL                                 ENGENHARIA CIVIL               
+00403987 086.0 PR MARINGA                                            ENGENHARIA CIVIL               
+00141677 086.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00018402 086.0 SP SAO CARLOS                                         ENGENHARIA MECANICA            
+00174331 086.0 SP SAO PAULO                                          ADMINISTRACAO                  
+00319745 086.3 RJ RIO DE JANEIRO                                     HISTORIA                       
+00352858 086.3 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00438205 086.3 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00097515 086.3 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00169165 086.3 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00351879 086.3 PE CARUARU                                            ODONTOLOGIA                    
+00413400 086.3 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00104397 086.3 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00022378 086.3 SP SAO PAULO                                          ODONTOLOGIA                    
+00384160 086.3 SP BAURU                                              ENGENHARIA ELETRICA            
+00353064 086.3 RS PORTO ALEGRE                                       HISTORIA                       
+00008875 086.3 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00298916 086.3 MG MONTES CLAROS                                      ODONTOLOGIA                    
+00147796 086.3 SP SAO PAULO                                          HISTORIA                       
+00465523 086.3 RS SANTA MARIA                                        ENGENHARIA ELETRICA            
+00042184 086.3 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00100669 086.3 RN NATAL                                              HISTORIA                       
+00446944 086.3 PR CURITIBA                                           ENGENHARIA ELETRICA            
+00354080 086.3 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00099970 086.3 PR LONDRINA                                           CIENCIAS BIOLOGICAS            
+00317108 086.3 CE FORTALEZA                                          ENGENHARIA ELETRICA            
+00006782 086.5 PR MARINGA                                            ENGENHARIA CIVIL               
+00373805 086.5 RS GUAPORE                                            PEDAGOGIA                      
+00261925 086.5 PE RECIFE                                             PEDAGOGIA                      
+00024004 086.5 SP AMPARO                                             PEDAGOGIA                      
+00116854 086.5 SP GUARULHOS                                          PEDAGOGIA                      
+00117253 086.8 SP SAO PAULO                                          DIREITO                        
+00443185 086.8 AL MACEIO                                             MATEMATICA                     
+00203540 086.9 CE FORTALEZA                                          ENGENHARIA ELETRICA            
+00378305 086.9 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00124289 086.9 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00378380 087.0 GO GOIANIA                                            ENGENHARIA CIVIL               
+00341116 087.0 SC FLORIANOPOLIS                                      ENGENHARIA CIVIL               
+00208985 087.0 MG BELO HORIZONTE                                     ENGENHARIA CIVIL               
+00151505 087.0 SP SAO PAULO                                          ADMINISTRACAO                  
+00446684 087.0 SC FLORIANOPOLIS                                      ENGENHARIA MECANICA            
+00266522 087.0 PR CURITIBA                                           ENGENHARIA CIVIL               
+00005581 087.0 SP MOGI DAS CRUZES                                    ENGENHARIA CIVIL               
+00232582 087.0 SP ILHA SOLTEIRA                                      ENGENHARIA CIVIL               
+00075305 087.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00289908 087.0 SP SAO CARLOS                                         ENGENHARIA CIVIL               
+00000115 087.0 SC CHAPECO                                            ENGENHARIA CIVIL               
+00045027 087.0 SP SAO CARLOS                                         ENGENHARIA CIVIL               
+00439137 087.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00302036 087.0 SP CAMPINAS                                           LETRAS                         
+00354166 087.0 PE RECIFE                                             ENGENHARIA CIVIL               
+00342548 087.0 SP SAO PAULO                                          ENGENHARIA MECANICA            
+00274614 087.0 PR CURITIBA                                           ENGENHARIA MECANICA            
+00051370 087.3 RJ RIO DE JANEIRO                                     MATEMATICA                     
+00402044 087.5 RS PORTO ALEGRE                                       PEDAGOGIA                      
+00286458 087.5 SP SAO JOSE DO RIO PRETO                              ENGENHARIA ELETRICA            
+00162025 087.5 SP ILHA SOLTEIRA                                      ENGENHARIA ELETRICA            
+00191267 087.5 MS CAMPO GRANDE                                       ODONTOLOGIA                    
+00119117 087.5 SP ILHA SOLTEIRA                                      AGRONOMIA                      
+00104938 087.5 RJ RIO DE JANEIRO                                     HISTORIA                       
+00197820 087.5 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00368028 087.5 SP SAO CAETANO DO SUL                                 ENGENHARIA ELETRICA            
+00410444 087.5 SP MARILIA                                            ENFERMAGEM                     
+00034479 087.5 RS PORTO ALEGRE                                       HISTORIA                       
+00259929 087.5 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00090290 087.5 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00059298 087.5 RS CANOAS                                             ENGENHARIA ELETRICA            
+00465388 087.5 MG BELO HORIZONTE                                     HISTORIA                       
+00044356 087.5 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00418408 087.5 PR CASCAVEL                                           ODONTOLOGIA                    
+00320832 087.5 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00339910 087.5 SP SAO CAETANO DO SUL                                 ENGENHARIA ELETRICA            
+00404024 087.5 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00213275 087.5 SP PIRACICABA                                         AGRONOMIA                      
+00200274 087.5 PR CURITIBA                                           HISTORIA                       
+00142245 087.5 SP SAO BERNARDO DO CAMPO                              ENGENHARIA ELETRICA            
+00334047 087.5 RS PORTO ALEGRE                                       HISTORIA                       
+00050092 087.5 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00249599 087.5 CE FORTALEZA                                          ENGENHARIA ELETRICA            
+00023127 087.5 CE FORTALEZA                                          PEDAGOGIA                      
+00002408 088.0 PR CURITIBA                                           ENGENHARIA CIVIL               
+00141662 088.0 SP SAO PAULO                                          ECONOMIA                       
+00080421 088.0 PA BELEM                                              PEDAGOGIA                      
+00088997 088.0 MG VICOSA                                             ENGENHARIA CIVIL               
+00017980 088.0 CE FORTALEZA                                          ENGENHARIA CIVIL               
+00263837 088.0 SC FLORIANOPOLIS                                      ENGENHARIA CIVIL               
+00024739 088.0 RS PORTO ALEGRE                                       ENGENHARIA CIVIL               
+00093967 088.1 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00223535 088.1 MG ITAJUBA                                            ENGENHARIA ELETRICA            
+00349357 088.1 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00259015 088.1 BA SALVADOR                                           ENGENHARIA ELETRICA            
+00141741 088.1 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00374213 088.1 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00312349 088.1 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00470234 088.1 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00182497 088.1 PR CURITIBA                                           ENGENHARIA ELETRICA            
+00278187 088.5 SP SAO PAULO                                          ENGENHARIA MECANICA            
+00281203 088.5 RJ RIO DE JANEIRO                                     ENGENHARIA MECANICA            
+00115363 088.5 MG BELO HORIZONTE                                     ADMINISTRACAO                  
+00441064 088.8 PB CAMPINA GRANDE                                     HISTORIA                       
+00153031 088.8 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00316378 088.8 ES VITORIA                                            ENGENHARIA ELETRICA            
+00129597 088.8 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00142586 088.8 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00294517 088.8 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00123732 088.8 SP SAO PAULO                                          HISTORIA                       
+00322519 088.8 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00009561 088.8 SP SAO BERNARDO DO CAMPO                              ENGENHARIA ELETRICA            
+00046140 088.8 SP SAO PAULO                                          ODONTOLOGIA                    
+00412872 088.8 MS CAMPO GRANDE                                       ENGENHARIA ELETRICA            
+00275907 088.8 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00005749 088.8 PR CURITIBA                                           ENGENHARIA ELETRICA            
+00056792 088.8 RS SANTA MARIA                                        CIENCIAS BIOLOGICAS            
+00425971 088.8 RS SANTA MARIA                                        ENGENHARIA ELETRICA            
+00045327 089.0 MG BELO HORIZONTE                                     MATEMATICA                     
+00166364 089.0 SP BAURU                                              ENGENHARIA CIVIL               
+00045327 089.0 MG BELO HORIZONTE                                     MATEMATICA                     
+00350936 089.0 PB JOAO PESSOA                                        ENGENHARIA CIVIL               
+00092650 089.0 SC JOINVILLE                                          ENGENHARIA CIVIL               
+00070855 089.4 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00130388 089.4 PR CURITIBA                                           ENGENHARIA ELETRICA            
+00317292 089.4 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00055109 089.4 MG SANTA RITA DO SAPUCAI                              ENGENHARIA ELETRICA            
+00329285 089.4 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00407061 089.4 DF BRASILIA                                           ENGENHARIA ELETRICA            
+00255387 089.4 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00470169 089.5 CE FORTALEZA                                          PEDAGOGIA                      
+00269760 089.5 PA ALTAMIRA                                           PEDAGOGIA                      
+00282626 089.5 BA SALVADOR                                           PEDAGOGIA                      
+00096646 090.0 MG JUIZ DE FORA                                       ENGENHARIA CIVIL               
+00213243 090.0 PE RECIFE                                             ENGENHARIA ELETRICA            
+00354825 090.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00036261 090.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00412287 090.0 MG BELO HORIZONTE                                     ENGENHARIA MECANICA            
+00462301 090.0 PR CURITIBA                                           ENGENHARIA MECANICA            
+00039955 090.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00464587 090.0 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00305674 090.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00442319 090.0 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00200598 090.0 MS CAMPO GRANDE                                       ENGENHARIA CIVIL               
+00399178 090.0 SP SAO CARLOS                                         ENGENHARIA CIVIL               
+00106909 090.0 SP CAMPINAS                                           ENGENHARIA MECANICA            
+00054788 090.0 RS PORTO ALEGRE                                       HISTORIA                       
+00300910 090.0 PE RECIFE                                             ENGENHARIA ELETRICA            
+00036430 090.0 SP CAMPINAS                                           ENGENHARIA CIVIL               
+00021643 090.0 RN NATAL                                              ENGENHARIA CIVIL               
+00300316 090.0 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00233233 090.0 PR CURITIBA                                           HISTORIA                       
+00386375 090.0 MA SAO LUIS                                           HISTORIA                       
+00213243 090.0 PE RECIFE                                             ENGENHARIA ELETRICA            
+00073591 090.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00323297 090.0 MG BELO HORIZONTE                                     ENGENHARIA CIVIL               
+00280270 090.0 SP BAURU                                              ENGENHARIA ELETRICA            
+00288364 090.5 SC JOINVILLE                                          ENGENHARIA MECANICA            
+00307639 090.5 MG UBERLANDIA                                         GEOGRAFIA                      
+00071549 090.6 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00293093 090.6 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00240700 090.6 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00120411 090.6 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00269639 090.6 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00193114 090.6 BA SALVADOR                                           ENGENHARIA ELETRICA            
+00039348 090.6 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00114333 090.6 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00064616 090.8 MG OURO PRETO                                         MATEMATICA                     
+00242396 091.0 PE RECIFE                                             ENGENHARIA CIVIL               
+00204490 091.0 MG OURO PRETO                                         ENGENHARIA CIVIL               
+00100076 091.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00168821 091.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00096596 091.0 SC BLUMENAU                                           ENGENHARIA CIVIL               
+00005677 091.3 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00379754 091.3 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00219268 091.3 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00241607 091.3 RJ RIO DE JANEIRO                                     MATEMATICA                     
+00342067 091.3 SP SAO CARLOS                                         ENGENHARIA ELETRICA            
+00390842 091.3 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00117610 091.3 PE CARUARU                                            ODONTOLOGIA                    
+00140303 091.3 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00367840 091.3 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00069946 091.3 DF BRASILIA                                           ENGENHARIA ELETRICA            
+00117610 091.3 PE CARUARU                                            ODONTOLOGIA                    
+00158303 091.3 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00045931 091.5 RJ RIO DE JANEIRO                                     ENGENHARIA MECANICA            
+00446509 091.5 SP CAMPINAS                                           MATEMATICA                     
+00293742 091.5 SP SAO PAULO                                          ENGENHARIA MECANICA            
+00121474 091.9 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00013859 091.9 SP SAO CAETANO DO SUL                                 ENGENHARIA ELETRICA            
+00300968 091.9 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00073806 091.9 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00207249 091.9 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00361157 091.9 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00015547 091.9 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00222842 091.9 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00309337 091.9 MG SANTA RITA DO SAPUCAI                              ENGENHARIA ELETRICA            
+00436881 091.9 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00050060 091.9 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00366117 092.0 RJ RIO DE JANEIRO                                     MATEMATICA                     
+00298531 092.0 SC FLORIANOPOLIS                                      ENGENHARIA MECANICA            
+00152822 092.5 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00129522 092.5 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00155037 092.5 PE RECIFE                                             ENGENHARIA ELETRICA            
+00196501 092.5 ES VITORIA                                            ENGENHARIA ELETRICA            
+00025075 092.5 BA SALVADOR                                           ENGENHARIA ELETRICA            
+00450327 092.5 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00249137 092.5 RJ RIO DE JANEIRO                                     MATEMATICA                     
+00304622 092.5 ES VITORIA                                            ENGENHARIA ELETRICA            
+00450327 092.5 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00059470 092.5 MG JUIZ DE FORA                                       ENGENHARIA ELETRICA            
+00123070 092.7 RJ RIO DE JANEIRO                                     QUIMICA                        
+00438213 092.8 PR MARINGA                                            MATEMATICA                     
+00332320 093.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00197039 093.0 PR CURITIBA                                           ENGENHARIA CIVIL               
+00341399 093.0 SP CAMPINAS                                           ENGENHARIA CIVIL               
+00106220 093.0 SP SAO JOSE DOS CAMPOS                                ENGENHARIA CIVIL               
+00314078 093.0 RJ NITEROI                                            ENGENHARIA CIVIL               
+00170242 093.0 SP CAMPINAS                                           ENGENHARIA CIVIL               
+00403250 093.0 SP SAO PAULO                                          ENGENHARIA CIVIL               
+00466277 093.0 MG VICOSA                                             ENGENHARIA CIVIL               
+00232517 093.0 GO GOIANIA                                            ENGENHARIA CIVIL               
+00152903 093.0 ES VITORIA                                            ENGENHARIA CIVIL               
+00201758 093.0 RS PORTO ALEGRE                                       ENGENHARIA CIVIL               
+00392583 093.1 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00401178 093.1 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00075041 093.1 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00371836 093.3 RJ RIO DE JANEIRO                                     MATEMATICA                     
+00413599 093.8 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00047093 093.8 ES VITORIA                                            ENGENHARIA ELETRICA            
+00443602 093.8 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00328267 093.8 PR CURITIBA                                           ENGENHARIA ELETRICA            
+00397187 093.8 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00202236 093.8 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00143444 093.8 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00188638 093.8 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00082841 093.8 SC FLORIANOPOLIS                                      CIENCIAS BIOLOGICAS            
+00250324 093.8 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00194923 093.8 RS PORTO ALEGRE                                       HISTORIA                       
+00181121 093.8 SP SAO PAULO                                          HISTORIA                       
+00226724 093.8 PR CURITIBA                                           ENGENHARIA ELETRICA            
+00169498 093.8 RR BOA VISTA                                          HISTORIA                       
+00034617 093.8 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00338606 094.0 RJ RIO DE JANEIRO                                     ENGENHARIA CIVIL               
+00322027 094.0 SP BAURU                                              ENGENHARIA CIVIL               
+00238352 094.0 DF BRASILIA                                           ENGENHARIA CIVIL               
+00121216 094.0 MG BELO HORIZONTE                                     ENGENHARIA MECANICA            
+00232149 094.0 PR CASCAVEL                                           ENGENHARIA CIVIL               
+00177876 094.0 SE SAO CRISTOVAO                                      ENGENHARIA CIVIL               
+00439985 094.4 BA SALVADOR                                           ENGENHARIA ELETRICA            
+00056465 094.4 MG JUIZ DE FORA                                       ENGENHARIA ELETRICA            
+00097212 094.4 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00152687 094.4 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00084781 094.4 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00141172 094.8 RS PORTO ALEGRE                                       QUIMICA                        
+00080294 095.0 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00064532 095.0 SP PIRACICABA                                         HISTORIA                       
+00380272 095.0 RS PORTO ALEGRE                                       ENGENHARIA CIVIL               
+00424380 095.0 SP SAO PAULO                                          HISTORIA                       
+00203281 095.0 SP ILHA SOLTEIRA                                      ENGENHARIA ELETRICA            
+00071539 095.0 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00140783 095.0 ES VITORIA                                            ENGENHARIA ELETRICA            
+00259056 095.0 ES VITORIA                                            ENGENHARIA ELETRICA            
+00123990 095.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00164039 095.0 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00377348 095.0 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00228325 095.0 SP SAO PAULO                                          HISTORIA                       
+00053300 095.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00055169 095.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00324775 095.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00053300 095.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00423643 095.0 SP ILHA SOLTEIRA                                      ENGENHARIA ELETRICA            
+00242387 095.6 PR CURITIBA                                           ENGENHARIA ELETRICA            
+00183885 095.6 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00073686 095.6 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00083532 095.6 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00045315 096.0 MG BELO HORIZONTE                                     ENGENHARIA CIVIL               
+00035713 096.3 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00139899 096.3 SP SAO BERNARDO DO CAMPO                              ENGENHARIA ELETRICA            
+00367194 096.3 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00317134 096.3 SP SANTOS                                             HISTORIA                       
+00035713 096.3 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00029758 096.3 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00249947 096.3 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00048156 096.3 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00408386 096.3 CE FORTALEZA                                          HISTORIA                       
+00448537 096.3 DF BRASILIA                                           ENGENHARIA ELETRICA            
+00461735 096.3 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00347969 096.9 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00058332 096.9 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00387291 096.9 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00361916 096.9 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00307849 096.9 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00043395 096.9 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00235008 096.9 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00408589 096.9 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00130651 096.9 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00337021 096.9 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00297281 097.0 SP SAO CARLOS                                         ENGENHARIA MECANICA            
+00177009 097.0 PR CURITIBA                                           ENGENHARIA CIVIL               
+00362944 097.0 PE RECIFE                                             MATEMATICA                     
+00068414 097.5 RJ NITEROI                                            ENGENHARIA ELETRICA            
+00292374 097.5 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00090769 097.5 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00432864 097.5 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00413288 097.5 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00365069 097.5 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00409632 097.5 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00332759 098.1 RS PORTO ALEGRE                                       ENGENHARIA ELETRICA            
+00035110 098.1 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00275195 098.1 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00128155 098.1 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00236276 098.3 PE RECIFE                                             MATEMATICA                     
+00380065 098.8 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00141220 098.8 DF BRASILIA                                           ENGENHARIA ELETRICA            
+00394783 098.8 MG JUIZ DE FORA                                       ENGENHARIA ELETRICA            
+00442562 098.8 SP SAO JOSE DOS CAMPOS                                ENGENHARIA ELETRICA            
+00000106 099.0 SP SAO PAULO                                          MATEMATICA                     
+00004925 099.0 PE RECIFE                                             ENGENHARIA CIVIL               
+00091247 099.0 SP SAO PAULO                                          MATEMATICA                     
+00172174 099.0 MS CAMPO GRANDE                                       ENGENHARIA CIVIL               
+00419122 099.0 CE FORTALEZA                                          ENGENHARIA CIVIL               
+00206632 099.4 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00034813 099.5 RJ RIO DE JANEIRO                                     MATEMATICA                     
+00195615 099.5 SP SAO PAULO                                          MATEMATICA                     
+00313261 100.0 MG ITAJUBA                                            ENGENHARIA ELETRICA            
+00222330 100.0 ES VITORIA                                            ENGENHARIA ELETRICA            
+00334374 100.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00008877 100.0 MG JUIZ DE FORA                                       ENGENHARIA ELETRICA            
+00288353 100.0 DF BRASILIA                                           ENGENHARIA CIVIL               
+00074445 100.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00295259 100.0 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00358837 100.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00109960 100.0 SP CAMPINAS                                           ENGENHARIA ELETRICA            
+00011837 100.0 SP SAO PAULO                                          ENGENHARIA ELETRICA            
+00433443 100.0 BA SALVADOR                                           ENGENHARIA ELETRICA            
+00104703 100.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00130087 100.0 RJ RIO DE JANEIRO                                     ENGENHARIA ELETRICA            
+00329394 100.0 MG BELO HORIZONTE                                     ENGENHARIA ELETRICA            
+00386522 100.0 ES VITORIA                                            ENGENHARIA ELETRICA            

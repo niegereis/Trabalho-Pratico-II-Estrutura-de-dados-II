@@ -55,8 +55,6 @@ bool F2JuntarNaFitaDe(Fita *fitas, TipoDeFita tipo, Analise *analise, int *fitaS
       if (!leuBloco)
         continue;
 
-      analise->transferenciasLeitura++;
-
       qtdBlocosLidos++;
       qtdNovoBloco += blocos[i].qtdItens;
 

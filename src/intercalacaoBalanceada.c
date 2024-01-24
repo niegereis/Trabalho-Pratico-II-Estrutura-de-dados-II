@@ -22,7 +22,7 @@ bool BlocoInserirAluno(Bloco *bloco, Aluno *a) {
 
 int BlocoEscreverEmFita(Fita *fita, Bloco *bloco) {
   fwrite(bloco, sizeof(Bloco), 1, fita->arquivo);
-  int escritas = 1;
+  int escritas = 0;
   for (int i = 0; i < bloco->qtdItens; i++) {
     fwrite(&(bloco->alunos[i]), sizeof(Aluno), 1, fita->arquivo);
     escritas++;
@@ -80,6 +80,26 @@ void FitaFecharArquivos(Fita *fitas, EstrategiaDeIntercalacao estrategia) {
     fclose(fitas[i].arquivo);
 }
 
+void FitaImprime(Fita *fita) {
+  fseek(fita->arquivo, 0, 0);
+  Bloco bloco;
+  bool leu = BlocoLerViaArquivoBinario(fita->arquivo, &bloco);
+  if (!leu) {
+    perror("Não foi possivel ler o bloco. Erro: ");
+    return;
+  }
+  BlocoImprimeMetadados(&bloco);
+  int i = 0;
+  while (bloco.posicaoAtualNoBloco < bloco.qtdItens) {
+    Aluno aluno;
+    AlunoLerViaArquivoBinario(fita->arquivo, &aluno);
+    printf("(%d): ", i++);
+    AlunoImprime(&aluno);
+    printf("\n");
+    bloco.posicaoAtualNoBloco++;
+  }
+}
+
 Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analise *analise, int *blocosGerados) {
   FILE *arquivoProvao = fopen("./arquivos/output.txt", "r");
   if (arquivoProvao == NULL) {
@@ -105,22 +125,18 @@ Fita *FitaGerarBlocos(int qtdLinhas, EstrategiaDeIntercalacao estrategia, Analis
 
   int fitaSelecionada = 0;
   while (true) {
-
     Bloco bloco = BlocoCria(qtdLinhas);
     bool removeu;
     do {
-
       ItemHeap itemRemovido;
       removeu = HeapRemove(&heap, &itemRemovido, analise);
       if (removeu) {
-
         BlocoInserirAluno(&bloco, &itemRemovido.aluno);
       } else if (heap.ultimoRemovido != NULL) {
         break;
       }
 
-      if (feof(arquivoProvao) || qtdAlunosLidos >= qtdLinhas - 1) {
-
+      if (feof(arquivoProvao) || qtdAlunosLidos >= qtdLinhas) {
         while (HeapRemove(&heap, &itemRemovido, analise))
           BlocoInserirAluno(&bloco, &itemRemovido.aluno);
 
@@ -267,8 +283,9 @@ void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer,
     exit(1);
   }
 
+  printf("Blocos gerados: %d\n", blocosGerados);
+
   if (blocosGerados <= 1) {
-    //FitaConverterParaArquivoOutput(&fitas[0]);
     copiaArquivoBin(fitas[0].arquivo, linhasALer);
     return;
   }
@@ -310,9 +327,8 @@ void IntercalacaoBalanceada(EstrategiaDeIntercalacao estrategia, int linhasALer,
     }
   }
 
-  //FitaConverterParaArquivoOutput(&fitas[fitaSaida]);
+  // FitaConverterParaArquivoOutput(&fitas[fitaSaida]);
   copiaArquivoBin(fitas[fitaSaida].arquivo, linhasALer);
-
 
   FitaFecharArquivos(fitas, estrategia);
   clock_gettime(1, &fim);

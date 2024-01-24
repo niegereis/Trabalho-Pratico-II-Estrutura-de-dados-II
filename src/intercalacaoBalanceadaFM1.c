@@ -15,8 +15,6 @@ bool FM1JuntarNaFitaDeSaida(Fita *fitas, Analise *analise, int *fitaSaidaIndex) 
       if (!leuBloco)
         continue;
 
-      analise->transferenciasLeitura++;
-
       blocos[i].posicaoAtualNoBloco = 0;
       qtdNovoBloco += blocos[i].qtdItens;
       qtdBlocosLidos++;
