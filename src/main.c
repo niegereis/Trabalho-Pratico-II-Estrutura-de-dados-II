@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
   }
 
   int metodo, quantidade, situacao;
-  bool p = false;//váriavel para impressão no terminal
+  bool p = false; // váriavel para impressão no terminal
 
   metodo = atoi(argv[1]);
   quantidade = atoi(argv[2]);
@@ -39,18 +39,18 @@ int main(int argc, char **argv) {
   if (argc == 5 && (strcmp(argv[4], "-P") || strcmp(argv[4], "-p")))
     p = true;
 
-  //copia o arquivo selecionado pelo usuário para o output.txt, onde será ordenado
+  // copia o arquivo selecionado pelo usuário para o output.txt, onde será ordenado
   copiaArquivo(output, situacao, quantidade);
   fclose(output);
 
-  if (p){
+  if (p) {
     printf("\nAntes da ordenação:\n");
     imprimeTerminal(quantidade);
   }
 
   Analise analise;
   analise = ordenaMain(quantidade, metodo);
-  if (p){
+  if (p) {
     printf("\nDepois da ordenação:\n");
     imprimeTerminal(quantidade);
   }
