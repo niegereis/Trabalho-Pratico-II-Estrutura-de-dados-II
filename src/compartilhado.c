@@ -8,8 +8,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-void copiaArquivo(FILE *out, int situacao,
-                  int tam) { // copia a quntidade de linhas definida pelo usuário do arquivo escolhido para output.txt
+ // copia a quntidade de linhas definida pelo usuário do arquivo escolhido para output.txt
+void copiaArquivo(FILE *out, int situacao, int tam) {
   FILE *in;
   switch (situacao) {
   case 1:
@@ -78,6 +78,7 @@ void AnaliseDefinirTempoPeloInicioEFim(Analise *analise, struct timespec inicio,
   analise->tempoTotal = ((fim.tv_sec - inicio.tv_sec) * 1e9 + (fim.tv_nsec - inicio.tv_nsec)) / 1e6;
 }
 
+//funçao chamada na main onde o arquivo é ordenado pelo método escolhido pelo usuário
 Analise ordenaMain(int quantidade, int metodo) {
   Analise analise = AnaliseCriar();
 
@@ -96,6 +97,7 @@ Analise ordenaMain(int quantidade, int metodo) {
   return analise;
 }
 
+//imprime os dados do arquivo output.txt para o terminal
 void imprimeTerminal(int quantidade) {
   Aluno aluno;
   FILE *output = fopen("./arquivos/output.txt", "r");

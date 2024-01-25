@@ -16,6 +16,7 @@ void AlunoImprimeCompleto(Aluno *al) {
   printf("%s %05.1f %s %-49s %s\n", al->numeroInscricao, al->nota, al->estado, al->cidade, al->curso);
 }
 
+//le os dados de uma linha do arquivo .txt para a struct aluno
 Aluno AlunoLer(FILE *f) {
   Aluno aluno;
 
@@ -32,7 +33,7 @@ Aluno AlunoLer(FILE *f) {
     if (aluno.curso[i] == ' ' && aluno.curso[i - 1] == ' ') {
       aluno.curso[i - 1] = '\0';
     }
-  } // remove os espaços em branco
+  } 
 
   return aluno;
 }
@@ -41,12 +42,8 @@ bool AlunoLerViaArquivoBinario(FILE *f, Aluno *alunoLido) { return fread(alunoLi
 
 void AlunoEscreverEmArquivoBin(Aluno *aluno, FILE *arquivoBinario) { fwrite(aluno, sizeof(Aluno), 1, arquivoBinario); }
 
+//escreve o aluno no arquivo .txt
 void AlunoEscreve(FILE *arquivo, Aluno al) {
   fprintf(arquivo, "%s %05.1f %s %-49s %-31s", al.numeroInscricao, al.nota, al.estado, al.cidade, al.curso);
 }
 
-// void AlunoEscreveSeparadosPorNovaLinha(FILE *arquivo, Aluno *aluno) {
-
-//   fprintf(arquivo, "%s %05.1f %s %-49s %-31s\n", aluno->numeroInscricao, aluno->nota, aluno->estado, aluno->cidade,
-//   aluno->curso);
-// }

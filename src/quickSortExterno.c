@@ -64,6 +64,7 @@ void retiraMin(TipoArea *area, Aluno *aluno) {
 
 // ------------------------------------------------------------------------------------------
 
+//Funçao que realiza a divisão do arquivo em duas partes, ordenando o pivo no meio
 void particao(FILE **arqEi, FILE **arqLEs, TipoArea area, int esq, int dir, int *i, int *j, Analise *analise) {
   int ls = dir, es = dir, li = esq, Ei = esq;
   float lInf = INT_MIN, lSup = INT_MAX;
@@ -74,8 +75,10 @@ void particao(FILE **arqEi, FILE **arqLEs, TipoArea area, int esq, int dir, int 
   *j = dir + 1;
 
   analise->comparacoes++;
+  //o loop continua enquanto as variaveis li e ls nao se cruzam
   while (ls >= li) {
     analise->comparacoes++;
+    //o pivô é enchido até o seu tamanho - 1, com os alunos lidos alternadamente entre as partes inferior e superior
     if (area.n < TAMANHOAREA - 1) { // verificar se tem parte do pivo vazio
       if (ondeLer) {
         analise->transferenciasLeitura++;
@@ -88,7 +91,8 @@ void particao(FILE **arqEi, FILE **arqLEs, TipoArea area, int esq, int dir, int 
       continue;
     }
     analise->comparacoes++;
-    if (ls == es) { // se o ls for igual ao es, então o ls é o maior elemento da área
+    //Sequência de comparações para a leitura do arquivo, seguindo ordem alternada e evitando que nenhum dado seja sobrescrito antes de ser lido, 
+    if (ls == es) { 
       analise->transferenciasLeitura++;
       leSup(arqLEs, &ultLido, &ls, &ondeLer);
     } else if (li == Ei) {
@@ -106,13 +110,14 @@ void particao(FILE **arqEi, FILE **arqLEs, TipoArea area, int esq, int dir, int 
     }
 
     analise->comparacoes++;
+    //se o aluno lido possuir nota maior que o limite superior, este é escrito no arquivo superior
     if (ultLido.nota > lSup) { // se o ultimo lido for maior que o limite superior
       analise->transferenciasEscrita++;
       *j = es;
       escreveMax(arqLEs, ultLido, &es);
       continue;
     }
-
+    //se o aluno lido possuir nota menor que o limite inferior, este é escrito no arquivo inferior
     analise->comparacoes++;
     if (ultLido.nota < lInf) {
       analise->transferenciasEscrita++;
@@ -121,19 +126,23 @@ void particao(FILE **arqEi, FILE **arqLEs, TipoArea area, int esq, int dir, int 
       continue;
     }
 
-    // colocar a funçao de inserir pivo
+  
     // ------------------------------------------------------
-
+    //se o aluno estiver entre os limites, este é inserido ordenadamente na área do pivô
     inserirArea(&area, ultLido);
 
     // ------------------------------------------------------
+    //comparações que retiram o maior ou menor aluno do pivô, de acordo com o tamanho dos arquivos de escrita inferior e superior
     analise->comparacoes++;
+    //se o arquivo inferior for menor, o aluno é retirado do pivô, sua nota se torna o novo limite inferior e este é escrito no arquivo inferior
     if (Ei - esq < dir - es) { // retira o aluno com maior nota
                                // retirar o maior item do pivo
       analise->transferenciasEscrita++;
       retiraMin(&area, &R);
       escreveMin(arqEi, R, &Ei);
       lInf = R.nota;
+        
+      //se o arquivo superior for menor, o aluno é retirado do pivô, sua nota se torna o novo limite superior e este é escrito no arquivo superior
     } else { // retira o aluno com menor nota
              // retira menor item do pivo
       analise->transferenciasEscrita++;
@@ -142,7 +151,7 @@ void particao(FILE **arqEi, FILE **arqLEs, TipoArea area, int esq, int dir, int 
       lSup = R.nota;
     }
   }
-
+  //após a leitura de todo arquivo, os elementos que restaram no pivô são escritos sequencialmente pela variável Ei no arquivo novamente, de forma ordenada
   analise->comparacoes++;
   while (Ei <= es) {
     analise->comparacoes++;           // numero de comparações
@@ -152,7 +161,7 @@ void particao(FILE **arqEi, FILE **arqLEs, TipoArea area, int esq, int dir, int 
   }
 }
 
-void quickSortExterno(FILE **arqLEi, FILE **arqLEs, int esq, int dir, Analise *analise) { // função recusiva
+void quickSortExterno(FILE **arqLEi, FILE **arqLEs, int esq, int dir, Analise *analise) { // função recusiva do quicksort externo
   int i, j;
   TipoArea area;
   area.n = 0;
@@ -160,6 +169,7 @@ void quickSortExterno(FILE **arqLEi, FILE **arqLEs, int esq, int dir, Analise *a
     return;
   particao(arqLEi, arqLEs, area, esq, dir, &i, &j, analise);
 
+  //a próxima função é chamada priorizando a chamada do menor arquivo primeiro
   if (i - esq < dir - j) {
     quickSortExterno(arqLEi, arqLEs, esq, i, analise);
     quickSortExterno(arqLEi, arqLEs, j, dir, analise);
@@ -169,7 +179,7 @@ void quickSortExterno(FILE **arqLEi, FILE **arqLEs, int esq, int dir, Analise *a
   }
 }
 
-void ordenarQS(Analise *analise, int quantidade) { // FUNÇÃO principal
+void ordenarQS(Analise *analise, int quantidade) { // FUNÇÃO principal do quicksort externo
   struct timespec inicio, fim;
   FILE *arquivo;
 
