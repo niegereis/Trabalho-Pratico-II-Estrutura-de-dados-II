@@ -171,22 +171,20 @@ void quickSortExterno(FILE **arqLEi, FILE **arqLEs, int esq, int dir, Analise *a
 
 void ordenarQS(Analise *analise, int quantidade) { // FUNÇÃO principal
   struct timespec inicio, fim;
-  FILE *arqLEi, *arqLEs;
-  // arqLi = fopen("output.txt","r+");
-  arqLEi = fopen("./arquivos/output.txt", "r+");
-  arqLEs = fopen("./arquivos/output.txt", "r+");
-  if (arqLEi == NULL || arqLEs == NULL) {
+  FILE *arquivo;
+
+  arquivo = fopen("./arquivos/output.txt", "r+");
+  if (arquivo == NULL) {
     perror("error: ");
     exit(1);
   }
 
   clock_gettime(1, &inicio);
 
-  quickSortExterno(&arqLEi, &arqLEs, 1, quantidade, analise);
+  quickSortExterno(&arquivo, &arquivo, 1, quantidade, analise);
 
   clock_gettime(1, &fim);
 
   AnaliseDefinirTempoPeloInicioEFim(analise, inicio, fim);
-  fclose(arqLEi);
-  fclose(arqLEs);
+  fclose(arquivo);
 }
