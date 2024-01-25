@@ -1,6 +1,7 @@
 #include "../lib/aluno.h"
 #include <string.h>
 
+// Função usada para criar um novo aluno
 Aluno AlunoCriar(char *numeroInscricao, double nota, char *estado, char *cidade, char *curso) {
   Aluno aluno;
   strncpy(aluno.numeroInscricao, numeroInscricao, 9);
@@ -11,12 +12,15 @@ Aluno AlunoCriar(char *numeroInscricao, double nota, char *estado, char *cidade,
   return aluno;
 }
 
+// Função usada para imprimir as informações do aluno
 void AlunoImprime(Aluno *aluno) { printf("Inscrição: %s => Nota: %.1f", aluno->numeroInscricao, aluno->nota); }
+
+// Função usada para imprimir as informações completas do aluno
 void AlunoImprimeCompleto(Aluno *al) {
   printf("%s %05.1f %s %-49s %s\n", al->numeroInscricao, al->nota, al->estado, al->cidade, al->curso);
 }
 
-//le os dados de uma linha do arquivo .txt para a struct aluno
+// le os dados de uma linha do arquivo .txt para a struct aluno
 Aluno AlunoLer(FILE *f) {
   Aluno aluno;
 
@@ -33,7 +37,7 @@ Aluno AlunoLer(FILE *f) {
     if (aluno.curso[i] == ' ' && aluno.curso[i - 1] == ' ') {
       aluno.curso[i - 1] = '\0';
     }
-  } 
+  }
 
   return aluno;
 }
@@ -42,8 +46,7 @@ bool AlunoLerViaArquivoBinario(FILE *f, Aluno *alunoLido) { return fread(alunoLi
 
 void AlunoEscreverEmArquivoBin(Aluno *aluno, FILE *arquivoBinario) { fwrite(aluno, sizeof(Aluno), 1, arquivoBinario); }
 
-//escreve o aluno no arquivo .txt
+// escreve o aluno no arquivo .txt
 void AlunoEscreve(FILE *arquivo, Aluno al) {
   fprintf(arquivo, "%s %05.1f %s %-49s %-31s", al.numeroInscricao, al.nota, al.estado, al.cidade, al.curso);
 }
-

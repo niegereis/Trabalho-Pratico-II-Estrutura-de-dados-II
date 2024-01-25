@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 
- // copia a quntidade de linhas definida pelo usuário do arquivo escolhido para output.txt
+// copia a quntidade de linhas definida pelo usuário do arquivo escolhido para output.txt
 void copiaArquivo(FILE *out, int situacao, int tam) {
   FILE *in;
   switch (situacao) {
@@ -46,7 +46,7 @@ void copiaArquivoBin(FILE *in, int tam) { // Lê fita final e a escreve no outpu
   FILE *out = fopen("./arquivos/output.txt", "w+");
   fseek(in, 0, 0);
   for (int i = 0; i < tam; i++) {
-    fseek(in, (i*(sizeof(Aluno)) + sizeof(Bloco)), 0);
+    fseek(in, (i * (sizeof(Aluno)) + sizeof(Bloco)), 0);
     AlunoLerViaArquivoBinario(in, &al);
     fseek(out, i * 101, 0);
     AlunoEscreve(out, al);
@@ -78,7 +78,7 @@ void AnaliseDefinirTempoPeloInicioEFim(Analise *analise, struct timespec inicio,
   analise->tempoTotal = ((fim.tv_sec - inicio.tv_sec) * 1e9 + (fim.tv_nsec - inicio.tv_nsec)) / 1e6;
 }
 
-//funçao chamada na main onde o arquivo é ordenado pelo método escolhido pelo usuário
+// funçao chamada na main onde o arquivo é ordenado pelo método escolhido pelo usuário
 Analise ordenaMain(int quantidade, int metodo) {
   Analise analise = AnaliseCriar();
 
@@ -97,7 +97,7 @@ Analise ordenaMain(int quantidade, int metodo) {
   return analise;
 }
 
-//imprime os dados do arquivo output.txt para o terminal
+// imprime os dados do arquivo output.txt para o terminal
 void imprimeTerminal(int quantidade) {
   Aluno aluno;
   FILE *output = fopen("./arquivos/output.txt", "r");
