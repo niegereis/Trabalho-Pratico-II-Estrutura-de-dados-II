@@ -3,6 +3,16 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * Alunos:
+ * - Camila Aparecida Silva Oliveira - 22.2.4007
+ * - Cecília Peeret Paulino Ataíde - 22.2.4069
+ * - Eduardo Gordiano Passos Silva - 22.2.4087
+ * - Guilherme Silva de Souza - 22.2.4009
+ * - Luiz Humberto Fonseca Neto - 22.2.4067
+ * - Niege Marryany Dos Reis Da Silva - 22.2.4005
+ */
+
 #define TAMMAX 471705
 
 int main(int argc, char **argv) {
