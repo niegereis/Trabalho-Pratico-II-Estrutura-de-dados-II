@@ -1,3 +1,3 @@
-# Trabalho Prático Estrutura de Dados II - Métodos de ordenação externa
+# Trabalho Prático II Estrutura de Dados II - Métodos de ordenação externa
 
 Neste trabalho foi realizado a implementação e análise experimental de métodos de ordenação externa dos seguintes métodos: intercalação balanceada de vários caminhos (2f fitas) utilizando, na etapa de geração dos blocos ordenados, a técnica de seleção por substituição; intercalação balanceada de vários caminhos (f+1 fitas) utilizando, na etapa de geração dos blocos ordenados, a técnica de seleção por substituição e o quicksort externo. Para o Método 1, será considerada a existência de memória interna para armazenar um vetor de, no máximo, 10 registros, e 20 fitas de armazenamento externo. Para o Método 2, a memória interna disponível será para um vetor de, no máximo, 19 registros, e 20 fitas de armazenamento externo. Já para o Método 3, a memória interna será para um vetor de, no máximo, 10 registros.
